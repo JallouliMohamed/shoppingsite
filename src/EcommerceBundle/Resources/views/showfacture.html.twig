@@ -1,0 +1,203 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+
+    <style>
+        .profile-usermenu ul li.active {
+            border-bottom: none;
+        }
+
+        .profile-usermenu ul li.active a {
+            color: #5b9bd1;
+            background-color: #f6f9fb;
+            border-left: 2px solid #5b9bd1;
+            margin-left: -2px;
+        }
+
+    </style>
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        <section style="padding-bottom: 50px; padding-top: 50px;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{ path('fos_user_profile_show') }}">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    Mon Profil </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_profile_edit') }}">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Informations personnelles </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('useralladdresses') }}" target="_blank">
+                                    <i class="glyphicon glyphicon-globe"></i>
+                                    Mes adresses </a>
+                            </li>
+                            <li class="active">
+                                <a href="{{ path('userallorders') }}">
+                                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    Mes commandes </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="alert alert-info">
+                        <h4>Bonjour {{ app.user.firstname }} {{ app.user.lastname }} </h4>
+                        <p>
+                            À partir de votre compte, vous pouvez obtenir l'historique de vos commandes et mettre à jour vos informations.
+                        </p>
+                    </div>
+
+
+
+
+
+                    <style>.invoice-title h2, .invoice-title h3 {
+                            display: inline-block;
+                        }
+
+                        .table > tbody > tr > .no-line {
+                            border-top: none;
+                        }
+
+                        .table > thead > tr > .no-line {
+                            border-bottom: none;
+                        }
+
+                        .table > tbody > tr > .thick-line {
+                            border-top: 2px solid;
+                        }</style>
+
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="invoice-title">
+                                    <h2>Facture</h2><h3 class="pull-right">Commande # {{ commande.reference }}</h3>
+                                    {% if commande.paymentstate is same as("paid")  %} <div class="p-3 mb-2 bg-success text-white">Payée</div>{% else %}
+                                    <div class="p-3 mb-2 bg-danger text-white">Non payée</div> {% endif %}
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <address>
+                                            <strong>Adresse de paiement:</strong><br>
+                                            {{ commande.order.facturation['nom'] }} {{ commande.order.facturation['prenom'] }}<br>
+                                            {{ commande.order.facturation['adresse'] }}<br>
+                                            {{ commande.order.facturation['complement'] }}<br>
+                                            {{ commande.order.facturation['ville'] }}
+                                        </address>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <address>
+                                            <strong>Livré à:</strong><br>
+                                            {{ commande.order.livraison['nom'] }} {{ commande.order.livraison['prenom'] }}<br>
+                                            {{ commande.order.livraison['adresse'] }}<br>
+                                            {{ commande.order.livraison['complement'] }}<br>
+                                            {{ commande.order.livraison['ville'] }}
+                                        </address>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <address>
+                                            <strong>Payment Method:</strong><br>
+                                            Visa ending **** 4242<br>
+                                            jsmith@email.com
+                                        </address>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <address>
+                                            <strong>Order Date:</strong><br>
+                                            {{ commande.date|localizeddate('long', 'short') }}<br><br>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><strong>Facture</strong></h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                <tr>
+                                                    <td><strong>Produit</strong></td>
+                                                    <td class="text-center"><strong>Prix</strong></td>
+                                                    <td class="text-center"><strong>Quantité</strong></td>
+                                                    <td class="text-right"><strong>Total</strong></td>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for produit in commande.order.produit %}
+                                                <tr>
+                                                    <td>{{ produit.reference }}</td>
+                                                    <td class="text-center">{{ produit.prixHT }} DT</td>
+                                                    <td class="text-center">{{ produit.quantite }}</td>
+                                                    <td class="text-right">{{ produit.prixHT * produit.quantite }} DT</td>
+                                                </tr>
+                                                {% endfor %}
+
+
+                                                <tr>
+                                                    <td class="thick-line"></td>
+                                                    <td class="thick-line"></td>
+                                                    <td class="thick-line text-center"><strong>Total HT</strong></td>
+                                                    <td class="thick-line text-right">{{ commande.order.prixHT }} DT</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line text-center"><strong>Promotion</strong></td>
+                                                    <td class="no-line text-right">TODO</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line"></td>
+                                                    <td class="no-line text-center"><strong>Total TTC</strong></td>
+                                                    <td class="no-line text-right">{{ commande.order.prixHT }} DT</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+</div>
+
+
+                </div>
+            </div>
+            <!-- ROW END -->
+
+
+        </section>
+        <!-- SECTION END -->
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+{% extends 'BackOfficeBundle:Brand:base.html.twig' %}
+{% block content %}
+    {#<h2>Formulaire de modification</h2>#}
+    {#{{ form(form) }}#}
+    {#{{ form_errors(form) }}#}
+    <style>
+
+        /*.bg-1 {*/
+        /*background: #2d2d30;*/
+        /*color: #bdbdbd;*/
+        /*height: 100%;*/
+        /*}*/
+        /*.bg-1 h3 {color: #fff;}*/
+        .bg-1 p {font-style: italic;}
+    </style>
+
+    <div class="bg-1">
+        <div class="container-fluid" >
+           <div class="text-center"> <h3>Ajouter Patisserie</h3></div>
+            {#<p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>#}
+
+            {{ form_start(form) }}
+            <div class="form-group">
+
+                <label for="pwd">Nom:</label>  {{ form_widget(form.name,{'attr':{'class':'form-control','placeholder':"Name"}}  ) }}
+                <label for="pwd">Adresse:</label>  {{ form_widget(form.address,{'attr':{'class':'form-control','placeholder':"Adresse"}}  ) }}
+                <label for="pwd">Phone</label> {{ form_widget(form.phoneNumber,{'attr':{'class':'form-control','placeholder':"+216 00 000 000"}}  ) }}
+                <label for="pwd">Fax</label> {{ form_widget(form.fax,{'attr':{'class':'form-control','placeholder':"+216 00 000 000"}}  ) }}
+                <label for="pwd">Email</label> {{ form_widget(form.email,{'attr':{'class':'form-control','placeholder':"aza@aaza.com"}}  ) }}
+                <label for="pwd">Responsable Patissier</label> {{ form_widget(form.user,{'attr':{'class':'form-control','placeholder':"site web"}}  ) }}
+                <br>{{ form_widget(form.Ajouter,{'attr':{'class':'btn btn-primary btn-block'}}  ) }}</div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+

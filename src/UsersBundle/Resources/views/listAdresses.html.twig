@@ -1,0 +1,155 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+
+    <style>
+        .profile-usermenu ul li.active {
+            border-bottom: none;
+        }
+
+        .profile-usermenu ul li.active a {
+            color: #5b9bd1;
+            background-color: #f6f9fb;
+            border-left: 2px solid #5b9bd1;
+            margin-left: -2px;
+        }
+
+    </style>
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        <section style="padding-bottom: 50px; padding-top: 50px;">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li>
+                                <a href="{{ path('fos_user_profile_show') }}">
+                                    <i class="glyphicon glyphicon-home"></i>
+                                    Mon Profil </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_profile_edit') }}">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Informations personnelles </a>
+                            </li>
+                            <li class="active">
+                                <a href="#" target="_blank">
+                                    <i class="glyphicon glyphicon-globe"></i>
+                                    Mes adresses </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    Mes commandes </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="alert alert-info">
+                        <h4>Bonjour {{ app.user.firstname }} {{ app.user.lastname }} </h4>
+                        <p>
+                            À partir de votre compte, vous pouvez obtenir l'historique de vos commandes et mettre à jour vos informations.
+                        </p>
+                    </div>
+                    <center><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ajouter une adresse</button></center>
+
+                    {% for adresse in addresses %}
+
+                        <div class="card col-lg-6">
+                            <h3 class="card-header">Adresse principale</h3>
+                            <div class="card-block">
+                                <p class="card-text ">{{ adresse.nom }}  {{ adresse.prenom }}</p>
+                                <p class="card-text glyphicon glyphicon-info-sign"> {{ adresse.adresse }}, {{ adresse.ville }}, {{ adresse.pays }}, {{ adresse.cp }} </p><br>
+                                <p class="card-text glyphicon glyphicon-earphone"> {{ adresse.telephone }}</p>
+
+                                <br>
+                                <th><a href="{{ path('delete_user_address', {'address':adresse.id}) }}" type="button" class="btn btn-danger btn-sm">Supprimer</a></th>
+                                <th><a href="{{ path('update_user_address', {'address':adresse.id}) }}" type="button" class="btn btn-primary btn-sm">Modifier</a></th>
+                            </div>
+                        </div>
+<br>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <!-- ROW END -->
+
+
+        </section>
+        <!-- SECTION END -->
+    </div>
+
+
+
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ajouter une adresse</h4>
+                </div>
+                <div class="modal-body">
+                    {{ form_start(form, {'attr': {'class':'form-group'}}) }}
+
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Nom</label>
+                        {{ form_widget(form.nom, {'attr' : {'class':'form-control'}}) }}
+
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Prenom</label>
+                        {{ form_widget(form.prenom, {'attr' : {'class':'form-control'}}) }}
+
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Telephone</label>
+                        {{ form_widget(form.telephone, {'attr' : {'class':'form-control'}}) }}
+
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Adresse</label>
+                        {{ form_widget(form.adresse, {'attr' : {'class':'form-control'}}) }}
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Ville</label>
+                        {{ form_widget(form.ville, {'attr' : {'class':'form-control'}}) }}
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Code postale</label>
+                        {{ form_widget(form.cp, {'attr' : {'class':'form-control'}}) }}
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Complement</label>
+                        {{ form_widget(form.complement, {'attr' : {'class':'form-control'}}) }}
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Pays</label>
+                        {{ form_widget(form.pays, {'attr' : {'class':'form-control'}}) }}
+
+                    </div>
+                    {{ form_widget(form.sauvegarder, {'attr' : {'class':'btn btn-info btn-lg'}})}}
+
+
+
+                    {{ form_end(form) }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

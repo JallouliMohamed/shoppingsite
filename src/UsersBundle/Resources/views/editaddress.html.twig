@@ -1,0 +1,104 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+<style>
+    .profile-usermenu ul li.active {
+        border-bottom: none;
+    }
+
+    .profile-usermenu ul li.active a {
+        color: #5b9bd1;
+        background-color: #f6f9fb;
+        border-left: 2px solid #5b9bd1;
+        margin-left: -2px;
+    }
+
+</style>
+<div class="container" xmlns="http://www.w3.org/1999/html">
+    <section style="padding-bottom: 50px; padding-top: 50px;">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li>
+                            <a href="{{ path('fos_user_profile_show') }}">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Mon Profil </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fos_user_profile_edit') }}">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Informations personnelles </a>
+                        </li>
+                        <li class="active">
+                            <a href="#" target="_blank">
+                                <i class="glyphicon glyphicon-globe"></i>
+                                Mes adresses </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                                Mes commandes </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="alert alert-info">
+                    <h4>Bonjour {{ app.user.firstname }} {{ app.user.lastname }} </h4>
+                    <p>
+                        À partir de votre compte, vous pouvez obtenir l'historique de vos commandes et mettre à jour vos informations.
+                    </p>
+                </div>
+                {{ form_start(form, {'attr': {'class':'form-group'}}) }}
+
+                <div class="form-group col-lg-4">
+                    <label>Nom </label>
+                    {{ form_widget(form.nom, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Prenom</label>
+                    {{ form_widget(form.prenom, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Telephone</label>
+                    {{ form_widget(form.telephone, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Adresse</label>
+                    {{ form_widget(form.adresse, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Ville</label>
+                    {{ form_widget(form.ville, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Code Postal</label>
+                    {{ form_widget(form.cp, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Complement</label>
+                    {{ form_widget(form.complement, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-lg-4">
+                    <label>Pays</label>
+                    {{ form_widget(form.pays, {'attr' : {'class':'form-control'}}) }}
+                </div>
+                <div class="form-group col-md-8">
+
+
+                    {{ form_widget(form.sauvegarder, {'attr' : {'class':'btn btn-success'}}) }}
+                    {{ form_end(form) }}
+
+                    <br>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- ROW END -->
+
+
+    </section>
+    <!-- SECTION END -->
+</div>
+{% endblock %}

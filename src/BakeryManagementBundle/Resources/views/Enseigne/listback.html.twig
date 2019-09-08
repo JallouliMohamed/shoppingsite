@@ -1,0 +1,10 @@
+<ul class="treeview-menu">
+
+    <li><a href=" {{ path('back_office_chart_brand') }}"><i class="fa fa-circle-o"></i>{{ enseigne[0].name }} </a></li>
+    {% for brand in brands %}
+    <li><a href=" {{ path( 'bakery_topprod', {'id':brand.id})}}"><i class="fa fa-circle-o"></i> {{ brand.name }}</a></li>
+        {#<li><a href=" {{ path( 'back_office_chart_brand2',{'id':brand.id})}}"><i class="fa fa-circle-o"></i> {{ brand.name }}</a></li>#}
+
+    {% endfor %}
+
+</ul>

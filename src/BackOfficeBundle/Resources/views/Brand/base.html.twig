@@ -1,0 +1,79 @@
+{% extends '::baseAdmin.html.twig' %}
+{% block homePath %}{{ path('back_office_homepage_brand') }}{% endblock %}
+{% block profileLink %}{{ path('back_office_profile_brand') }}{% endblock %}
+{% block sidebar %}
+    {{ parent() }}
+    {#<li class="active treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class="active"><a href="{{ path('back_office_homepage_brand') }}"><i
+                            class="fa fa-circle-o"></i> Dashboard v1</a></li>
+
+        </ul>
+    </li>#}
+
+
+    <li class="header">Menu</li>
+
+    <!-- Optionally, you can add icons to the links -->
+    <li class="active"><a href="{{ path('bakery_list') }}">
+            <i class="fa fa-link"></i> <span>Mes coordonnées</span>
+        </a></li>
+
+<li class="active treeview">
+    <a href="#">
+        <i class="fa fa-link"></i> <span>Gestion Patisserie</span>
+        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+    </a>
+    <ul class="treeview-menu">
+        <li class="active"><a href="{{ path('brand_list') }}"><i
+                        class="fa fa-circle-o"></i> Mes Patisserie</a></li>
+
+
+        <li class="active"><a href="{{ path('brand_add') }}"><i
+                        class="fa fa-circle-o"></i> Ajouter Patisserie</a></li>
+
+    </ul>
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-table"></i> <span>Gestion des produits</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="{{ path('all_products_brand') }}"><i class="fa fa-circle-o"></i>Mes Produits</a></li>
+        </ul>
+    </li>
+    <li><a href="{{ path('brand_map') }}"><i class="fa fa-link"></i> <span>Map</span></a></li>
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Statistiques</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+
+        {{ render(controller('BakeryManagementBundle:Enseigne:listback')) }}
+
+    </li>
+
+{% endblock %}
+
+
+    {% block content %}
+        {% for i in img %}
+            <img src="{{ asset('uploads/' ~ i.logo) }}"  class="center-block" height="100px" alt="Responsive image" >
+        {% endfor %}
+    {% endblock %}
+

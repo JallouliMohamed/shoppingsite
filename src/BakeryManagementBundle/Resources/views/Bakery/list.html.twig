@@ -1,0 +1,69 @@
+{% extends 'BackOfficeBundle:Brand:base.html.twig' %}
+{% block content %}
+    {#<div class="content-wrapper">#}
+<div>
+        <section class="content-header">
+            <h1>Liste des patisseries</h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            {#<?= flash(); // affichage du message flash   ?>#}
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Liste</h3>
+
+                    {#<div class="box-tools">#}
+                        {#<a href="experiences_edit.php?type=experience" class="btn btn-success pull-right">Ajouter</a>#}
+                    {#</div>#}
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+
+                        <tr>
+                        <th>Nom</th>
+                        <th>Addresse</th>
+                        <th>Tel</th>
+                        <th>Fax</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                        </tr>
+                        {% for patisseries in patisseries %}
+                        <tr>
+                        <td>{{ patisseries.name }}</td>
+                        <td>{{ patisseries.address }}</td>
+                        <td>{{ patisseries.phoneNumber }}</td>
+                        <td>{{ patisseries.fax }}</td>
+                        <td>{{ patisseries.email }}</td>
+                            <td>
+                                <a href="{{ path('brand_update',{'id':patisseries.id}) }}" class="btn btn-info" >
+                                <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="{{ path('brand_delete',{'id':patisseries.id}) }}" class="btn btn-danger" >
+                                    <i class="fa fa-trash-o"></i>
+                                </a>
+                                {#<a href="?delete=<?= $experience->id; ?>&<?= csrf(); ?>"#}
+                                   {#onclick="return confirm('Attention vous allez supprimer l\'élément')"#}
+                                   {#class="btn btn-danger">#}
+                                    {#<i class="fa fa-trash-o"></i> Supprimer#}
+                                {#</a>#}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </section>
+
+
+        <!-- /.content -->
+
+    <div class="navigation">
+        {{ knp_pagination_render(patisseries) }}
+    </div>
+
+</div>
+
+{% endblock %}

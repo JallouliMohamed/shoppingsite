@@ -1,0 +1,76 @@
+ecommerce_homepage:
+    path:     /
+    defaults: { _controller: EcommerceBundle:Default:index }
+
+ajouter:
+    path:  /ajouter/{id}
+    defaults: { _controller: EcommerceBundle:Panier:ajouter}
+
+supprimer:
+    path:  /supprimer/{id}
+    defaults: { _controller: EcommerceBundle:Panier:supprimer }
+
+panier:
+    path:  /cart
+    defaults: { _controller: EcommerceBundle:Panier:panier }
+menupanier:
+    path:  /panier
+    defaults: { _controller: EcommerceBundle:Panier:menu}
+
+facture:
+    path:  /facture
+    defaults: { _controller: EcommerceBundle:Order:facture}
+
+livraison:
+    path:  /livraison
+    defaults: { _controller: EcommerceBundle:Panier:livraison}
+
+validation:
+    path:  /validation
+    defaults: { _controller: EcommerceBundle:Panier:validation }
+
+livraisonAdresseSuppression:
+    path:  /livraison/adresse/suppression/{id}
+    defaults: { _controller: EcommerceBundle:Panier:adresseSuppression }
+
+delete_user_address:
+    path:     /profile/addresses/delete
+    defaults: { _controller: UsersBundle:Adresses:delete }
+update_user_address:
+    path:     /profile/addresses/update
+    defaults: { _controller: UsersBundle:Adresses:edit }
+
+afficherfacture:
+    path:  /profile/orders/facture/{id}
+    defaults: { _controller: EcommerceBundle:Order:afficherFacture }
+
+FacturePDF:
+    path:  /profile/orders/facture/{id}/pdf
+    defaults: { _controller: EcommerceBundle:Order:FacturePDF }
+showpayment:
+    path:  /order/{id}/showpayment
+    defaults: { _controller: EcommerceBundle:Order:Payment }
+app_orders_paymentcreate:
+    path:  /order/{id}/createpayment
+    defaults: { _controller: EcommerceBundle:Order:paymentCreate }
+app_orders_paymentcomplete:
+    path:  /order/{id}/paymentcomplete
+    defaults: { _controller: EcommerceBundle:Order:paymentComplete }
+
+
+
+delivery_show_planning:
+    path:  /deliveryMan/planning
+    defaults: { _controller: EcommerceBundle:Delivery:showPlanning }
+
+delivery_affect_planning:
+    path:  /bakery/affectplanning/{id}
+    defaults: { _controller: EcommerceBundle:Delivery:affectationplanning}
+delivery_show_affected:
+    path:  /deliveryMan/affectedorders
+    defaults: { _controller: EcommerceBundle:Delivery:listAffectedOrders}
+
+bakery_alllineorders:
+    path:  /bakery/allorders
+    defaults: { _controller: EcommerceBundle:Order:BakerylistOrders }
+

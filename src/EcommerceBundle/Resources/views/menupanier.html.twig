@@ -1,0 +1,33 @@
+{% set totalprod = 0 %}
+{% set totalHT = 0 %}
+ {% for produit in produits %}
+                {% set totalprod = totalprod + panier[produit.id] %}
+     {% set totalHT = totalHT + (produit.price * panier[produit.id]) %}
+
+ {% endfor %}
+
+<div class="ps-cart"><a class="ps-cart__toggle" href="#"><span><i>{{ totalprod }}</i></span><i class="ps-icon--shopping-cart"></i></a>
+    <div class="ps-cart__listing">
+        <div class="ps-cart__content">
+
+            {% for produit in produits %}
+                {% set totalprod = totalprod + panier[produit.id] %}
+
+            <div class="ps-cart-item">
+                <a class="ps-cart-item__close" href="{{ path('supprimer', { 'id' : produit.id }) }}"></a>
+                <div class="ps-cart-item__thumbnail">
+                    <a href="#"></a><img src="{{ asset('images/cake/img-cake-1.jpg') }}" alt=""></div>
+                <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="#">{{ produit.name }}</a>
+                    <p><span>Quantity:<i>{{ panier[produit.id] }}</i></span><span>Total:<i>{{ produit.price * panier[produit.id] }} DT</i></span></p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        <div class="ps-cart__total">
+            <p>Number of items:<span>{{ totalprod/2 }}</span></p>
+            <p>Item Total:<span>{{ totalHT }} DT</span></p>
+        </div>
+        <div class="ps-cart__footer"><a class="ps-btn ps-btn--view-bag" href="{{ path('panier') }}">Mon panier</a></div>
+    </div>
+</div>

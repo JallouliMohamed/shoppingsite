@@ -1,0 +1,6 @@
+notifications_homepage:
+    path:     /
+    defaults: { _controller: NotificationsBundle:Default:index }
+redirect_to_notif:
+    path:     /Notification/RedirectToLink
+    defaults: { _controller: NotificationsBundle:Notification:markNotification }

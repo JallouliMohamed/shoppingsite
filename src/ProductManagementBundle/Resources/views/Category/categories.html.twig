@@ -1,0 +1,124 @@
+{% extends 'BackOfficeBundle:Admin:base.html.twig' %}
+{% block style %}{{ parent() }}{% endblock %}
+
+{% block content %}
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            Gestion des catégories
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Gestion des catégories</a></li>
+            <li class="active">Mes catégories</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Mes catégories</h3>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ajouter</button>
+                    </div>
+
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="col-md-6">
+
+                        </div>
+                        <table id="example2" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for category in categories %}
+                                <tr>
+                                    <td>{{ category.name }}</td>
+                                    <td><a href="{{ path('update_category_admin', {'category':category.id}) }}" type="button" class="btn btn-primary btn-sm">Modifier</a>
+                                    <a href="{{ vich_uploader_asset(category, 'imageFile') }}" type="button" class="btn btn-info btn-sm">Photo</a>
+                                    <a href="{{ path('delete_category_admin', {'category':category.id}) }}" type="button" class="btn btn-danger btn-sm">Supprimer</a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Actions</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Ajouter une catégorie</h4>
+                </div>
+                <div class="modal-body">
+                    {{ form_start(form, {'attr': {'class':'form-group'}}) }}
+
+                    <div class="form-group">
+                        <label class="control-label">Nom</label>
+                        {{ form_widget(form.name, {'attr' : {'class':'form-control'}}) }}
+                    </div>
+
+                    {{ form_widget(form.imageFile) }}
+                    {{ form_widget(form.sauvegarder, {'attr' : {'class':'btn-success'}})}}
+                    {{ form_errors(form) }}
+                    {{ form_end(form) }}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+
+    <!-- page script -->
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : false,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : false
+            })
+        })
+    </script>
+{% endblock %}
+

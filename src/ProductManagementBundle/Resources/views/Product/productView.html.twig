@@ -1,0 +1,57 @@
+<div class="ps-shop ps-col-tiny" id="productsDiv">
+    <div class="row">
+        {% for product in products %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="ps-product">
+                    <div class="ps-product__thumbnail">
+                        {% if product.reduction > 0 %}
+                            <div class="ps-badge"><span>{{ product.reduction }}%</span></div>
+                        {% endif %}
+                        <a class="ps-product__overlay" href="{{ path('product_page', { 'id': product.id }) }}"></a>
+                        <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="" height="320">
+                        <ul class="ps-product__action">
+                            <li></li>
+                            <li><a href="#" data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="ps-product__content">
+                        <a class="ps-product__title" href="{{ path('product_page', { 'id': product.id }) }}">{{ product.name }}</a>
+                        <div class="ps-product__category">
+                            <a class="ps-product__category">{{ product.subcategory.category.name }}</a>
+                            <a class="ps-product__category" href="{{ path('products_page', {'subcat_id':product.subcategory.id}) }}">{{ product.subcategory.name }}</a>
+                        </div>
+                        <select class="ps-rating" title="ratingtab">
+                            <option value="1" {% if product.rating == 1 %} selected {% endif %}>1</option>
+                            <option value="2" {% if product.rating == 2 %} selected {% endif %}>2</option>
+                            <option value="3" {% if product.rating == 3 %} selected {% endif %}>3</option>
+                            <option value="4" {% if product.rating == 4 %} selected {% endif %}>4</option>
+                            <option value="5" {% if product.rating == 5 %} selected {% endif %}>5</option>
+                        </select>
+                        <p class="ps-product__price">
+                            {% if product.reduction > 0 %}
+                                <del>{{ product.price }} Dinars</del>
+                                {{ product.price - (product.price*product.reduction/100) }} Dinars
+                            {% else %}
+                                {{ product.price }} Dinars
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="ps-pagination">
+        <ul class="pagination">
+            {{ knp_pagination_render(products) }}
+        </ul>
+        {#<ul class="pagination">
+            <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+        </ul>#}
+    </div>
+</div>

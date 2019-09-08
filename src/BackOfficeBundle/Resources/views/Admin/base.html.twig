@@ -1,0 +1,80 @@
+{% extends '::baseAdmin.html.twig' %}
+{% block homePath %}{{ path('back_office_homepage_admin') }}{% endblock %}
+{% block profileLink %}{{ path('back_office_profile_admin') }}{% endblock %}
+{% block sidebar %}
+    {{ parent() }}
+    {#<li class="active treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class="active"><a href="{{ path('back_office_homepage_admin') }}"><i
+                            class="fa fa-circle-o"></i> Dashboard v1</a></li>
+
+        </ul>
+    </li>#}
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-table"></i> <span>Gestion</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="{{ path('all_categories_admin') }}"><i class="fa fa-circle-o"></i> Mes catégories</a></li>
+            <li><a href="{{ path('all_subcategories_admin') }}"><i class="fa fa-circle-o"></i> Mes sous catégories</a></li>
+        </ul>
+    </li>
+
+    {#<li class="treeview">
+        <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Charts</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="{{ path('back_office_chart_bakery') }}"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <!--<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>-->
+        </ul>
+    </li>#}
+    {#<li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i> <span>Forms</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                        <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a>
+                        </li>
+                        <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+                    </ul>
+                </li>#}
+
+
+    {#<li>
+        <a href="{{ path('back_office_mailbox') }}">
+            <i class="fa fa-envelope"></i> <span>Mailbox</span>
+            <span class="pull-right-container">
+  <small class="label pull-right bg-yellow">12</small>
+  <small class="label pull-right bg-green">16</small>
+  <small class="label pull-right bg-red">5</small>
+</span>
+        </a>
+    </li>#}
+{% endblock %}
+
+
+        {% block content %}
+
+        {% endblock %}
+

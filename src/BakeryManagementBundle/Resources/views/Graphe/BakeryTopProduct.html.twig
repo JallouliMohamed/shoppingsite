@@ -1,0 +1,381 @@
+{% extends 'BackOfficeBundle:Brand:base.html.twig' %}
+
+
+{% block content %}
+    <!-- Currently unavailable in Admin and Delivery -->
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+        <h1>
+            ChartJS
+            <small>Preview sample</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Charts</a></li>
+            <li class="active">ChartJS</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- AREA CHART -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Produit / Ventes</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="chart">
+                            <canvas id="areaChart" style="height:250px">
+
+                                {#{{ render(controller(#}
+                                {#'BakeryManagementBundle:Graphe:Bakerychart',{'id' :bakery.id }#}
+                                {#)) }}#}
+                                <script src="{{ asset('jquery-3.2.1.js') }}"></script>
+                                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.5/js/mdb.min.js"></script>
+                                <script>
+
+                                    //bar
+                                    var ctxB = document.getElementById("areaChart").getContext('2d');
+                                    var myBarChart = new Chart(ctxB, {
+                                        type: 'bar',
+                                        data: {
+                                            labels: [
+                                                {% for dat in data%}
+                                                "{{ dat.name}}",
+                                                {% endfor %}
+                                            ],
+                                            datasets: [{
+                                                label: '# of Votes',
+                                                data: [
+                                                    {% for dat in data%}
+                                                    {{ dat.sales}},
+                                                    {% endfor %}
+                                                ],
+                                                backgroundColor: [
+                                                    'rgba(255, 99, 132, 0.2)',
+                                                    'rgba(54, 162, 235, 0.2)',
+                                                    'rgba(255, 206, 86, 0.2)',
+                                                    'rgba(75, 192, 192, 0.2)',
+                                                    'rgba(153, 102, 255, 0.2)',
+                                                    'rgba(255, 159, 64, 0.2)'
+                                                ],
+                                                borderColor: [
+                                                    'rgba(255,99,132,1)',
+                                                    'rgba(54, 162, 235, 1)',
+                                                    'rgba(255, 206, 86, 1)',
+                                                    'rgba(75, 192, 192, 1)',
+                                                    'rgba(153, 102, 255, 1)',
+                                                    'rgba(255, 159, 64, 1)'
+                                                ],
+                                                borderWidth: 1
+                                            }]
+                                        },
+                                        options: {
+                                            scales: {
+                                                yAxes: [{
+                                                    ticks: {
+                                                        beginAtZero:true
+                                                    }
+                                                }]
+                                            }
+                                        }
+                                    });
+
+                                </script>
+                                {#{{ render(controller(#}
+                                {#'BakeryManagementBundle:Graphe:Topbybrand'#}
+                                {#)) }}#}
+
+                            </canvas>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+                {#<!-- DONUT CHART -->#}
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Produit/Note</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <canvas id="pieChart" style="height:250px">
+                            {#{{ render(controller(#}
+                            {#'BakeryManagementBundle:Graphe:Bakerychart2',{'id' :bakery.id }#}
+                            {#)) }}#}
+                            <script src="{{ asset('jquery-3.2.1.js') }}"></script>
+                            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.5/js/mdb.min.js"></script>
+                            <script>
+
+                                //bar
+                                var ctxB = document.getElementById("pieChart").getContext('2d');
+                                var myBarChart = new Chart(ctxB, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: [
+                                            {% for dat in data%}
+                                            "{{ dat.name}}",
+                                            {% endfor %}
+                                        ],
+                                        datasets: [{
+                                            label: '# of Votes',
+                                            data: [
+                                                {% for dat in data%}
+                                                {{ dat.sales*dat.price}},
+                                                {% endfor %}
+                                            ],
+                                            backgroundColor: [
+                                                'rgba(255, 99, 132, 0.2)',
+                                                'rgba(54, 162, 235, 0.2)',
+                                                'rgba(255, 206, 86, 0.2)',
+                                                'rgba(75, 192, 192, 0.2)',
+                                                'rgba(153, 102, 255, 0.2)',
+                                                'rgba(255, 159, 64, 0.2)'
+                                            ],
+                                            borderColor: [
+                                                'rgba(255,99,132,1)',
+                                                'rgba(54, 162, 235, 1)',
+                                                'rgba(255, 206, 86, 1)',
+                                                'rgba(75, 192, 192, 1)',
+                                                'rgba(153, 102, 255, 1)',
+                                                'rgba(255, 159, 64, 1)'
+                                            ],
+                                            borderWidth: 1
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero:true
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
+
+                            </script>
+                        </canvas>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                {#<!-- /.box -->#}
+                {#<div class="box box-success">#}
+                {#<div class="box-header with-border">#}
+                {#<h3 class="box-title">Produit/Revenus(Dt)</h3>#}
+
+                {#<div class="box-tools pull-right">#}
+                {#<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>#}
+                {#</button>#}
+                {#<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>#}
+                {#</div>#}
+                {#</div>#}
+                {#<div class="box-body">#}
+                {#<div class="chart">#}
+                {#<canvas id="barChart1" style="height:230px">#}
+                {#{{ render(controller(#}
+                {#'BakeryManagementBundle:Graphe:BakeryRevenu'#}
+                {#)) }}#}
+                    {#<script src="{{ asset('jquery-3.2.1.js') }}"></script>#}
+                    {#<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.5/js/mdb.min.js"></script>#}
+                    {#<script>#}
+
+                        {#//bar#}
+                        {#var ctxB = document.getElementById("barChart1").getContext('2d');#}
+                        {#var myBarChart = new Chart(ctxB, {#}
+                            {#type: 'bar',#}
+                            {#data: {#}
+                                {#labels: [#}
+                                    {#{% for dat in data%}#}
+                                    {#"{{ dat.name}}",#}
+                                    {#{% endfor %}#}
+                                {#],#}
+                                {#datasets: [{#}
+                                    {#label: '# of Votes',#}
+                                    {#data: [#}
+                                        {#{% for dat in data%}#}
+                                        {#{{ dat.rating}},#}
+                                        {#{% endfor %}#}
+                                    {#],#}
+                                    {#backgroundColor: [#}
+                                        {#'rgba(255, 99, 132, 0.2)',#}
+                                        {#'rgba(54, 162, 235, 0.2)',#}
+                                        {#'rgba(255, 206, 86, 0.2)',#}
+                                        {#'rgba(75, 192, 192, 0.2)',#}
+                                        {#'rgba(153, 102, 255, 0.2)',#}
+                                        {#'rgba(255, 159, 64, 0.2)'#}
+                                    {#],#}
+                                    {#borderColor: [#}
+                                        {#'rgba(255,99,132,1)',#}
+                                        {#'rgba(54, 162, 235, 1)',#}
+                                        {#'rgba(255, 206, 86, 1)',#}
+                                        {#'rgba(75, 192, 192, 1)',#}
+                                        {#'rgba(153, 102, 255, 1)',#}
+                                        {#'rgba(255, 159, 64, 1)'#}
+                                    {#],#}
+                                    {#borderWidth: 1#}
+                                {#}]#}
+                            {#},#}
+                            {#options: {#}
+                                {#scales: {#}
+                                    {#yAxes: [{#}
+                                        {#ticks: {#}
+                                            {#beginAtZero:true#}
+                                        {#}#}
+                                    {#}]#}
+                                {#}#}
+                            {#}#}
+                        {#});#}
+
+                    {#</script>#}
+                {#</canvas>#}
+                {#</div>#}
+                {#</div>#}
+                {#<!-- /.box-body -->#}
+                {#</div>#}
+                {#<!-- /.box -->#}
+
+                </div>
+                <!-- /.col (LEFT) -->
+                <div class="col-md-6">
+                <!-- LINE CHART -->
+                <div class="box box-info">
+                <div class="box-header with-border">
+                <h3 class="box-title">Produit/Revenus(Dt)</h3>
+
+                <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                </div>
+                </div>
+                <div class="box-body">
+                <div class="chart">
+                <canvas id="lineChart" style="height:250px">
+ <script src="{{ asset('jquery-3.2.1.js') }}"></script>
+                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.5/js/mdb.min.js"></script>
+                    <script>
+
+                        //bar
+                        var ctxB = document.getElementById("lineChart").getContext('2d');
+                        var myBarChart = new Chart(ctxB, {
+                            type: 'bar',
+                            data: {
+                                labels: [
+                                    {% for dat in data%}
+                                    "{{ dat.name}}",
+                                    {% endfor %}
+                                ],
+                                datasets: [{
+                                    label: '# of Votes',
+                                    data: [
+                                        {% for dat in data%}
+                                        {{ dat.rating}},
+                                        {% endfor %}
+                                    ],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255,99,132,1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+
+                    </script>
+                </canvas>
+                {{ render(controller(
+                'BakeryManagementBundle:Graphe:TopRevbybrand'
+                )) }}
+                </div>
+                </div>
+                <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+                <!-- BAR CHART -->
+                {#<div class="box box-success">#}
+                {#<div class="box-header with-border">#}
+                {#<h3 class="box-title">Patisserie/Ventes</h3>#}
+
+                {#<div class="box-tools pull-right">#}
+                {#<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>#}
+                {#</button>#}
+                {#<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>#}
+                {#</div>#}
+                {#</div>#}
+                {#<div class="box-body">#}
+                {#<div class="chart">#}
+                {#<canvas id="barChart" style="height:230px">#}
+                {#{{ render(controller(#}
+                {#'BakeryManagementBundle:Graphe:BakeryProduct'#}
+                {#)) }}#}
+                {#</canvas>#}
+                {#</div>#}
+                {#</div>#}
+                {#<!-- /.box-body -->#}
+                {#</div>#}
+                <!-- /.box -->
+
+
+            </div>
+            <!-- /.col (RIGHT) -->
+        </div>
+        <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+{% endblock %}
+
+{% block Scripts %}{{ parent() }}
+{% endblock %}
+
+{#{% extends 'BackOfficeBundle:Brand:base.html.twig' %}#}
+{#{% block content %}#}
+    {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.5/css/mdb.min.css" />#}
+    {#<script src="{{ asset('jquery-3.2.1.js') }}"></script>#}
+    {#<canvas id="barChart" style="max-width: 500px;"></canvas>#}
+    {#{% for dat in data%}#}
+    {#<tr>#}
+    {#<td>{{ dat.name}}</td>#}
+    {#</tr>#}
+    {#{% endfor %}#}
+
+
+{#{% endblock %}#}

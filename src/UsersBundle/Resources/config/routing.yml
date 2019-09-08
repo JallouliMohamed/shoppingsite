@@ -1,0 +1,20 @@
+#users_homepage:
+#    path:     /
+#    defaults: { _controller: UsersBundle:Default:index }
+#for testing
+back_office_login:
+    path:     /test/login
+    defaults: { _controller: BackOfficeBundle:Default:login }
+
+useralladdresses:
+    path:     /profile/addresses
+    defaults: {_controller: UsersBundle:Adresses:listAddress}
+
+userallorders:
+    path:     /profile/orders
+    defaults: {_controller: EcommerceBundle:Order:listOrders}
+
+
+bakeryalllineorders:
+    path:     /bakery/lineorders
+    defaults: {_controller: EcommerceBundle:Order:BakerylistOrders}

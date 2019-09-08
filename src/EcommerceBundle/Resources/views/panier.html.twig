@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% set totalHT = 0 %}
+
+{% block content %}
+    <div class="page-wrap">
+        <!--section-->
+        <div class="ps-section--hero"><img src="images/hero/01.jpg" alt="">
+            <div class="ps-section__content text-center">
+                <h3 class="ps-section__title">OUR BAKERY</h3>
+                <div class="ps-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Cart</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="ps-section--cart pt-100 pb-100">
+            <div class="container">
+                <div class="ps-cart-listing">
+                    <p class="hidden-lg"><i>Slide right to view</i></p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>All Products</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                       {% for produit in produits %}
+
+                            <tr>
+                                <td>
+                                    <div class="ps-product--cart"><img src="{{ asset('Front/images/cake/img-cake-12.jpg') }}" alt=""><a href="product-detail.html">{{ produit.name }}</a></div>
+                                </td>
+                                <td>{{ produit.price }} DT
+
+                                </td>
+                                <td>
+                                    <form action="{{ path('ajouter', { 'id' : produit.id }) }}" method="get">
+
+                                    <select name="qte" class="span1" onChange="this.form.submit()">
+                                        {% for i in 1..10 %}
+                                            <option value="{{ i }}" {% if i == panier[produit.id] %} selected="selected" {% endif %}>{{ i }}</option>
+                                        {% endfor %}
+                                    </select>&nbsp;
+                                    <a href="{{ path('supprimer', { 'id' : produit.id }) }}"><i class="icon-trash"></i></a>
+                                </td>
+
+                                </form>
+                                </td>
+                                <td><span class="total-row">{{ produit.price * panier[produit.id] }} DT</span></td>
+                                <td>
+                                    <a href="{{ path('supprimer', { 'id' : produit.id }) }}"> <div class="ps-cart-listing__remove"></div></a>
+                                </td>
+                            </tr>
+                           {% set totalHT = totalHT + (produit.price * panier[produit.id]) %}
+
+                       {% endfor %}
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ps-cart__process">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
+                                <div class="form-group form-group--icon ps-cart__promotion">
+                                    <div class="icon-wrap"><i class="fa fa-angle-right"></i>
+                                        <input class="form-control" type="text" placeholder="promotion code">
+                                    </div>
+                                </div>
+                                <div class="form-groupform-order">
+                                    <a class="ps-cart__shopping" href="{{ path('product_page') }}">Continuer mes achats</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                                <div class="ps-cart__total">
+                                    <p>Total Price: <span>{{ totalHT }} DT</span></p>
+                                    <a class="ps-btn ps-btn--sm ps-btn--fullwidth" href="{{ path('livraison') }}">Passer la commande</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+    <div style="  width: 400px;
+    margin: 0 auto;">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+
+        <h2>Login</h2>
+
+        <form class="woocommerce-form woocommerce-form-login login" action="{{ path("fos_user_security_check") }}" method="post">
+
+            <p class="before-login-text">
+                Welcome back! Sign in to your account.		</p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <label for="username">Username or email address&nbsp;<span class="required">*</span></label>
+                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="_username" value="{{ last_username }}" id="username" autocomplete="username" value="" />			</p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <label for="password">Password&nbsp;<span class="required">*</span></label>
+                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="_password" id="password" autocomplete="current-password" />
+            </p>
+
+
+            <p class="form-row">
+                <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="3737967e27" /><input type="hidden" name="_wp_http_referer" value="/electro-wide/my-account/" />				<button type="submit" class="woocommerce-Button button" name="login" value="Log in">Log in</button>
+                <label class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+                    <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Remember me</span>
+                </label>
+            </p>
+            <p class="woocommerce-LostPassword lost_password">
+                <a href="lost-password/index.html">Lost your password?</a>
+            </p>
+
+
+        </form>
+
+
+    </div>
+{% endblock %}

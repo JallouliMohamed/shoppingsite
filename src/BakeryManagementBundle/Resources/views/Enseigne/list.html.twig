@@ -1,0 +1,72 @@
+{% extends 'BackOfficeBundle:Brand:base.html.twig' %}
+{% block content %}
+    {#<div class="content-wrapper">#}
+<div>
+    <section class="content-header">
+        <h1>Mes coordonnées</h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        {#<?= flash(); // affichage du message flash   ?>#}
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Liste</h3>
+
+                {#<div class="box-tools">#}
+                {#<a href="experiences_edit.php?type=experience" class="btn btn-success pull-right">Ajouter</a>#}
+                {#</div>#}
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+
+                    <tr>
+                        <th>Nom</th>
+                        <th>Addresse</th>
+                        <th>Tel</th>
+                        <th>Fax</th>
+                        <th>Email</th>
+                        <th>Site Web</th>
+                        <th>Description</th>
+                        <th>Logo</th>
+                        <th>CodeRC</th>
+                        <th>Actions</th>
+                    </tr>
+        {% for enseignes in enseignes %}
+            <tr>
+                <td>{{ enseignes.name }}</td>
+                <td>{{ enseignes.address }}</td>
+                <td>{{ enseignes.phoneNumber }}</td>
+                <td>{{ enseignes.fax }}</td>
+                <td>{{ enseignes.email }}</td>
+                <td>{{ enseignes.website }}</td>
+                <td>{{ enseignes.description }}</td>
+
+                {% block image %}
+                <td><img src="{{ asset('uploads/' ~ enseignes.logo) }}" width="50px" height="50px" alt=""></td>
+                {% endblock %}
+                <td>{{ enseignes.codeRC }}</td>
+                <td>
+                    <a href="{{ path('bakery_update',{'id':enseignes.id}) }}" class="btn btn-info" >
+                        <i class="fa fa-edit"></i>
+                    </a>                {#<a href="{{ asset('uploads/' ~ enseignes.logo) }}">View logo</a>#}
+                </td>
+
+            </tr>
+        {% endfor %}
+                </table>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </section>
+
+    <!-- /.content -->
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+</div>
+
+{% endblock %}

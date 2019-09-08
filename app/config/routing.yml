@@ -1,0 +1,67 @@
+front:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+notifications:
+    resource: "@NotificationsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+users:
+    resource: "@UsersBundle/Resources/config/routing.yml"
+    prefix:   /
+
+back_office:
+    resource: "@BackOfficeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+BakeryManagement:
+    resource: "@BakeryManagementBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ProductManagement:
+    resource: "@ProductManagementBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+#mgilet_notifications:
+#    resource: "@MgiletNotificationBundle/Controller/"
+#    prefix: /notifications
+
+
+#List_user:
+ #   path:     /list
+  #  defaults: { _controller: AppBundle:User:index }
+#edit_user:
+ #   path:     /edit/{id}
+  #  defaults: { _controller: AppBundle:User:edit }
+
+#hwi_oauth_redirect:
+#    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+#    prefix:   /connect
+
+#hwi_oauth_login:
+#    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+#    prefix:   /login
+
+#hwi_oauth_security:
+#    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+#    prefix: /connect
+
+ancarebeca_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yml"
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+Panier:
+    resource: "@EcommerceBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bakery_management:
+    resource: "@BakeryManagementBundle/Resources/config/routing.yml"
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /optional_routing_prefix

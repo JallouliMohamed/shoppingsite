@@ -1,0 +1,243 @@
+{% extends '::base.html.twig' %}
+{% block title %}Produits{% endblock %}
+{% block content %}
+{#<div class="loader"></div>#}
+<div class="page-wrap">
+    <!-- Heros-->
+    <div class="ps-section--hero"><img src="{{ asset('Front/images/hero/01.jpg')}}" alt="">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">Nos Produits</h3>
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('front_homepage') }}">Home</a></li>
+                    <li class="active">Nos Produits</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section--page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-lg-push-3 col-md-push-3">
+                    <div class="ps-shop-grid pt-80">
+                        <div class="ps-shop-features">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                                    <img class="mb-30" src="{{ asset('Front/images/product-banner/012x.jpg')}}" alt="">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
+                                    <img class="mb-30" src="{{ asset('Front/images/product-banner/022x.jpg')}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-shop-filter">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 ">
+                                    <div class="form-group">
+                                        <label>Sort by:</label>
+                                        <select id="sortSelector" name="sortSelector" class="ps-select" data-placeholder="Popupar product">
+                                            <option value="popularity"><a href="{{ path('sort_products', {'sortBy':'popularity'}) }}">Popularité</a></option>
+                                            <option value="highCost"><a href="{{ path('sort_products', {'sortBy':'highCost'}) }}">Plus Cher</a></option>
+                                            <option value="lowCost"><a href="{{ path('sort_products', {'sortBy':'lowCost'}) }}">Moins Cher</a></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ps-shop ps-col-tiny" id="productsDiv">
+                            <div class="row">
+                                {% for product in products %}
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                                        <div class="ps-product">
+                                            <div class="ps-product__thumbnail">
+                                                {% if product.reduction > 0 %}
+                                                <div class="ps-badge"><span>{{ product.reduction }}%</span></div>
+                                                {% endif %}
+                                                <a class="ps-product__overlay" href="{{ path('product_page', { 'id': product.id }) }}"></a>
+                                                <img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="" height="320">
+                                                <ul class="ps-product__action">
+                                                    <li></li>
+                                                    <li><a href="#" data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="ps-product__content">
+                                                <a class="ps-product__title" href="{{ path('product_page', { 'id': product.id }) }}">{{ product.name }}</a>
+                                                <div class="ps-product__category">
+                                                    <a class="ps-product__category">{{ product.subcategory.category.name }}</a>
+                                                    <a class="ps-product__category" href="{{ path('products_page', {'subcat_id':product.subcategory.id}) }}">{{ product.subcategory.name }}</a>
+                                                </div>
+                                                <select class="ps-rating" title="ratingtab">
+                                                    <option value="1" {% if product.rating == 1 %} selected {% endif %}>1</option>
+                                                    <option value="2" {% if product.rating == 2 %} selected {% endif %}>2</option>
+                                                    <option value="3" {% if product.rating == 3 %} selected {% endif %}>3</option>
+                                                    <option value="4" {% if product.rating == 4 %} selected {% endif %}>4</option>
+                                                    <option value="5" {% if product.rating == 5 %} selected {% endif %}>5</option>
+                                                </select>
+                                                <p class="ps-product__price">
+                                                {% if product.reduction > 0 %}
+                                                    <del>{{ product.price }} Dinars</del>
+                                                    {{ product.price - (product.price*product.reduction/100) }} Dinars
+                                                {% else %}
+                                                    {{ product.price }} Dinars
+                                                {% endif %}
+                                                </p>
+                                                {% if panier[product.id] is not defined %}
+                                                    <a class="btn btn-success" href="{{ path('ajouter', { 'id' : product.id }) }}">Ajouter au panier</a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                            <div class="ps-pagination">
+                                <ul class="pagination">
+                                {{ knp_pagination_render(products) }}
+                                </ul>
+                                {#<ul class="pagination">
+                                    <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+                                </ul>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-lg-pull-9 col-md-pull-9">
+                    <div class="ps-sidebar">
+                        <aside class="ps-widget ps-widget--sidebar ps-widget--search">
+                            <form id="search" method="post" action="{{ path('products_page') }}">
+                                <input class="form-control" name="name" type="text" placeholder="Taper le nom d'un produit...">
+                                <button type="submit"><i class="ps-icon--search"></i></button>
+                            </form>
+                        </aside>
+                        <aside class="ps-widget ps-widget--sidebar ps-widget--category">
+                            <div class="ps-widget__header">
+                                <h3 class="ps-widget__title">SOUS CATEGORIE</h3>
+                            </div>
+                            <div class="ps-widget__content">
+                                <ul class="ps-list--circle">
+                                    <li class="current"><a href="{{ path('products_page') }}"><span class="circle"></span>All</a></li>
+                                    {% for subcategorie in subcategories %}
+                                    <li><a href="{{ path('products_page', {'subcat_id':subcategorie.id}) }}"><span class="circle"></span>{{ subcategorie.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </aside>
+                        <aside class="ps-widget ps-widget--sidebar ps-widget--filter">
+                            <div class="ps-widget__header">
+                                <h3 class="ps-widget__title">Filter Prices</h3>
+                            </div>
+                            <div class="ps-widget__content">
+                                <div class="ac-slider" data-default-min="1" data-default-max="1000" data-max="1000" data-step="1" data-unit="Dinars"></div>
+                                <p class="ac-slider__meta">Prix: <span id="minPrice" class="ac-slider__value ac-slider__min"></span>-<span id="maxPrice" class="ac-slider__value ac-slider__max"></span></p><a id="priceFilterBtn" class="ac-slider__filter ps-btn ps-btn--xs" href="#">Filtrer</a>
+                            </div>
+                        </aside>
+                        <aside class="ps-widget ps-widget--sidebar ps-widget--ads">
+                            <div class="ps-widget__header">
+                                <h3 class="ps-widget__title">Ads Banner</h3>
+                            </div>
+                            <div class="ps-widget__content"><img src="{{ asset('Front/images/widget/banner2x.png')}}" alt=""></div>
+                        </aside>
+                        <aside class="ps-widget ps-widget--sidebar ps-widget--best-seller">
+                            <div class="ps-widget__header">
+                                <h3 class="ps-widget__title">Best seller</h3>
+                            </div>
+                            <div class="ps-widget__content">
+                                {% for bestSeller in bestSellers %}
+                                    <div class="ps-product--sidebar">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay" href="{{ path('product_page', { 'id': bestSeller.id }) }}"></a>
+                                            <img src="{{ vich_uploader_asset(bestSeller, 'imageFile') }}" alt="" width="75" height="81"></div>
+                                        <div class="ps-product__content">
+                                            <h4 class="ps-product__title"><a href="{{ path('product_page', { 'id': bestSeller.id }) }}">{{ bestSeller.name }}</a></h4>
+                                            <p class="ps-product__price">
+                                                {% if bestSeller.reduction > 0 %}
+                                                <del>{{ bestSeller.price }} Dinars</del>
+                                                {{ bestSeller.price - (bestSeller.price*bestSeller.reduction/100) }} Dinars
+                                                {% else %}
+                                                {{ bestSeller.price }} Dinars
+                                                {% endif %}
+                                            </p><a class="ps-btn ps-btn--xs" href="#">Acheter</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </aside>
+                        <aside class="ps-widget ps-widget--sidebar ps-widget--tags">
+                            <div class="ps-widget__header">
+                                <h3 class="ps-widget__title">Les catégories en tendance</h3>
+                            </div>
+                            <div class="ps-widget__content">
+                                <ul class="ps-tags">
+                                    {% for tag in favs %}
+                                        <li><a href="{{ path('products_page', {'subcat_id':tag.id}) }}">{{ tag.name }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    {% endblock %}
+
+{% block Scripts %}
+
+    {{ parent() }}
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#priceFilterBtn").click(function () {
+                var minPrice = $('#minPrice').html();
+                var maxPrice = $('#maxPrice').html();
+                minPrice = minPrice.substring(1, minPrice.length);
+                maxPrice = maxPrice.substring(1, maxPrice.length);
+                url ="{{ path("products_page", {'min_price':'minPrice', 'max_price':'maxPrice'})}}";
+                url = url.replace('minPrice', minPrice);
+                url = url.replace('maxPrice', maxPrice);
+                url = url.replace('amp;', "");
+                document.location.href = url;
+
+
+                var suffix = "?min_price="+minPrice+"&max_price="+maxPrice;
+
+                /*$.get("{{ path('test_ajax') }}"+suffix, function(data, status){
+                    $("#productsDiv").empty();
+                    $("#productsDiv").html(data);
+                });*/
+
+                /*$.post("{{ path('test_ajax') }}",
+                    {
+                        min_price: minPrice,
+                        max_price: maxPrice
+                    },
+                    function(data, status){
+                    $("#productsDiv").empty();
+                    $("#productsDiv").html(data);
+                });*/
+
+
+            });
+
+            $("#sortSelector").change(function () {
+                var sortBy = $('select[name=sortSelector]').val();
+                url ="{{ path("products_page", {'sortBy':'l'})}}";
+                url = url.replace('l', sortBy);
+                document.location.href = url;
+            });
+
+
+        });
+    </script>
+
+{% endblock %}

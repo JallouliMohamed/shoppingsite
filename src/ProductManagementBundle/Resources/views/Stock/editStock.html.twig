@@ -1,0 +1,9 @@
+{% extends 'BackOfficeBundle:Bakery:base.html.twig' %}
+{% block style %}{{ parent() }}{% endblock %}
+{% block content %}
+
+
+{{ form(form) }}
+
+    {{ form_errors(form) }}
+{% endblock %}

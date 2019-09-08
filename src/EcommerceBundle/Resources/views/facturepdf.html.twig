@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="{{ base_dir ~ asset('Front/plugins/bootstrap/dist/css/bootstrap.min.css') }}">
+<script type="text/javascript" src="{{ base_dir ~ asset('Front/plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+
+<style>.invoice-title h2, .invoice-title h3 {
+        display: inline-block;
+    }
+
+    .table > tbody > tr > .no-line {
+        border-top: none;
+    }
+
+    .table > thead > tr > .no-line {
+        border-bottom: none;
+    }
+
+    .table > tbody > tr > .thick-line {
+        border-top: 2px solid;
+    }</style>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="invoice-title">
+            <h2>Facture</h2><h3 class="pull-right">Commande # {{ commande.reference }}</h3>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-6">
+                <address>
+                    <strong>Adresse de paiement:</strong><br>
+                    {{ commande.order.facturation['nom'] }} {{ commande.order.facturation['prenom'] }}<br>
+                    {{ commande.order.facturation['adresse'] }}<br>
+                    {{ commande.order.facturation['complement'] }}<br>
+                    {{ commande.order.facturation['ville'] }}
+                </address>
+            </div>
+            <div class="col-xs-6 text-right">
+                <address>
+                    <strong>Livré à:</strong><br>
+                    {{ commande.order.livraison['nom'] }} {{ commande.order.livraison['prenom'] }}<br>
+                    {{ commande.order.livraison['adresse'] }}<br>
+                    {{ commande.order.livraison['complement'] }}<br>
+                    {{ commande.order.livraison['ville'] }}
+                </address>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <address>
+                    <strong>Payment Method:</strong><br>
+                    Visa ending **** 4242<br>
+                    jsmith@email.com
+                </address>
+            </div>
+            <div class="col-xs-6 text-right">
+                <address>
+                    <strong>Order Date:</strong><br>
+                    {{ commande.date|localizeddate('long', 'short') }}<br><br>
+                </address>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>Facture</strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed">
+                        <thead>
+                        <tr>
+                            <td><strong>Produit</strong></td>
+                            <td class="text-center"><strong>Prix</strong></td>
+                            <td class="text-center"><strong>Quantité</strong></td>
+                            <td class="text-right"><strong>Total</strong></td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for produit in commande.order.produit %}
+                            <tr>
+                                <td>{{ produit.reference }}</td>
+                                <td class="text-center">{{ produit.prixHT }} DT</td>
+                                <td class="text-center">{{ produit.quantite }}</td>
+                                <td class="text-right">{{ produit.prixHT * produit.quantite }} DT</td>
+                            </tr>
+                        {% endfor %}
+
+
+                        <tr>
+                            <td class="thick-line"></td>
+                            <td class="thick-line"></td>
+                            <td class="thick-line text-center"><strong>Total HT</strong></td>
+                            <td class="thick-line text-right">{{ commande.order.prixHT }} DT</td>
+                        </tr>
+                        <tr>
+                            <td class="no-line"></td>
+                            <td class="no-line"></td>
+                            <td class="no-line text-center"><strong>Shipping</strong></td>
+                            <td class="no-line text-right">$15</td>
+                        </tr>
+                        <tr>
+                            <td class="no-line"></td>
+                            <td class="no-line"></td>
+                            <td class="no-line text-center"><strong>Total</strong></td>
+                            <td class="no-line text-right">$685.99</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

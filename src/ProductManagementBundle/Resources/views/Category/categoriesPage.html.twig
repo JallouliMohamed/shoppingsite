@@ -1,0 +1,232 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+    <div class="page-wrap">
+        <div class="ps-section--hero"><img src="{{ asset('Front/images/hero/03.jpg') }}" alt="">
+            <div class="ps-section__content text-center">
+                <h3 class="ps-section__title">Menu</h3>
+                <div class="ps-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Menu</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <section class="ps-section pt-80 pb-40">
+            <div class="container">
+                {% for category in categories %}
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                    <div class="ps-section__header mb-50">
+                        <h3 class="ps-section__title ps-section__title--left">{{ category.name }}</h3>
+                    </div>
+                    <div class="ps-section__content">
+                        <div class="ps-product--list">
+                            <div class="ps-product__thumbnail">
+                                <a class="ps-product__overlay" href="product-detail.html"></a>
+                                <img src="{{ asset('Front/images/cake/img-cake-14.jpg')}}" alt=""></div>
+                            <div class="ps-product__content">
+                                <h4 class="ps-product__title"><a href="product-detail.html">Amazin’ Glazin’</a></h4>
+                                <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                <p class="ps-product__price">
+                                    <del>£25.00</del>£15.00
+                                </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="ps-product--list">
+                            <div class="ps-product__thumbnail">
+                                <a class="ps-product__overlay" href="product-detail.html"></a>
+                                <img src="{{ asset('Front/images/cake/img-cake-13.jpg')}}" alt=""></div>
+                            <div class="ps-product__content">
+                                <h4 class="ps-product__title"><a href="product-detail.html">The Crusty Croissant</a></h4>
+                                <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                <p class="ps-product__price">
+                                    <del>£25.00</del>£15.00
+                                </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="ps-product--list">
+                            <div class="ps-product__thumbnail">
+                                <a class="ps-product__overlay" href="product-detail.html"></a>
+                                <img src="{{ asset('Front/images/cake/img-cake-18.jpg')}}" alt=""></div>
+                            <div class="ps-product__content">
+                                <h4 class="ps-product__title"><a href="product-detail.html">The Rolling Pin</a></h4>
+                                <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                <p class="ps-product__price">
+                                    <del>£25.00</del>£15.00
+                                </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                    <div class="ps-section__header mb-50">
+                        <h3 class="ps-section__title ps-section__title--left">COOKIES</h3>
+                    </div>
+                    <div class="ps-section__content">
+                        <div class="ps-product--list">
+                            <div class="ps-product__thumbnail">
+                                <a class="ps-product__overlay" href="product-detail.html"></a>
+                                <img src="{{ asset('Front/images/cake/img-cake-1.jpg')}}" alt=""></div>
+                            <div class="ps-product__content">
+                                <h4 class="ps-product__title"><a href="product-detail.html">Amazin’ Glazin’</a></h4>
+                                <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                <p class="ps-product__price">
+                                    <del>£25.00</del>£15.00
+                                </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="ps-product--list">
+                            <div class="ps-product__thumbnail">
+                                <a class="ps-product__overlay" href="product-detail.html"></a>
+                                <img src="{{ asset('Front/images/cake/img-cake-15.jpg')}}" alt=""></div>
+                            <div class="ps-product__content">
+                                <h4 class="ps-product__title"><a href="product-detail.html">The Crusty Croissant</a></h4>
+                                <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                <p class="ps-product__price">
+                                    <del>£25.00</del>£15.00
+                                </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="ps-product--list">
+                            <div class="ps-product__thumbnail">
+                                <a class="ps-product__overlay" href="product-detail.html"></a>
+                                <img src="{{ asset('Front/images/cake/img-cake-3.jpg')}}" alt=""></div>
+                            <div class="ps-product__content">
+                                <h4 class="ps-product__title"><a href="product-detail.html">The Rolling Pin</a></h4>
+                                <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                <p class="ps-product__price">
+                                    <del>£25.00</del>£15.00
+                                </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="ps-section ps-section--pattern pt-80 pb-80">
+            <div class="container">
+                <div class="ps-countdown">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                            <img src="{{ asset('Front/images/counter.png')}}" alt="">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                            <header class="text-center">
+                                <div class="ps-section__top">Hot Deal Today</div>
+                                <h4>Vanilla cupcake with red sugar flowers</h4>
+                                <p>Only: <span> £1.55 </span></p>
+                                <ul class="ps-countdown__time" data-time="April 21, 2018 15:37:25">
+                                    <!--li <span class="days"></span><p>Days</p>-->
+                                    <!--li.divider :-->
+                                    <li><span class="hours"></span>
+                                        <p>Hours</p>
+                                    </li>
+                                    <li class="divider">:</li>
+                                    <li><span class="minutes"></span>
+                                        <p>minutes</p>
+                                    </li>
+                                    <li class="divider">:</li>
+                                    <li><span class="seconds"></span>
+                                        <p>Seconds</p>
+                                    </li>
+                                </ul><a class="ps-btn" href="#">Order Now<i class="fa fa-angle-right"></i></a>
+                            </header>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="ps-section ps-section--offer pt-80 pb-80">
+            <div class="container">
+                <div class="ps-section__header text-center mb-60">
+                    <h4 class="ps-section__top">Making People Happy</h4>
+                    <h3 class="ps-section__title ps-section__title--full">OFFER THIS WEEK</h3>
+                </div>
+                <div class="ps-section__content">
+                    <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
+                        <div class="ps-masonry">
+                            <div class="grid-sizer"></div>
+                            <div class="grid-item high wide">
+                                <div class="grid-item__content-wrapper">
+                                    <div class="ps-offer"><img src="{{ asset('Front/images/offer/banner-4.jpg')}}" alt="">
+                                        <a class="ps-offer__overlay" href="#"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="grid-item__content-wrapper">
+                                    <div class="ps-offer"><img src="{{ asset('Front/images/offer/banner-2.jpg')}}" alt="">
+                                        <a class="ps-offer__overlay" href="#"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-item high">
+                                <div class="grid-item__content-wrapper">
+                                    <div class="ps-offer"><img src="{{ asset('Front/images/offer/banner-3.jpg')}}" alt="">
+                                        <a class="ps-offer__overlay" href="#"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                            <div class="ps-product--list mt-60">
+                                <div class="ps-product__thumbnail">
+                                    <a class="ps-product__overlay" href="product-detail.html"></a>
+                                    <img src="{{ asset('Front/images/cake/img-cr-1.jpg')}}" alt=""></div>
+                                <div class="ps-product__content">
+                                    <h4 class="ps-product__title"><a href="product-detail.html">Amazin’ Glazin’</a></h4>
+                                    <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                    <p class="ps-product__price">
+                                        <del>£25.00</del>£15.00
+                                    </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="ps-product--list mt-60">
+                                <div class="ps-product__thumbnail">
+                                    <a class="ps-product__overlay" href="product-detail.html"></a>
+                                    <img src="{{ asset('Front/images/cake/img-cr-2.jpg')}}" alt=""></div>
+                                <div class="ps-product__content">
+                                    <h4 class="ps-product__title"><a href="product-detail.html">The Crusty Croissant</a></h4>
+                                    <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                    <p class="ps-product__price">
+                                        <del>£25.00</del>£15.00
+                                    </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                            <div class="ps-product--list mt-60">
+                                <div class="ps-product__thumbnail">
+                                    <a class="ps-product__overlay" href="product-detail.html"></a>
+                                    <img src="{{ asset('Front/images/cake/img-cr-3.jpg')}}" alt=""></div>
+                                <div class="ps-product__content">
+                                    <h4 class="ps-product__title"><a href="product-detail.html">Amazin’ Glazin’</a></h4>
+                                    <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                    <p class="ps-product__price">
+                                        <del>£25.00</del>£15.00
+                                    </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="ps-product--list mt-60">
+                                <div class="ps-product__thumbnail">
+                                    <a class="ps-product__overlay" href="product-detail.html"></a>
+                                    <img src="{{ asset('Front/images/cake/img-cr-4.jpg')}}" alt=""></div>
+                                <div class="ps-product__content">
+                                    <h4 class="ps-product__title"><a href="product-detail.html">The Crusty Croissant</a></h4>
+                                    <p>Lollipop dessert donut marzipan cookie bonbon sesame snaps chocolate.</p>
+                                    <p class="ps-product__price">
+                                        <del>£25.00</del>£15.00
+                                    </p><a class="ps-btn ps-btn--xs" href="cart.html">Order now<i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+{% endblock %}

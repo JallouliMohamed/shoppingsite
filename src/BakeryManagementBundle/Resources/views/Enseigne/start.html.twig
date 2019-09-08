@@ -1,0 +1,145 @@
+{{ form_start(form) }}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ asset('stylestart.css') }}" rel="stylesheet">
+
+<section id="contact">
+    <div class="section-content">
+        <h1 class="section-header">Félicitation!  <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">
+                lancez votre enseigne...</span></h1>
+    </div>
+    <div class="contact-section">
+        <div class="container">
+
+
+            <div class="col-md-6 form-line">
+
+                <div class="form-group">
+                    <label for="exampleInputUsername">Nom</label>
+                    {#<input type="text" class="form-control" id="" placeholder=" Enter Name">#}
+                    {{ form_widget(form.name,{'attr':{'class':'form-control','placeholder':"Name"}}  ) }}
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputUsername">Adresse</label>
+                    {#<input type="text" class="form-control" id="" placeholder=" Enter Name">#}
+                    {{ form_widget(form.address,{'attr':{'class':'form-control','placeholder':"Adresse"}}  ) }}
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail">Email</label>
+                    {#<input type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email id">#}
+                    {{ form_widget(form.email,{'attr':{'class':'form-control','placeholder':"aza@aaza.com",'id':"exampleInputEmail"}}  ) }}
+
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Fax No.</label>
+                    {#<input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">#}
+                    {{ form_widget(form.fax,{'attr':{'class':'form-control','placeholder':"+216 00 000 000", 'id':"telephone"}}  ) }}
+
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Mobile No.</label>
+                    {#<input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">#}
+                    {{ form_widget(form.phoneNumber,{'attr':{'class':'form-control','placeholder':"+216 00 000 000",'id':"telephone"}}  ) }}
+
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="telephone">Site Web</label>
+                    {#<input type="tel" class="form-control" id="telephone" placeholder=" Enter 10-digit mobile no.">#}
+                    {{ form_widget(form.website,{'attr':{'class':'form-control','placeholder':"site web"}}  ) }}
+
+                </div>
+                <div class="form-group">
+                    <label for ="description"> Description</label>
+                    {#<textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>#}
+                    {{ form_widget(form.description,{'attr':{'class':'form-control','placeholder':""}}  ) }}
+
+                </div>
+                <div class="form-group">
+                    <label for ="logo"> Logo</label>
+                    {#<textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>#}
+                    {{ form_widget(form.logo,{'attr':{'class':'form-control','placeholder':"+"}}  ) }}
+
+                </div>
+                <div class="form-group">
+                    <label for ="RC"> Code Registre De Commerce</label>
+                    {#<textarea  class="form-control" id="description" placeholder="Enter Your Message"></textarea>#}
+                    {{ form_widget(form.codeRC,{'attr':{'class':'form-control','placeholder':""}}  ) }}
+
+                </div>
+                <br>{{ form_widget(form.Ajouter,{'attr':{'class':'btn btn-default submit'}}  ) }}
+                {#<div>#}
+
+                    {#<button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>#}
+                        {#Send Message</button>#}
+                {#</div>#}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+{{ form_end(form) }}
+
+{#<link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">#}
+{#<!-- Font Awesome -->#}
+{#<link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">#}
+{#<style>#}
+
+    {#.bg-1 {#}
+        {#/*background: #2d2d30;*/#}
+        {#/*color: #bdbdbd;*/#}
+        {#/*height: 100%;*/#}
+        {#background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/08/30/12087/3574f899daef41d2f145eba13ff7840f.jpg');#}
+        {#background-size:100% 100%;#}
+        {#background-attachment: fixed;#}
+        {#background-repeat:no-repeat;#}
+        {#font-family: 'Open Sans', sans-serif;#}
+        {#padding-bottom: 40px;#}
+    {#}#}
+    {#.bg-1 h3 {color: #fff;}#}
+    {#.bg-1 p {font-style: italic;}#}
+    {#.control-label {#}
+        {#color: #fff;#}
+    {#}#}
+{#</style>#}
+
+{#<div class="bg-1">#}
+    {#<div class="container" >#}
+        {#<div class="row">#}
+        {#<h3 class="text-center">Félicitation! lancez votre enseigne</h3>#}
+
+        {#{{ form_start(form) }}#}
+        {#<div class="form-group">#}
+
+            {#<label for="pwd" class=" control-label">Nom:</label>#}
+
+                {#{{ form_widget(form.name,{'attr':{'class':'form-control','placeholder':"Name"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Local:</label>  {{ form_widget(form.address,{'attr':{'class':'form-control','placeholder':"Adresse"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Phone</label> {{ form_widget(form.phoneNumber,{'attr':{'class':'form-control','placeholder':"+216 00 000 000"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Fax</label> {{ form_widget(form.fax,{'attr':{'class':'form-control','placeholder':"+216 00 000 000"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Email</label> {{ form_widget(form.email,{'attr':{'class':'form-control','placeholder':"aza@aaza.com"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Website</label> {{ form_widget(form.website,{'attr':{'class':'form-control','placeholder':"site web"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Description</label> {{ form_widget(form.description,{'attr':{'class':'form-control','placeholder':"site web"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Logo</label> {{ form_widget(form.logo,{'attr':{'class':'form-control','placeholder':"+"}}  ) }}#}
+            {#<label for="pwd" class=" control-label">Code Registre De Commerce</label> {{ form_widget(form.codeRC,{'attr':{'class':'form-control','placeholder':""}}  ) }}#}
+             {#<br>{{ form_widget(form.Ajouter,{'attr':{'class':'btn btn-primary btn-block'}}  ) }}#}
+
+        {#</div>#}
+        {#{{ form_end(form) }}#}
+        {#</div>#}
+    {#</div>#}
+
+    {#</div>#}

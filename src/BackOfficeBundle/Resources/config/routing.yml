@@ -1,0 +1,139 @@
+back_office_index:
+    path:     /
+    defaults: { _controller: BackOfficeBundle:Default:index }
+
+
+# FOR TESTING
+back_office_homepage:
+    path:     /backoffice
+    defaults: { _controller: BackOfficeBundle:Default:layout }
+back_office_mailbox:
+    path:     /backoffice/mailbox
+    defaults: { _controller: BackOfficeBundle:Default:mailbox }
+back_office_compose:
+    path:     /backoffice/compose
+    defaults: { _controller: BackOfficeBundle:Default:compose }
+back_office_readMail:
+    path:     /backoffice/readMail
+    defaults: { _controller: BackOfficeBundle:Default:readMail }
+back_office_simple:
+    path:     /backoffice/simple
+    defaults: { _controller: BackOfficeBundle:Default:simple }
+back_office_data:
+    path:     /backoffice/data
+    defaults: { _controller: BackOfficeBundle:Default:data }
+
+
+back_office_homepage_admin:
+    path:     /admin
+    defaults: { _controller: BackOfficeBundle:Admin:layout }
+back_office_homepage_bakery:
+    path:     /bakery
+    defaults: { _controller: BackOfficeBundle:Bakery:layout }
+back_office_homepage_brand:
+    path:     /brand
+    defaults: { _controller: BackOfficeBundle:Brand:layout }
+back_office_homepage_deliveryMan:
+    path:     /deliveryMan
+    defaults: { _controller: BackOfficeBundle:DeliveryMan:layout }
+
+
+back_office_profile_admin:
+    path:     /admin/profile
+    defaults: { _controller: BackOfficeBundle:Admin:profile }
+back_office_profile_bakery:
+    path:     /bakery/profile
+    defaults: { _controller: BackOfficeBundle:Bakery:profile }
+back_office_profile_brand:
+    path:     /brand/profile
+    defaults: { _controller: BackOfficeBundle:Brand:profile }
+back_office_profile_deliveryMan:
+    path:     /deliveryMan/profile
+    defaults: { _controller: BackOfficeBundle:DeliveryMan:profile }
+
+
+delete_product_brand:
+    path:     /product/delete
+    defaults: { _controller: ProductManagementBundle:Product:deleteProduct }
+
+update_product_brand:
+    path:     /product/edit
+    defaults: { _controller: ProductManagementBundle:Product:editProduct }
+
+back_office_data_admin:
+    path:     /admin/data
+    defaults: { _controller: BackOfficeBundle:Admin:data }
+back_office_data_bakery:
+    path:     /bakery/data
+    defaults: { _controller: BackOfficeBundle:Bakery:data }
+back_office_data_brand:
+    path:     /brand/data
+    defaults: { _controller: ProductManagementBundle:Product:getAll }
+back_office_data_deliveryMan:
+    path:     /deliveryMan/data
+    defaults: { _controller: BackOfficeBundle:DeliveryMan:data }
+
+
+back_office_simple_admin:
+    path:     /admin/simple
+    defaults: { _controller: BackOfficeBundle:Admin:simple }
+back_office_simple_bakery:
+    path:     /bakery/simple
+    defaults: { _controller: BackOfficeBundle:Bakery:simple }
+back_office_simple_brand:
+    path:     /brand/simple
+    defaults: { _controller: BackOfficeBundle:Brand:simple }
+back_office_simple_deliveryMan:
+    path:     /deliveryMan/simple
+    defaults: { _controller: BackOfficeBundle:DeliveryMan:simple }
+
+back_office_chart_bakery:
+    path:     /bakery/chart
+    defaults: { _controller: BackOfficeBundle:Bakery:chart }
+back_office_chart_brand:
+    path:     /brand/chart
+    defaults: { _controller: BackOfficeBundle:Brand:chart }
+
+
+
+back_office_mailbox_admin:
+    path:     /admin/mailbox
+    defaults: { _controller: BackOfficeBundle:Admin:mailbox }
+back_office_mailbox_brand:
+    path:     /brand/mailbox
+    defaults: { _controller: BackOfficeBundle:Brand:mailbox }
+back_office_mailbox_bakery:
+    path:     /bakery/mailbox
+    defaults: { _controller: BackOfficeBundle:Bakery:mailbox }
+back_office_mailbox_deliveryMan:
+    path:     /deliveryMan/mailbox
+    defaults: { _controller: BackOfficeBundle:DeliveryMan:mailbox }
+    
+
+back_office_compose_admin:
+    path:     /admin/compose
+    defaults: { _controller: BackOfficeBundle:Admin:compose }
+back_office_compose_brand:
+    path:     /brand/compose
+    defaults: { _controller: BackOfficeBundle:Brand:compose }
+back_office_compose_bakery:
+    path:     /bakery/compose
+    defaults: { _controller: BackOfficeBundle:Bakery:compose }
+back_office_compose_deliveryMan:
+    path:     /deliveryMan/compose
+    defaults: { _controller: BackOfficeBundle:DeliveryMan:compose }
+
+
+back_office_readMail_admin:
+    path:     /admin/readMail
+    defaults: { _controller: BackOfficeBundle:Admin:readMail }
+back_office_readMail_brand:
+    path:     /brand/readMail
+    defaults: { _controller: BackOfficeBundle:Brand:readMail }
+back_office_readMail_bakery:
+    path:     /bakery/readMail
+    defaults: { _controller: BackOfficeBundle:Bakery:readMail }
+back_office_readMail_deliveryMan:
+    path:     /deliveryMan/readMail
+    defaults: { _controller: BackOfficeBundle:DeliveryMan:readMail }
+    

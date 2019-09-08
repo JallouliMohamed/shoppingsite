@@ -1,0 +1,93 @@
+product_management_homepage:
+    path:     /testQueries
+    defaults: { _controller: ProductManagementBundle:Default:index }
+
+the_homepage:
+    path:     /YassineHP
+    defaults: { _controller: ProductManagementBundle:Product:index }
+
+
+products_page:
+    path:     /products
+    defaults: { _controller: ProductManagementBundle:Product:showAllProducts }
+
+categories_page:
+    path:     /categories
+    defaults: { _controller: ProductManagementBundle:Category:showAllCategories }
+
+product_page:
+    path:     /product
+    defaults: { _controller: ProductManagementBundle:Product:showProductDetails }
+
+products_by_subcat:
+    path:     /products/bySubcat
+    defaults: { _controller: ProductManagementBundle:Product:getProductsBySubcat }
+
+filter_products:
+    path:     /products/byPrice
+    defaults: { _controller: ProductManagementBundle:Product:getProductsByPrice }
+
+sort_products:
+    path:     /products/sort
+    defaults: { _controller: ProductManagementBundle:Product:sort }
+
+test_ajax:
+    path:     /products/ajax
+    defaults: { _controller: ProductManagementBundle:Product:getProductsAjax }
+
+add_favorite:
+    path:     /favorite/add
+    defaults: { _controller: ProductManagementBundle:Favorite:addFavorite }
+
+remove_favorite:
+    path:     /favorite/remove
+    defaults: { _controller: ProductManagementBundle:Favorite:removeFavorite }
+
+remove_review:
+    path:     /review/remove
+    defaults: { _controller: ProductManagementBundle:Review:removeReview }
+
+list_favorite:
+    path:     /favorite/list
+    defaults: { _controller: ProductManagementBundle:Favorite:listFavorite }
+
+all_products_brand:
+    path:     /brand/myproducts
+    defaults: { _controller: ProductManagementBundle:Product:getAll }
+delete_product_brand:
+    path:     /product/delete
+    defaults: { _controller: ProductManagementBundle:Product:deleteProduct }
+update_product_brand:
+    path:     /product/edit
+    defaults: { _controller: ProductManagementBundle:Product:editProduct }
+
+all_categories_admin:
+    path:     /admin/categories
+    defaults: { _controller: ProductManagementBundle:Category:getAll }
+delete_category_admin:
+    path:     /admin/category/delete
+    defaults: { _controller: ProductManagementBundle:Category:delete }
+update_category_admin:
+    path:     /admin/category/edit
+    defaults: { _controller: ProductManagementBundle:Category:edit }
+
+mystock_bakery:
+    path:     /bakery/mystock
+    defaults: { _controller: ProductManagementBundle:Stock:getMyStock }
+
+remove_stock_bakery:
+    path:     /bakery/stock/remove
+    defaults: { _controller: ProductManagementBundle:Stock:removeStock }
+update_stock_bakery:
+    path:     /bakery/stock/edit
+    defaults: { _controller: ProductManagementBundle:Stock:editStock }
+
+all_subcategories_admin:
+    path:     /admin/subcategories
+    defaults: { _controller: ProductManagementBundle:SubCategory:getAll }
+delete_subcategory_admin:
+    path:     /admin/subcategory/delete
+    defaults: { _controller: ProductManagementBundle:SubCategory:delete }
+update_subcategory_admin:
+    path:     /admin/subcategory/edit
+    defaults: { _controller: ProductManagementBundle:SubCategory:edit }

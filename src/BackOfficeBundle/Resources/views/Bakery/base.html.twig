@@ -1,0 +1,55 @@
+{% extends '::baseAdmin.html.twig' %}
+{% block homePath %}{{ path('back_office_homepage_bakery') }}{% endblock %}
+{% block profileLink %}{{ path('back_office_profile_bakery') }}{% endblock %}
+{% block sidebar %}
+    {{ parent() }}
+    {#<li class="active treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class="active"><a href="{{ path('back_office_homepage_bakery') }}"><i
+                            class="fa fa-circle-o"></i> Dashboard v1</a></li>
+
+        </ul>
+    </li>#}
+
+    <li class="active treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Mes commandes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class="active"><a href="{{ path('bakery_alllineorders') }}"><i
+                            class="fa fa-circle-o"></i> Afficher mes commandes</a></li>
+
+
+        </ul>
+
+    </li>
+
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-table"></i> <span>Gestion de stock</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="{{ path('mystock_bakery') }}"><i class="fa fa-circle-o"></i> Mon Stock</a></li>
+        </ul>
+    </li>
+
+{% endblock %}
+
+
+        {% block content %}
+
+        {% endblock %}
+

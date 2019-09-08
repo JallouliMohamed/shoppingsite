@@ -1,0 +1,4 @@
+services:
+#    bakery_management.example:
+#        class: BakeryManagementBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

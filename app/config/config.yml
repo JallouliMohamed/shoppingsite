@@ -1,0 +1,179 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@BackOfficeBundle/Resources/config/services.yml" }
+    - { resource: "@UsersBundle/Resources/config/services.yml" }
+    - { resource: "@FrontBundle/Resources/config/services.yml" }
+    - { resource: "@BakeryManagementBundle/Resources/config/services.yml" }
+    - { resource: "@ProductManagementBundle/Resources/config/services.yml" }
+    - { resource: "@NotificationsBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: fr
+    brochures_directory: '%kernel.project_dir%/web/uploads'
+
+
+framework:
+    #esi: ~
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+
+services:
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_image:
+            uri_prefix: /web/uploads
+            upload_destination: '%kernel.project_dir%/uploads'
+            namer: vich_uploader.namer_uniqid
+            delete_on_update: false
+            delete_on_remove: false
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: UsersBundle\Entity\Users
+    from_email:
+        address: "cupcake@esprit.tn"
+        sender_name: "Cupcake Postman"
+    profile:
+            form:
+                type: UsersBundle\Form\ProfileType
+    registration:
+                form:
+                    type: UsersBundle\Form\RegistrationType
+
+fos_message:
+    db_driver: orm
+    thread_class: UsersBundle\Entity\Thread
+    message_class: UsersBundle\Entity\Message
+vresh_twilio:
+    #(Required) Your Account SID from www.twilio.com/user/account
+    sid: 'ACbfd5caa728659293cead5ef9c4dad0f0'
+    #(Required) Your Auth Token from www.twilio.com/user/account
+    authToken: 'ca12f5d45505bfc36005ca568e259e8e'
+    #(Optional, default: '2010-04-01') Twilio API version
+    version: '2010-04-01'
+    #(Optional, default: 1) Number of times to retry failed requests
+    retryAttempts: 3
+
+knp_paginator:
+    page_range: 5                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
+    default_options:
+        page_name: page                 # page query parameter name
+        sort_field_name: sort           # sort field query parameter name
+        sort_direction_name: direction  # sort direction query parameter name
+        distinct: true                  # ensure distinct results, useful when ORM queries are using GROUP BY statements
+        filter_field_name: filterField  # filter field query parameter name
+        filter_value_name: filterValue  # filter value query paameter name
+    template:
+        pagination: '@KnpPaginator/Pagination/sliding.html.twig'     # sliding pagination controls template
+        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
+        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+
+#hwi_oauth:
+#    connect:
+#      confirmation: true
+#      registration_form: fos_user.registration.form.factory
+    # Define which firewalls will be used for oauth
+    # Usually, its only the main, but you can add it if you have a custom one
+
+
+    #firewall_names: ["main"]
+    #fosub:
+    #    username_iterations: 30
+        # Define in which columns of the fos_user table will be stored
+        # the access token of every resource_owner
+    #   properties:
+    #        facebook: facebook_id
+
+    # Define the resource_owners that your user can use to login into your app
+    # Note that the client_id and client_secret and key values are symfony parameters
+    # stored too in the config.yml from the previous step !
+    #resource_owners:
+#
+ #       facebook:
+  #          type:           facebook
+   #         client_id:      344309509416204
+    #        client_secret:  ce2ad147b8ac69cb16df8c90c8c62990
+    #        scope:     "email"
+    #        infos_url:     "https://graph.facebook.com/me?fields=username,name,email,picture.type(large)"
+     #       paths:
+     #           email:          email
+      #          profilepicture: picture.data.url
+
+
+#Paypalpayment
+doctrine:
+    orm:
+        mappings:
+            JMSPaymentCoreBundle: ~
+
+
+jms_payment_paypal:
+    username: ryadh.berrahal_api1.gmail.com
+    password: ZB9292P4MHVZWV53
+    signature: AQ1x2QftwZO4gbv57ONUHeJy9r6HAKs.JuXEJAsqLjoYDoOEEfuYHBZ3

@@ -1,0 +1,3 @@
+marketing_homepage:
+    path:     /
+    defaults: { _controller: MarketingBundle:Default:index }

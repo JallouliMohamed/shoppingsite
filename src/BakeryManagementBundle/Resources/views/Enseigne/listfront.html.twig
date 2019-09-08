@@ -1,0 +1,12 @@
+
+<li class="menu-item-has-children">
+    <a href="{{ path('front_companypage') }}">Brand</a>
+    <ul class="sub-menu">
+    {% for enseignes in enseignes %}
+        <li><a href="{{ path('brand_about', { 'id' : enseignes.id}) }}">
+                {{ enseignes.name }}
+            </a></li>
+    {% endfor %}
+    </ul>
+</li>
+{#, enseignes.id#}

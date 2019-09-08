@@ -1,0 +1,240 @@
+{% extends '::base.html.twig' %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+    {#<div class="loader"></div>#}
+    <div class="page-wrap">
+        <!-- Heros-->
+        <div class="ps-section--hero"><img src="{{ asset('Front/images/hero/01.jpg')}}" alt="">
+            <div class="ps-section__content text-center">
+                <h3 class="ps-section__title">{{ product.enseigne.name }}</h3>
+                <div class="ps-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="{{ path('front_homepage') }}">Home</a></li>
+                        <li><a href="#">{{ product.enseigne.name }}</a></li>
+                        <li class="active">{{ product.name }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="ps-section pt-80 pb-80">
+            <div class="container">
+                <div class="ps-product--detail">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
+                            <div class="ps-product__thumbnail">
+                                {% if product.reduction > 0 %}
+                                    <div class="ps-badge"><span>{{ product.reduction }}%</span></div>
+                                {% endif %}
+                                <div class="owl-slider primary" data-owl-auto="true" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="false" data-owl-animate-in="" data-owl-animate-out="" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-nav-left="&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;" data-owl-nav-right="&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;">
+                                    <div class="ps-product__image"><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""></div>
+                                    <div class="ps-product__image"><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""></div>
+                                    <div class="ps-product__image"><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""></div>
+                                    <div class="ps-product__image"><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""></div>
+                                    <div class="ps-product__image"><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""></div>
+                                </div>
+                                <div class="owl-slider second mb-30" data-owl-auto="true" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="20" data-owl-nav="false" data-owl-dots="false" data-owl-animate-in="" data-owl-animate-out="" data-owl-item="4" data-owl-item-xs="2" data-owl-item-sm="3" data-owl-item-md="4" data-owl-item-lg="4" data-owl-nav-left="&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;" data-owl-nav-right="&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;"><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""><img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+                            <header>
+                                <h3 class="ps-product__name">{{ product.name }}</h3>
+                                <select class="ps-rating">
+                                    <option value="1" {% if product.rating == 1 %} selected {% endif %}>1</option>
+                                    <option value="2" {% if product.rating == 2 %} selected {% endif %}>2</option>
+                                    <option value="3" {% if product.rating == 3 %} selected {% endif %}>3</option>
+                                    <option value="4" {% if product.rating == 4 %} selected {% endif %}>4</option>
+                                    <option value="5" {% if product.rating == 5 %} selected {% endif %}>5</option>
+                                </select>
+                                <p class="ps-product__price">
+                                    {% if product.reduction > 0 %}
+                                        <del>{{ product.price }} Dinars</del>
+                                        {{ product.price - (product.price*product.reduction/100) }} Dinars
+                                    {% else %}
+                                        {{ product.price }} Dinars
+                                    {% endif %}
+                                </p><a class="ps-product__quickview popup-modal" href="#quickview-modal" data-effect="mfp-zoom-out">QUICK OVERVIEW</a>
+                                <div class="ps-product__description">
+                                    <p>{{ product.description }}</p>
+                                </div>
+                                <div class="ps-product__meta">
+                                    <p><span> Availability: </span> {% if stocks|length == 0 %} Out Of Stock {% endif %}</p>
+                                    <ul>
+                                        {% for stock in stocks %}
+                                            <li><a href="#">{{ stock.bakery.name }}</a> : {% if stock.qte > 0 %} In Stock {% else %} Out of Stock {% endif %}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    <p class="category"><span>CATEGORIE: </span><a href="{{ path('products_page', {'subcat_id': product.subcategory.id}) }}">{{ product.subcategory.name }}</a></p>
+                                </div>
+                                <div class="ps-product__shop">
+                                    <div class="form-group--number">
+                                        <button class="minus"><span>-</span></button>
+                                        <input class="form-control" type="text" value="1">
+                                        <button class="plus"><span>+</span></button>
+                                    </div>
+                                    {#<ul class="ps-product__action">
+                                        <li><a href="#" data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a></li>
+                                        <li><a href="#" data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+                                    </ul>#}
+                                </div>
+                            </header>
+                            <footer>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-5 col-sm-6 col-xs-12 "><a class="ps-btn--fullwidth ps-btn" href="#">Purchase Now<i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12 ">
+                                        <p class="ps-product__sharing">Share with:<a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-google-plus"></i></a><a href="#"><i class="fa fa-twitter"></i></a></p>
+                                    </div>
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="ps-product__info">
+                        <ul class="tab-list" role="tablist">
+                            <li class="active"><a href="#tab_01" aria-controls="tab_01" role="tab" data-toggle="tab">Overview</a></li>
+                            <li><a href="#tab_02" aria-controls="tab_02" role="tab" data-toggle="tab">Review</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-content mb-60">
+                        <div class="tab-pane active" role="tabpanel" id="tab_01">
+                            <p>{{ product.description }}.</p>
+                        </div>
+                        <div class="tab-pane" role="tabpanel" id="tab_02">
+                            <p>{{ reviews|length }} Reviews pour {{ product.name }}</p>
+                            {% for review in reviews %}
+                            <div class="ps-review-box">
+                                <div class="ps-review-box__thumbnail"><img src="{{ vich_uploader_asset(review.user, 'imageFile') }}" alt=""></div>
+                                <div class="ps-review-box__content">
+                                    <header>
+                                        <select class="ps-rating">
+                                            <option value="1" {% if review.rating == 1 %} selected {% endif %}>1</option>
+                                            <option value="2" {% if review.rating == 2 %} selected {% endif %}>2</option>
+                                            <option value="3" {% if review.rating == 3 %} selected {% endif %}>3</option>
+                                            <option value="4" {% if review.rating == 4 %} selected {% endif %}>4</option>
+                                            <option value="5" {% if review.rating == 5 %} selected {% endif %}>5</option>
+                                        </select>
+                                        <p>By<a href=""> {{ review.user.username }}</a> - {{ review.reviewedAt|date('Y/M/D h:m:s') }}</p>
+
+                                {% if is_granted('ROLE_USER') == true %}
+                                        {% if review.user.id == app.user.id %}
+                                        <a type="button" class="close" href="{{ path('remove_review', {'id':review.id}) }}">&times;</a>
+                                        {% endif %}
+                                    {% endif %}
+                                    </header>
+                                    <p>{{ review.reviewText }}</p>
+
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% if is_granted('ROLE_USER') == true %}
+                            {{ form_start(form, {'attr': {'class':'ps-product__review'}}) }}
+                                <h4>ADD YOUR REVIEW</h4>
+                                <div class="row">
+                                    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
+                                        <div class="form-group">
+                                            <label>Your Review:</label>
+
+                                            {{ form_widget(form.reviewText, {'attr' : {'class':'form-control', 'rows':'6'}}) }}
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Your rating<span></span></label>
+                                            {{ form_widget(form.rating, {'attr' : {'class':'ps-rating', 'rows':'6'}}) }}
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            {{ form_widget(form.sauvegarder, {'attr' : {'class':'ps-btn ps-btn--sm' }}) }}
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            {{ form_end(form) }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="ps-section ps-section--best-seller pt-40 pb-100">
+            <div class="container">
+                <div class="ps-section__header text-center mb-50">
+                    <h4 class="ps-section__top">Sweet Cupcakes</h4>
+                    <h3 class="ps-section__title ps-section__title--full">LES BEST SELLERS DANS {{ product.subcategory.name }}</h3>
+                </div>
+                <div class="ps-section__content">
+                    <div class="owl-slider owl-slider--best-seller" data-owl-auto="true" data-owl-loop="true" data-owl-speed="100000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="false" data-owl-animate-in="" data-owl-animate-out="" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-nav-left="&lt;i class=&quot;ps-icon--back&quot;&gt;&lt;/i&gt;" data-owl-nav-right="&lt;i class=&quot;ps-icon--next&quot;&gt;&lt;/i&gt;">
+                        {% for suggestion in suggestions %}
+                        <div class="ps-product">
+                            <div class="ps-product__thumbnail">
+                                <a class="ps-product__overlay" href="{{ path('product_page', { 'id': suggestion.id }) }}"></a><img src="{{ vich_uploader_asset(suggestion, 'imageFile') }}" alt="" height="220" >
+                                <ul class="ps-product__action">
+                                    {#<li><a class="popup-modal" href="#quickview-modal" data-effect="mfp-zoom-out" data-tooltip="View"><i class="ps-icon--search"></i></a></li>#}
+                                    <li><a href="#" data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a></li>
+                                    <li><a href="#" data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+                                    <li><a href="#" data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="ps-product__content"><a class="ps-product__title" href="{{ path('product_page', { 'id': suggestion.id }) }}">{{ suggestion.name }}</a>
+                                <div class="ps-product__category">
+                                    <a class="ps-product__category" href="{{ path('products_page', {'subcat_id': suggestion.subcategory.id}) }}">{{ suggestion.subcategory.name }}</a>
+                                </div>
+                                <select class="ps-rating">
+                                    <option value="1" {% if suggestion.rating == 1 %} selected {% endif %}>1</option>
+                                    <option value="2" {% if suggestion.rating == 2 %} selected {% endif %}>2</option>
+                                    <option value="3" {% if suggestion.rating == 3 %} selected {% endif %}>3</option>
+                                    <option value="4" {% if suggestion.rating == 4 %} selected {% endif %}>4</option>
+                                    <option value="5" {% if suggestion.rating == 5 %} selected {% endif %}>5</option>
+                                </select>
+                                <p class="ps-product__price">{{ suggestion.price }} Dinars</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ps-section ps-section--best-seller pt-40 pb-100">
+            <div class="container">
+                <div class="ps-section__header text-center mb-50">
+                    <h4 class="ps-section__top">Cupcakes</h4>
+                    {% if is_granted('ROLE_USER') == true %}
+                    <h3 class="ps-section__title ps-section__title--full">Selon Vos Favories</h3>
+                    {% else %}
+                     <h3 class="ps-section__title ps-section__title--full">Autre suggestions</h3>
+                    {% endif %}
+                </div>
+                <div class="ps-section__content">
+                    <div class="owl-slider owl-slider--best-seller" data-owl-auto="true" data-owl-loop="true" data-owl-speed="100000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="false" data-owl-animate-in="" data-owl-animate-out="" data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-nav-left="&lt;i class=&quot;ps-icon--back&quot;&gt;&lt;/i&gt;" data-owl-nav-right="&lt;i class=&quot;ps-icon--next&quot;&gt;&lt;/i&gt;">
+                        {% for sugg in youMightLike %}
+                            <div class="ps-product">
+                                <div class="ps-product__thumbnail">
+                                    <a class="ps-product__overlay" href="{{ path('product_page', { 'id': sugg.id }) }}"></a><img src="{{ vich_uploader_asset(sugg, 'imageFile') }}" alt="" height="220" >
+                                    <ul class="ps-product__action">
+                                        
+                                        <li><a href="#" data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="ps-product__content"><a class="ps-product__title" href="{{ path('product_page', { 'id': sugg.id }) }}">{{ sugg.name }}</a>
+                                    <div class="ps-product__category">
+                                        <a class="ps-product__category" href="{{ path('products_page', {'subcat_id': sugg.subcategory.id}) }}">{{ sugg.subcategory.name }}</a>
+                                    </div>
+                                    <select class="ps-rating">
+                                        <option value="1" {% if sugg.rating == 1 %} selected {% endif %}>1</option>
+                                        <option value="2" {% if sugg.rating == 2 %} selected {% endif %}>2</option>
+                                        <option value="3" {% if sugg.rating == 3 %} selected {% endif %}>3</option>
+                                        <option value="4" {% if sugg.rating == 4 %} selected {% endif %}>4</option>
+                                        <option value="5" {% if sugg.rating == 5 %} selected {% endif %}>5</option>
+                                    </select>
+                                    <p class="ps-product__price">{{ sugg.price }} Dinars</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+bakery_management_homepage:
+    path:     /
+    defaults: { _controller: BakeryManagementBundle:Default:index }
+bakery_add:
+    path:     /brand/add
+    defaults: { _controller: BakeryManagementBundle:Enseigne:add }
+route_test:
+    path:     /brand/test
+    defaults: { _controller: BakeryManagementBundle:Enseigne:test }
+bakery_list:
+    path:     /brand/list
+    defaults: { _controller: BakeryManagementBundle:Enseigne:list }
+bakery_update:
+    path:     /brand/update
+    defaults: { _controller: BakeryManagementBundle:Enseigne:update }
+brand_add:
+    path:     /brand/addbakery
+    defaults: { _controller: BakeryManagementBundle:Bakery:add }
+brand_list:
+    path:     /brand/listbakery
+    defaults: { _controller: BakeryManagementBundle:Bakery:list }
+brand_update:
+    path:     /brand/updatebakery
+    defaults: { _controller: BakeryManagementBundle:Bakery:update }
+brand_delete:
+    path:     /brand/deletebakery
+    defaults: { _controller: BakeryManagementBundle:Bakery:delete }
+brand_frontlist:
+    path:     /listfront
+    defaults: { _controller: BakeryManagementBundle:Enseigne:listfront }
+brand_about:
+    path:     /aboutbrand/{id}
+    defaults: { _controller: BakeryManagementBundle:Enseigne:about }
+brand_chart:
+    path:     /brand/linechart
+    defaults: { _controller: BakeryManagementBundle:Graphe:chart }
+brand_map:
+    path:     /brand/map
+    defaults: { _controller: BakeryManagementBundle:Bakery:listPropositions2 }
+front_map:
+    path:     /brandmap/{id}
+    defaults: { _controller: BakeryManagementBundle:Bakery:listPropositions }
+rate:
+    path:     /rate
+    defaults: { _controller: BakeryManagementBundle:Enseigne:rate }
+brand_topprod:
+    path:     /brand/topprod
+    defaults: { _controller: BakeryManagementBundle:Graphe:Top }
+brand_top:
+    path:     /brand/topbrand
+    defaults: { _controller: BakeryManagementBundle:Graphe:Topbybrand }
+brand_TopRev:
+    path:     /brand/topRev
+    defaults: { _controller: BakeryManagementBundle:Graphe:TopRevbybrand }
+brand_prod:
+    path:     /brand/brandprod
+    defaults: { _controller: BakeryManagementBundle:Graphe:BakeryProduct }
+brand_TopRat:
+    path:     /brand/topRat
+    defaults: { _controller: BakeryManagementBundle:Graphe:TopRatebybrand }
+brand_Rev:
+    path:     /brand/Rev
+    defaults: { _controller: BakeryManagementBundle:Graphe:BakeryRevenu }
+brand_col:
+    path:     /brand/col
+    defaults: { _controller: BakeryManagementBundle:Enseigne:listback }
+bakery_topprod:
+    path:     /brand/bakerytopprod/{id}
+    defaults: { _controller: BakeryManagementBundle:Graphe:Bakerychart }
+bakery_toprev:
+    path:     /brand/bakerytoprev/{id}
+    defaults: { _controller: BakeryManagementBundle:Graphe:Bakerychart2 }
+bakery_toprev:
+    path:     /brand/bakerytoprev/{id}
+    defaults: { _controller: BakeryManagementBundle:Graphe:Bakerychart2 }
+bakery_baw:
+    path:     /brand/baw
+    defaults: { _controller: BakeryManagementBundle:Graphe:BakeryTo }
+

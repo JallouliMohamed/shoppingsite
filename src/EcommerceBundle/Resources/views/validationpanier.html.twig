@@ -1,0 +1,138 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+   <br><br>
+    <style>
+        .ssl-container {float:right;}
+        .ssl {display:block;float:right;font-size:24px;background: #EFEFEF;padding: 14px;border-radius: 35px;}
+        .ssl-text {display:block;float:right;padding:10px 10px 0 10px;color:#555;text-align:center;}
+        .step {background:#eee;font-size:1em;color:#ccc;padding:15px;font-size:1.25em;}
+        .step.active {color:#3C763D;}
+        .step .caret {position:absolute;margin:0;color:#eee;opacity:1.0;}
+        .step .caret.right {right:1px;top:0px;border-top:27px solid transparent;border-bottom:28px solid transparent;border-left:30px solid;}
+        .step .caret.bottom {bottom:-15px;left:35%;border-top:15px solid;border-right:50px solid transparent;border-left:50px solid transparent;}
+        @media(max-width:991px) {
+            .step {text-align:center;margin-top:20px;height:80px;}
+            .step .caret.right {top:20px;border-top:40px solid transparent;border-bottom:40px solid transparent;}
+        }
+        @media(max-width:767px) {
+            .step {height:auto;}
+            .ssl-container {float:none;margin:0 auto;width:220px;}
+        }
+        @media(min-width:768px) {
+            .step {margin-right:20px;}
+        }
+    </style>
+    <br><br>
+    <div class="container">
+        <br />
+        <div class="row">
+
+            <div class="ssl-container col-xs-12 col-sm-4 col-lg-3">
+                <span class="ssl glyphicon glyphicon-lock"></span>
+                <span class="ssl-text">
+                Paiement securisé<br />
+            </span>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-lg-9">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="step">
+                            <span class="glyphicon glyphicon-home"></span>
+                            Adresse
+                            <div class="hidden-xs caret right"></div>
+                            <div class="visible-xs caret bottom"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="step active">
+                            <span class="glyphicon glyphicon-shopping-cart"></span>
+                            Confirmation
+                            <div class="hidden-xs caret right"></div>
+                            <div class="visible-xs caret bottom"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="step">
+                            <span class="glyphicon glyphicon-usd"></span>
+                            Paiement
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="col-xs-12" />
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="span9">
+
+
+                <h2>Valider mon panier</h2>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>Références</th>
+                        <th>Quantité</th>
+                        <th>Prix unitaire</th>
+                        <th>Total HT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for produit in commande.order.produit %}
+                        <tr>
+                            <td>{{ produit.reference }}</td>
+                            <td>
+                                {{ produit.quantite }}
+                            </td>
+                            <td>{{ produit.prixHT }} DT</td>
+                            <td>{{ produit.prixHT * produit.quantite }} DT</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <dl class="dl-horizontal pull-right">
+                    <dt>Total HT :</dt><dd>{{ commande.order.prixHT }} DT</dd>
+                   <br>
+                    <a href="{{ path('showpayment', {'id':commande.id}) }}" class="ps-btn ps-btn--sm">Passer au paiement</a>
+
+
+
+                </dl>
+
+
+                <address class="col-xs-12 col-sm-4">
+                    <dt><h4>Adresse de facturation</h4></dt>
+                    <strong><i class="glyphicon glyphicon-user"></i>{{ commande.order.facturation.prenom }} {{ commande.order.facturation.nom }}</strong><br>
+                    <i class="glyphicon glyphicon-home"></i>{{ commande.order.facturation.adresse }}<br>
+                    <i class="glyphicon glyphicon-user"></i>{{ commande.order.facturation.ville }}, {{ commande.order.facturation.pays }} {{ commande.order.facturation.cp }}<br>
+                    <i class="glyphicon glyphicon-phone"></i> {{ commande.order.facturation.telephone }}
+                </address>
+
+                <address class="col-xs-12 col-sm-4">
+                    <dt><h4>Adresse de livraison</h4></dt>
+                    <strong><i class="glyphicon glyphicon-user"></i>{{ commande.order.livraison.prenom }} {{ commande.order.livraison.nom }}</strong><br>
+                    <i class="glyphicon glyphicon-home"></i>{{ commande.order.livraison.adresse }}<br>
+                    <i class="glyphicon glyphicon-user"></i>{{ commande.order.livraison.ville }}, {{ commande.order.livraison.pays }} {{ commande.order.livraison.cp }}<br>
+                    <i class="glyphicon glyphicon-phone"></i> {{ commande.order.livraison.telephone }}
+                </address>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

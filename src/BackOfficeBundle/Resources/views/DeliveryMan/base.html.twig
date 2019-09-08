@@ -1,0 +1,27 @@
+{% extends '::baseAdmin.html.twig' %}
+{% block homePath %}{{ path('back_office_homepage_deliveryMan') }}{% endblock %}
+{% block profileLink %}{{ path('back_office_profile_deliveryMan') }}{% endblock %}
+{% block sidebar %}
+    {{ parent() }}
+    <li class="active treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Mon Planning</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class="active"><a href="{{ path('delivery_show_planning') }}"><i
+                            class="fa fa-circle-o"></i> Afficher mon planning</a></li>
+            <li class="active"><a href="{{ path('delivery_show_affected') }}"><i
+                            class="fa fa-circle-o"></i> Mes commandes affectés</a></li>
+
+        </ul>
+    </li>
+{% endblock %}
+
+
+        {% block content %}
+
+        {% endblock %}
+

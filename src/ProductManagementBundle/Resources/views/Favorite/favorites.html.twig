@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+{% block title %}Mes Favories{% endblock %}
+{% block content %}
+<div class="page-wrap">
+    <div class="ps-section--hero"><img src="{{ asset('Front/images/hero/03.jpg') }}" alt="">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">MES FAVORIES</h3>
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('front_homepage') }}">Home</a></li>
+                    <li class="active">Mes Favories</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <section class="ps-section pt-80 pb-40">
+        <div class="container">
+            <!-- Cat -->
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                    <div class="ps-section__header mb-50">
+                        <h3 class="ps-section__title ps-section__title--left">Mes favories</h3>
+                    </div>
+                    <div class="ps-section__content">
+                        {% for favorite in favorites %}
+
+                                <div class="ps-product--list">
+                                    <div class="ps-product__thumbnail">
+                                        <a class="ps-product__overlay" href="{{ path('products_page', {'subcat_id':favorite.subcategory.id}) }}"></a>
+                                        <img src="{{ vich_uploader_asset(favorite.subcategory, 'imageFile') }}" alt=""></div>
+                                    <div class="ps-product__content">
+                                        <h4 class="ps-product__title"><a href="{{ path('products_page', {'subcat_id':favorite.subcategory.id}) }}">{{ favorite.subcategory.name }}</a></h4>
+
+                                            </p><a class="ps-btn ps-btn--xs" href="{{ path('remove_favorite',
+                                            {'subcat_id':favorite.subcategory.id}) }}">Supprimer<i class="fa fa-angle-right"></i></a>
+
+                                    </div>
+                                </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+
+        </div>
+    </section>
+{% endblock %}

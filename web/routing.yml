@@ -1,0 +1,23 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+pi:
+    resource: "@piBundle/Resources/config/routing.yml"
+    prefix:   /
+users:
+    resource: "@UsersBundle/Resources/config/routing.yml"
+    prefix:   /
+
+back_office:
+    resource: "@BackOfficeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+BakeryManagement:
+    resource: "@BakeryManagementBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ProductManagement:
+    resource: "@ProductManagementBundle/Resources/config/routing.yml"
+    prefix:   /
