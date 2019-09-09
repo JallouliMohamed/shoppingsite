@@ -28,16 +28,16 @@ class Users extends BaseUser implements ParticipantInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="FirstName", type="string", length=255,nullable=true)
+     * @ORM\Column(name="phone", type="string", length=255,nullable=true)
      */
-    private $firstName;
+    private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="LastName", type="string", length=255,nullable=true)
+     * @ORM\Column(name="ville", type="string", length=255,nullable=true)
      */
-    private $lastName;
+    private $ville;
 
     /**
      * @var int
@@ -148,6 +148,38 @@ class Users extends BaseUser implements ParticipantInterface
     }
 
     /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * @param string $ville
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+    }
+
+    /**
      * @param \DateTime $joinedAt
      */
     public function setJoinedAt($joinedAt)
@@ -251,38 +283,6 @@ class Users extends BaseUser implements ParticipantInterface
     public function setProfilePicture($profilePicture)
     {
         $this->profilePicture = $profilePicture;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * @param string $firstName
-     */
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * @param string $lastName
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
     }
 
     /**
