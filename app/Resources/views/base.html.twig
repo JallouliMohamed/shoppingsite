@@ -171,11 +171,10 @@
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4105"><a
                                 title="Track Your Order" href="track-your-order/index.html"><i
                                     class="ec ec-transport"></i>Track Your Order</a></li>
-                    <li id="menu-item-4099"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4099"><a title="Shop"
-                                                                                                           href="shop/index.html"><i
-                                    class="ec ec-shopping-bag"></i>Shop</a></li>
+
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED")== false %}
+
+
                         <li id="menu-item-4100"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a
                                     title="My Account" href="{{ path('fos_user_security_login') }}"><i class="ec ec-user"></i>login</a>
@@ -184,7 +183,10 @@
                                         class="fa fa-refresh"></i>Register</a></li>
                     {% endif %}
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-
+                        <li id="menu-item-4099"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4099"><a title="Shop"
+                                                                                                               href="{{ path('fos_user_change_password') }}"><i
+                                        class="ec ec-shopping-bag"></i>Reset passowrd</a></li>
                         <li id="menu-item-4100"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a
                                     title="My Account" href="#"><i class="ec ec-user"></i>{{  app.user.username }} </a>
@@ -200,9 +202,9 @@
                 <div class="masthead">
                     <div class="header-logo-area">
                         <div class="header-site-branding"><a href="index.html" class="header-logo-link">
-                                <svg version="1.1" x="0px" y="0px" width="175.748px"
-                                     height="42.52px" viewBox="0 0 175.748 42.52"
-                                     enable-background="new 0 0 175.748 42.52">
+
+                                    <img width="100px"
+                                         height="20px" src={{ asset('69128448_354082975533715_7892249049191940096_n.png') }}>
                                     <ellipse class="ellipse-bg" fill-rule="evenodd" clip-rule="evenodd" fill="#FDD700"
                                              cx="170.05" cy="36.341" rx="5.32" ry="5.367"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" fill="#333E48" d="M30.514,0.71c-0.034,0.003-0.066,0.008-0.056,0.056
@@ -277,7 +279,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                         <figure class="wpb_wrapper vc_figure">
                                                                             <div class="vc_single_image-wrapper   vc_box_border_grey">
                                                                                 <img width="540" height="460"
-                                                                                     src="wp-content/uploads/2016/03/megamenu-2.png"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/megamenu-2.png')}}"
                                                                                      class="vc_single_image-img attachment-full"
                                                                                      alt=""
                                                                                      srcset="https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu-2.png 540w, https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu-2-300x256.png 300w"
@@ -358,7 +360,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                         <figure class="wpb_wrapper vc_figure">
                                                                             <div class="vc_single_image-wrapper   vc_box_border_grey">
                                                                                 <img width="540" height="460"
-                                                                                     src="wp-content/uploads/2016/03/megamenu-3.png"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/megamenu-3.png')}}"
                                                                                      class="vc_single_image-img attachment-full"
                                                                                      alt=""
                                                                                      srcset="https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu-3.png 540w, https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu-3-300x256.png 300w"
@@ -438,7 +440,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                         <figure class="wpb_wrapper vc_figure">
                                                                             <div class="vc_single_image-wrapper   vc_box_border_grey">
                                                                                 <img width="540" height="495"
-                                                                                     src="wp-content/uploads/2016/03/megamenu-.png"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/megamenu-.png')}}"
                                                                                      class="vc_single_image-img attachment-full"
                                                                                      alt=""
                                                                                      srcset="https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu-.png 540w, https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu--300x275.png 300w"
@@ -518,7 +520,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                         <figure class="wpb_wrapper vc_figure">
                                                                             <div class="vc_single_image-wrapper   vc_box_border_grey">
                                                                                 <img width="540" height="485"
-                                                                                     src="wp-content/uploads/2016/03/megamenu-8.png"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/megamenu-8.png')}}"
                                                                                      class="vc_single_image-img attachment-full"
                                                                                      alt=""
                                                                                      srcset="https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu-8.png 540w, https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/03/megamenu-8-300x269.png 300w"
@@ -835,9 +837,10 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                     <form class="navbar-search" method="get" action="https://demo2.madrasthemes.com/electro-wide/"
                           autocomplete="off"><label class="sr-only screen-reader-text" for="search">Search for:</label>
                         <div class="input-group">
-                            <div class="input-search-field"><input type="text" id="search"
+                            <div class="input-search-field"><input style="background-color: white" type="text" id="search"
                                                                    class="form-control search-field product-search-field"
                                                                    dir="ltr" value="" name="s"
+
                                                                    placeholder="Search for Products"
                                                                    autocomplete="off"/></div>
                             <div class="input-group-addon search-categories"><select name='product_cat' id='product_cat'
@@ -859,7 +862,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                 </select></div>
                             <div class="input-group-btn"><input type="hidden" id="search-param" name="post_type"
                                                                 value="product"/>
-                                <button type="submit" class="btn btn-secondary"><i class="ec ec-search"></i></button>
+                                <button style="background-color: #5fb05b" type="submit" class="btn btn-secondary"><i class="ec ec-search"></i></button>
                             </div>
                         </div>
                     </form>
@@ -886,6 +889,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                         </div>
                     </div>
                 </div>
+                {% block headercontent %}
                 <div class="electro-navigation yes-home">
                     <div class="secondary-nav-menu electro-animate-dropdown">
                         <ul id="menu-secondary-nav" class="secondary-nav yamm">
@@ -1177,6 +1181,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                         </ul>
                     </div>
                 </div>
+                {% endblock %}
             </div>
             <div class="handheld-header-wrap container hidden-xl-up">
                 <div class="handheld-header-v2 handheld-stick-this ">
@@ -1812,7 +1817,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                             <li class="my-account"><a href="my-account/index.html"><i class="ec ec-user"></i></a></li>
                             <li class="cart"><a class="footer-cart-contents" href="cart/index.html"
                                                 title="View your shopping cart"> <i class="ec ec-shopping-bag"></i>
-                                    <span class="cart-items-count count">0</span> </a></li>
+                                    <span style="background-color: #5fb05b" class="cart-items-count count">0</span> </a></li>
                         </ul>
                     </div>
                 </div>
@@ -2345,7 +2350,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                     <div class="da">
                                         <div class="da-inner"><a class="da-media" href="shop/index.html">
                                                 <div class="da-media-left"><img
-                                                            src="wp-content/uploads/2016/02/cameras.jpg" alt=""/></div>
+                                                            src="{{ asset('wp-content/uploads/2016/02/cameras.jpg') }}" alt=""/></div>
                                                 <div class="da-media-body">
                                                     <div class="da-text"> Catch Big <br><strong>Deals</strong> on the
                                                         <br>Cameras
@@ -2357,7 +2362,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                     <div class="da">
                                         <div class="da-inner"><a class="da-media" href="shop/index.html">
                                                 <div class="da-media-left"><img
-                                                            src="wp-content/uploads/2016/02/MobileDevicesv2-2.jpg"
+                                                            src="{{ asset('wp-content/uploads/2016/02/MobileDevicesv2-2.jpg') }}"
                                                             alt=""/></div>
                                                 <div class="da-media-body">
                                                     <div class="da-text"> Tablets, <br>Smartphones <br><strong>and
@@ -2385,7 +2390,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                     <div class="da">
                                         <div class="da-inner"><a class="da-media" href="#">
                                                 <div class="da-media-left"><img
-                                                            src="wp-content/uploads/2018/10/360-camers.png" alt=""/>
+                                                            src="{{ asset('wp-content/uploads/2018/10/360-camers.png') }}" alt=""/>
                                                 </div>
                                                 <div class="da-media-body">
                                                     <div class="da-text"> Shop the <strong>Hottest</strong><br>Products
@@ -2411,7 +2416,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                         class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
                                                     <div class="product-thumbnail product-item__thumbnail"><img
                                                                 width="300" height="300"
-                                                                src="wp-content/uploads/2016/03/GamePad-300x300.jpg"
+                                                                src="{{ asset('wp-content/uploads/2016/03/GamePad-300x300.jpg')}}"
                                                                 class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                 alt=""/></div>
                                                     <h2 class="woocommerce-loop-product__title">Game Console Controller
@@ -2468,7 +2473,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                                 Wireless Audio System Multiroom 360</h2>
                                                                             <div class="product-thumbnail product-item__thumbnail">
                                                                                 <img width="300" height="300"
-                                                                                     src="wp-content/uploads/2016/03/WirelessSound-300x300.jpg"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/WirelessSound-300x300.jpg')}}"
                                                                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                      alt=""/></div>
                                                                         </a></div>
@@ -2576,7 +2581,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                                 Tablet Red EliteBook Revolve 810 G2</h2>
                                                                             <div class="product-thumbnail product-item__thumbnail">
                                                                                 <img width="300" height="300"
-                                                                                     src="wp-content/uploads/2016/03/Ultrabooks-300x300.jpg"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/Ultrabooks-300x300.jpg')}}"
                                                                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                      alt=""/></div>
                                                                         </a></div>
@@ -2687,7 +2692,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                                 White Solo 2 Wireless</h2>
                                                                             <div class="product-thumbnail product-item__thumbnail">
                                                                                 <img width="300" height="300"
-                                                                                     src="wp-content/uploads/2016/03/1-300x300.jpg"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/1-300x300.jpg')}}"
                                                                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                      alt=""/></div>
                                                                         </a></div>
@@ -2795,7 +2800,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                                 Smartphone 6S 32GB LTE</h2>
                                                                             <div class="product-thumbnail product-item__thumbnail">
                                                                                 <img width="300" height="300"
-                                                                                     src="wp-content/uploads/2016/03/GoldPhone-300x300.jpg"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/GoldPhone-300x300.jpg')}}"
                                                                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                      alt=""/></div>
                                                                         </a></div>
@@ -2902,7 +2907,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                                 Purple NX Mini F1 aparat SMART NX</h2>
                                                                             <div class="product-thumbnail product-item__thumbnail">
                                                                                 <img width="300" height="300"
-                                                                                     src="wp-content/uploads/2016/03/Photocamera-300x300.jpg"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/Photocamera-300x300.jpg')}}"
                                                                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                      alt=""/></div>
                                                                         </a></div>
@@ -3012,7 +3017,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                                                                                 Full Color LaserJet Pro M452dn</h2>
                                                                             <div class="product-thumbnail product-item__thumbnail">
                                                                                 <img width="300" height="300"
-                                                                                     src="wp-content/uploads/2016/03/Printer-300x300.jpg"
+                                                                                     src="{{ asset('wp-content/uploads/2016/03/Printer-300x300.jpg')}}"
                                                                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                      alt=""/></div>
                                                                         </a></div>
@@ -9569,6 +9574,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
         </section>{% endblock %}
         <footer id="colophon" class="site-footer footer-v2">
             <div class="desktop-footer container">
+                {% block footercontent %}
                 <div class="footer-widgets columns-3">
                     <div class="widget-column">
                         <aside id="woocommerce_products-3" class="widget clearfix woocommerce widget_products">
@@ -9736,8 +9742,8 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                             </div>
                         </aside>
                     </div>
-                </div>
-                <div class="footer-newsletter">
+                </div>{% endblock %}
+                <div class="footer-newsletter" style="background-color: #5fb05b">
                     <div class="container">
                         <div class="footer-newsletter-inner">
                             <div class="newsletter-content"><h5 class="newsletter-title">Sign up to Newsletter</h5><span
@@ -9945,7 +9951,7 @@ c5.976-0.568,9.574-3.936,11.816-8.354c-0.141-0.271-0.221-0.604-0.336-0.902C92.92
                         <div class="payment">
                             <div class="footer-payment-logo">
                                 <ul class="cash-card card-inline">
-                                    <li class="card-item"><img src="wp-content/uploads/2017/02/patment-icon.png" alt=""
+                                    <li class="card-item"><img src="{{ asset('wp-content/uploads/2017/02/patment-icon.png') }}" alt=""
                                                                width="324" height="38"></li>
                                 </ul>
                             </div>
