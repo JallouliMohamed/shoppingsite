@@ -8,7 +8,14 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+        $user=$this->container->get('security.authorization_checker');
+        if (($user->isGranted('ROLE_ADMIN'))){
+            return $this->redirectToRoute('back_office_homepage_admin');
+        }elseif (($user->isGranted('ROLE_USER'))){
+            return $this->render('FrontBundle:Default:index.html.twig');
+        }
         return $this->render('FrontBundle:Default:index.html.twig');
+
         //return $this->render('::base.html.twig');
     }
     public function aboutAction()
