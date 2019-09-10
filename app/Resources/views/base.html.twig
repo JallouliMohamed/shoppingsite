@@ -2,6 +2,7 @@
 <html lang="en-US">
 <!-- Mirrored from demo2.madrasthemes.com/electro-wide/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Sep 2019 22:13:39 GMT -->
 <!-- Added by HTTrack -->
+
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
     <meta charset="UTF-8">
@@ -164,13 +165,7 @@
                             Store</a></li>
                 </ul>
                 <ul id="menu-top-bar-right" class="nav nav-inline pull-right electro-animate-dropdown flip">
-                    <li id="menu-item-3234"
-                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3234"><a
-                                title="Store Locator" href="#"><i class="ec ec-map-pointer"></i>Store Locator</a></li>
-                    <li id="menu-item-4105"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4105"><a
-                                title="Track Your Order" href="track-your-order/index.html"><i
-                                    class="ec ec-transport"></i>Track Your Order</a></li>
+
 
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED")== false %}
 
@@ -201,7 +196,7 @@
             <div class="container hidden-lg-down">
                 <div class="masthead">
                     <div class="header-logo-area">
-                        <div class="header-site-branding"><a href="index.html" class="header-logo-link">
+                        <div class="header-site-branding"><a href="{{ path('front_homepage') }}" class="header-logo-link">
 
                                     <img width="100px"
                                          height="20px" src={{ asset('69128448_354082975533715_7892249049191940096_n.png') }}>
