@@ -32,18 +32,80 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
      *
      * @ORM\Column(name="Name", type="string", length=255)
      */
+
     private $name;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="title", type="string", length=255)
+      */
+
+     private $title;
 
 
-
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="adress", type="string", length=255)
+      */
+     private $adress;
     /**
      * @var float
      * @Assert\GreaterThanOrEqual(0)
      * @ORM\Column(name="Price", type="float")
      */
     private $price;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="country", type="string", length=255)
+      */
+     private $country;
 
-    /**
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="horsepower", type="integer", length=255,nullable=true)
+      */
+     private $horsepower;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="color", type="string", length=255,nullable=true)
+      */
+     private $color;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="ram", type="string", length=255,nullable=true)
+      */
+     private $ram;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="camera", type="string", length=255,nullable=true)
+      */
+     private $camera;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="numberofbeds", type="string", length=255,nullable=true)
+      */
+     private $numberofbeds;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="numberofbaths", type="string", length=255,nullable=true)
+      */
+     private $numberofbaths;
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="space", type="string", length=255,nullable=true)
+      */
+     private $space;
+
+     /**
      * @var string
      *
      * @ORM\Column(name="Description", type="string", length=255)
@@ -162,7 +224,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      *
      * @var string
      */
@@ -425,6 +487,166 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
     {
         return $this->rating;
     }
+
+     /**
+      * @return string
+      */
+     public function getTitle()
+     {
+         return $this->title;
+     }
+
+     /**
+      * @param string $title
+      */
+     public function setTitle($title)
+     {
+         $this->title = $title;
+     }
+
+     /**
+      * @return string
+      */
+     public function getAdress()
+     {
+         return $this->adress;
+     }
+
+     /**
+      * @param string $adress
+      */
+     public function setAdress($adress)
+     {
+         $this->adress = $adress;
+     }
+
+     /**
+      * @return string
+      */
+     public function getCountry()
+     {
+         return $this->country;
+     }
+
+     /**
+      * @param string $country
+      */
+     public function setCountry($country)
+     {
+         $this->country = $country;
+     }
+
+     /**
+      * @return string
+      */
+     public function getHorsepower()
+     {
+         return $this->horsepower;
+     }
+
+     /**
+      * @param string $horsepower
+      */
+     public function setHorsepower($horsepower)
+     {
+         $this->horsepower = $horsepower;
+     }
+
+     /**
+      * @return string
+      */
+     public function getColor()
+     {
+         return $this->color;
+     }
+
+     /**
+      * @param string $color
+      */
+     public function setColor($color)
+     {
+         $this->color = $color;
+     }
+
+     /**
+      * @return string
+      */
+     public function getRam()
+     {
+         return $this->ram;
+     }
+
+     /**
+      * @param string $ram
+      */
+     public function setRam($ram)
+     {
+         $this->ram = $ram;
+     }
+
+     /**
+      * @return string
+      */
+     public function getCamera()
+     {
+         return $this->camera;
+     }
+
+     /**
+      * @param string $camera
+      */
+     public function setCamera($camera)
+     {
+         $this->camera = $camera;
+     }
+
+     /**
+      * @return string
+      */
+     public function getNumberofbeds()
+     {
+         return $this->numberofbeds;
+     }
+
+     /**
+      * @param string $numberofbeds
+      */
+     public function setNumberofbeds($numberofbeds)
+     {
+         $this->numberofbeds = $numberofbeds;
+     }
+
+     /**
+      * @return string
+      */
+     public function getNumberofbaths()
+     {
+         return $this->numberofbaths;
+     }
+
+     /**
+      * @param string $numberofbaths
+      */
+     public function setNumberofbaths($numberofbaths)
+     {
+         $this->numberofbaths = $numberofbaths;
+     }
+
+     /**
+      * @return string
+      */
+     public function getSpace()
+     {
+         return $this->space;
+     }
+
+     /**
+      * @param string $space
+      */
+     public function setSpace($space)
+     {
+         $this->space = $space;
+     }
 
 }
 

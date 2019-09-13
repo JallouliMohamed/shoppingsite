@@ -15,7 +15,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  * @ORM\Entity(repositoryClass="ProductManagementBundle\Repository\SubCategoryRepository")
  * @Vich\Uploadable
  */
-class SubCategory
+class SubCategory implements \JsonSerializable
 {
     /**
      * @var int
@@ -120,6 +120,22 @@ class SubCategory
     public function __construct()
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+    /**
+     * Specify data which should be serialized to JSON
+     * @link https://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return [
+
+                'name' => $this->name,
+                'id' => $this->id
+
+        ];
     }
 }
 
