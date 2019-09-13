@@ -109,4 +109,5 @@ class CategoryController extends Controller
         $category = $em->getRepository('ProductManagementBundle:Category')->find($id);
         return $this->render('ProductManagementBundle:Category:categories.html.twig', array('category'=>$category));
     }*/
+    
 }
