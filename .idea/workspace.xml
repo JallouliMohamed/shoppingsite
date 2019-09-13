@@ -27,6 +27,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/SubCategory/editSubCategory.html.twig" afterPath="$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/SubCategory/editSubCategory.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UsersBundle/Entity/Users.php" afterPath="$PROJECT_DIR$/src/UsersBundle/Entity/Users.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UsersBundle/Redirection/AfterLoginRedirection.php" afterPath="$PROJECT_DIR$/src/UsersBundle/Redirection/AfterLoginRedirection.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductManagementBundle/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductManagementBundle/Controller/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductManagementBundle/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductManagementBundle/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductManagementBundle/Entity/SubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductManagementBundle/Entity/SubCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProductManagementBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductManagementBundle/Resources/config/routing.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,6 +53,15 @@
             <state relative-caret-position="17">
               <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Controller/ProductController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="336" column="65" selection-start-line="336" selection-start-column="65" selection-end-line="336" selection-end-column="65" />
+              <folding>
+                <element signature="e#137#169#0#PHP" expanded="true" />
+                <element signature="e#12918#12955#1#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,6 +75,20 @@
                 <element signature="e#5906#9201#0#HTML" expanded="false" />
                 <element signature="e#14178#16566#0#HTML" expanded="false" />
               </folding>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Entity/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-29">
+              <caret line="219" column="51" selection-start-line="219" selection-start-column="46" selection-end-line="219" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -70,36 +99,87 @@
             <state relative-caret-position="164">
               <caret line="103" column="14" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/Product/addProduct.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="116" column="675" selection-start-line="116" selection-start-column="668" selection-end-line="116" selection-end-column="675" />
+              <folding>
+                <element signature="e#150#156#0" expanded="true" />
+                <element signature="e#485#491#0" expanded="true" />
+                <element signature="e#158#164#0" expanded="true" />
+                <element signature="e#486#492#0" expanded="true" />
+                <element signature="e#161#167#0" expanded="true" />
+                <element signature="e#498#504#0" expanded="true" />
+                <element signature="e#828#834#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="11" />
               <folding />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UsersBundle/Form/RegistrationType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="24" selection-start-line="7" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="GrapheController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Controller/GrapheController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="283">
               <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="35" selection-start-line="3" selection-end-line="4" />
+>>>>>>> #5 add crud product
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="SubCategoryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Controller/SubCategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="232">
               <caret line="84" column="12" lean-forward="false" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="74" />
               <folding />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="14382">
+              <caret line="846" column="77" selection-start-line="846" selection-start-column="27" selection-end-line="846" selection-end-column="77" />
+>>>>>>> #5 add crud product
             </state>
           </provider>
         </entry>
@@ -107,12 +187,17 @@
       <file leaf-file-name="productchart.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/Chart/productchart.html.twig">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="368">
               <caret line="245" column="14" lean-forward="false" selection-start-line="245" selection-start-column="14" selection-end-line="245" selection-end-column="14" />
               <folding>
                 <element signature="e#690#1209#0#HTML" expanded="false" />
                 <element signature="e#5096#5116#0#HTML" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="612">
+              <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+>>>>>>> #5 add crud product
             </state>
           </provider>
         </entry>
@@ -129,6 +214,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
       <find>affect</find>
       <find>bakeryre</find>
       <find>bakerytopprod</find>
@@ -147,10 +233,13 @@
       <find>.png</find>
       <find>img</find>
       <find>header-lo</find>
+=======
+>>>>>>> #5 add crud product
       <find>button</find>
       <find>#5fb05b</find>
       <find>search</find>
       <find>first</find>
+<<<<<<< HEAD
       <find>role</find>
       <find>all_subcategories_admin</find>
       <find>showsubcategory</find>
@@ -159,6 +248,34 @@
       <find>bakery_topprod</find>
       <find>Bakerych</find>
       <find>BakeryTop</find>
+=======
+      <find>front_homepage</find>
+      <find>img</find>
+      <find>swift</find>
+      <find>swif</find>
+      <find>swi</find>
+      <find>fos</find>
+      <find>show</find>
+      <find>add</find>
+      <find>super</find>
+      <find>addproduct</find>
+      <find>jquery</find>
+      <find>exampleModal</find>
+      <find>super dea</find>
+      <find>all cat</find>
+      <find>cate</find>
+      <find>colo</find>
+      <find>user</find>
+      <find>coun</find>
+      <find>adres</find>
+      <find>bro</find>
+      <find>adre</find>
+      <find>image</find>
+      <find>subcate</find>
+      <find>nbre</find>
+      <find>updat</find>
+      <find>nbrebed</find>
+>>>>>>> #5 add crud product
     </findStrings>
     <replaceStrings>
       <replace>{{ path('back_office_readMail') }}</replace>
@@ -193,6 +310,7 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
+<<<<<<< HEAD
       <command text="s doctrine:schema:update --force" />
       <command text="s doctrine:schema:create" />
       <command text="s server:run " />
@@ -206,6 +324,12 @@
       <command text="s doctrine:schema:update --force" />
       <command text="s server:run " />
       <command text="c clear-cache" />
+=======
+      <command text="s doctrine:schema:update --force " />
+      <command text="s cache:clear" />
+      <command text="c clear-cache" />
+      <command text="s cache:clear" />
+>>>>>>> #5 add crud product
       <command text="s server:run " />
       <command text="c clear-cache" />
       <command text="s cache:clear" />
@@ -218,10 +342,18 @@
       <command text="c clear-cache" />
       <command text="s cache:clear" />
       <command text="s server:run " />
+      <command text="s cache:clear" />
+      <command text="c clear-cache" />
+      <command text="s doctrine:schema:update --force " />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
@@ -229,6 +361,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/BackOfficeBundle/Resources/views/Bakery/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/BackOfficeBundle/Resources/views/DeliveryMan/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/UsersBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/EcommerceBundle/Resources/views/livraison.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsersBundle/Entity/Adresses.php" />
+        <option value="$PROJECT_DIR$/src/BakeryManagementBundle/Resources/views/Enseigne/aboutbrand.html.twig" />
+        <option value="$PROJECT_DIR$/src/ProductManagementBundle/Repository/ProductRepository.php" />
+        <option value="$PROJECT_DIR$/src/BakeryManagementBundle/Controller/EnseigneController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/edit_content.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Profile/show_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/EcommerceBundle/Resources/views/showfacture.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsersBundle/Redirection/AfterLoginRedirection.php" />
+        <option value="$PROJECT_DIR$/src/EcommerceBundle/Entity/Planning.php" />
+        <option value="$PROJECT_DIR$/src/EcommerceBundle/Entity/LineOrder.php" />
+>>>>>>> #5 add crud product
         <option value="$PROJECT_DIR$/src/EcommerceBundle/Resources/views/listlineorders.html.twig" />
         <option value="$PROJECT_DIR$/src/EcommerceBundle/Controller/OrderController.php" />
         <option value="$PROJECT_DIR$/src/EcommerceBundle/Controller/DeliveryController.php" />
@@ -246,8 +397,12 @@
         <option value="$PROJECT_DIR$/src/FrontBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/ChangePassword/change_password_content.html.twig" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/UsersBundle/Form/RegistrationType.php" />
+=======
+        <option value="$PROJECT_DIR$/src/UsersBundle/Entity/Users.php" />
+>>>>>>> #5 add crud product
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/RegistrationFormType.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
@@ -255,6 +410,7 @@
         <option value="$PROJECT_DIR$/src/UsersBundle/Redirection/AfterLoginRedirection.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Controller/DefaultController.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/UsersBundle/Entity/Users.php" />
         <option value="$PROJECT_DIR$/src/ProductManagementBundle/Form/CategoryType.php" />
         <option value="$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/Category/categories.html.twig" />
@@ -280,6 +436,16 @@
         <option value="$PROJECT_DIR$/src/ProductManagementBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/BackOfficeBundle/Resources/views/Admin/base.html.twig" />
         <option value="$PROJECT_DIR$/src/ProductManagementBundle/Controller/GrapheController.php" />
+=======
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/ProductManagementBundle/Entity/SubCategory.php" />
+        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/UsersBundle/Form/RegistrationType.php" />
+        <option value="$PROJECT_DIR$/src/ProductManagementBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/Product/addProduct.html.twig" />
+        <option value="$PROJECT_DIR$/src/ProductManagementBundle/Entity/Product.php" />
+        <option value="$PROJECT_DIR$/src/ProductManagementBundle/Controller/ProductController.php" />
+>>>>>>> #5 add crud product
       </list>
     </option>
   </component>
@@ -376,7 +542,10 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+<<<<<<< HEAD
       <pane id="Scratches" />
+=======
+>>>>>>> #5 add crud product
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -397,6 +566,7 @@
             </path>
             <path>
               <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
               <item name="shoppingsite" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
@@ -436,6 +606,86 @@
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="SubCategory" type="2a2b976b:PhpTreeStructureProvider$1" />
+=======
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
+              <item name="Type" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="friendsofsymfony" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="routing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoppingsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoppingsite" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
+>>>>>>> #5 add crud product
             </path>
           </expand>
           <select />
@@ -448,7 +698,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -563,17 +813,32 @@
       <workItem from="1567810083409" duration="4289000" />
       <workItem from="1567960444726" duration="3668000" />
       <workItem from="1567964163714" duration="1006000" />
+<<<<<<< HEAD
       <workItem from="1567974285765" duration="9240000" />
       <workItem from="1568071433768" duration="1211000" />
       <workItem from="1568072687095" duration="17000" />
       <workItem from="1568073323789" duration="4279000" />
       <workItem from="1568150349381" duration="16048000" />
       <workItem from="1568242513547" duration="5517000" />
+=======
+      <workItem from="1567974285765" duration="10743000" />
+      <workItem from="1568035820041" duration="1174000" />
+      <workItem from="1568037729577" duration="11641000" />
+      <workItem from="1568074450928" duration="793000" />
+      <workItem from="1568076803056" duration="5240000" />
+      <workItem from="1568156097129" duration="5780000" />
+      <workItem from="1568226080165" duration="12893000" />
+      <workItem from="1568331157965" duration="8741000" />
+>>>>>>> #5 add crud product
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="361461000" />
+=======
+    <option name="totallyTimeSpent" value="382154000" />
+>>>>>>> #5 add crud product
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -588,6 +853,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -606,6 +872,29 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2489019" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32741934" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.32903227" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39967638" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32847896" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="7" weight="0.32847896" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.4919355" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32580644" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="11" sideWeight="0.49853587" visible="true" weight="0.516129" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+>>>>>>> #5 add crud product
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -619,6 +908,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -653,6 +943,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/web/wp-content/uploads/2017/02/patment-icon.png">
+      <provider selected="true" editor-type-id="images" />
+>>>>>>> #5 add crud product
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UsersBundle/Entity/Users.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -720,6 +1014,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Repository/MarqueRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -742,6 +1037,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Form/SubCategoryType.php">
+=======
+    <entry file="file://$PROJECT_DIR$/app/config/config_test.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+>>>>>>> #5 add crud product
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="51" selection-end-column="5" />
@@ -755,6 +1056,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/SubCategory/editSubCategory.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -768,6 +1070,10 @@
           <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/src/UsersBundle/UsersBundle.php">
+      <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> #5 add crud product
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/Marque/Marques.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -790,6 +1096,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/BakeryManagementBundle/Resources/views/Bakery/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -798,6 +1105,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+=======
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/ResettingController.php">
+>>>>>>> #5 add crud product
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="47" column="45" lean-forward="false" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
@@ -871,6 +1181,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/BakeryManagementBundle/Resources/views/Graphe/Bakery.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -882,6 +1193,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BakeryManagementBundle/Controller/BakeryController.php">
+=======
+    <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/Product/products.html.twig">
+>>>>>>> #5 add crud product
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
@@ -889,6 +1203,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/BakeryManagementBundle/Resources/views/Graphe/BakeryRev.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -904,6 +1219,10 @@
           <folding />
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> #5 add crud product
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BakeryManagementBundle/Resources/views/Enseigne/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -916,6 +1235,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/BakeryManagementBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -985,6 +1305,46 @@
             <element signature="e#5906#9201#0#HTML" expanded="false" />
             <element signature="e#14178#16566#0#HTML" expanded="false" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/FrontBundle.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Controller/CompanyController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Front/plugins/bootstrap/dist/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20553">
+          <caret line="1213" column="2" selection-start-line="1213" selection-start-column="2" selection-end-line="1213" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Controller/SubCategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+>>>>>>> #5 add crud product
         </state>
       </provider>
     </entry>
@@ -999,8 +1359,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Entity/SubCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2975">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsersBundle/Entity/Users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7140">
+          <caret line="426" column="31" selection-start-line="426" selection-start-column="31" selection-end-line="426" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UsersBundle/Form/RegistrationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="24" selection-start-line="7" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14382">
+          <caret line="846" column="77" selection-start-line="846" selection-start-column="27" selection-end-line="846" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="300">
           <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="11" />
           <folding />
@@ -1028,6 +1440,51 @@
         <state relative-caret-position="283">
           <caret line="28" column="18" lean-forward="false" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding />
+=======
+        <state relative-caret-position="504">
+          <caret line="100" column="26" selection-start-line="100" selection-start-column="26" selection-end-line="100" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="219" column="51" selection-start-line="219" selection-start-column="46" selection-end-line="219" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Resources/views/Product/addProduct.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="116" column="675" selection-start-line="116" selection-start-column="668" selection-end-line="116" selection-end-column="675" />
+          <folding>
+            <element signature="e#150#156#0" expanded="true" />
+            <element signature="e#485#491#0" expanded="true" />
+            <element signature="e#158#164#0" expanded="true" />
+            <element signature="e#486#492#0" expanded="true" />
+            <element signature="e#161#167#0" expanded="true" />
+            <element signature="e#498#504#0" expanded="true" />
+            <element signature="e#828#834#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ProductManagementBundle/Controller/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="336" column="65" selection-start-line="336" selection-start-column="65" selection-end-line="336" selection-end-column="65" />
+          <folding>
+            <element signature="e#137#169#0#PHP" expanded="true" />
+            <element signature="e#12918#12955#1#PHP" expanded="true" />
+          </folding>
+>>>>>>> #5 add crud product
         </state>
       </provider>
     </entry>
