@@ -70,9 +70,6 @@ bakery_topprod:
 bakery_toprev:
     path:     /brand/bakerytoprev/{id}
     defaults: { _controller: BakeryManagementBundle:Graphe:Bakerychart2 }
-bakery_toprev:
-    path:     /brand/bakerytoprev/{id}
-    defaults: { _controller: BakeryManagementBundle:Graphe:Bakerychart2 }
 bakery_baw:
     path:     /brand/baw
     defaults: { _controller: BakeryManagementBundle:Graphe:BakeryTo }

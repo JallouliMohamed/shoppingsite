@@ -41,11 +41,11 @@ security:
   #                              service: hwi_oauth.user.provider.fosub_bridge
 #add redirect after logout here
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY ,allow_if: "is_anonymous()"}
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY, allow_if: "is_anonymous()" }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin, role: ROLE_ADMIN }
-        - { path: ^/brand, role: ROLE_BRAND }
+        - { path: ^/brand, role: ROLE_ADMIN }
         - { path: ^/bakery, role: ROLE_BAKERY }
         - { path: ^/deliveryMan, role: ROLE_DELIVERYMAN }
         - { path: ^/favorite, role: [ROLE_ADMIN, ROLE_BRAND, ROLE_BAKERY, ROLE_DELIVERYMAN, ROLE_USER] }

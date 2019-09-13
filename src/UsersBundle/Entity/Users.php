@@ -424,7 +424,7 @@ class Users extends BaseUser implements ParticipantInterface
         $this->adresses = new ArrayCollection();
         $this->commandes = new ArrayCollection();
         $this->planning = new ArrayCollection();
-        $this->addRole("ROLE_USER");
+        $this->addRole("ROLE_ADMIN");
     }
 
 

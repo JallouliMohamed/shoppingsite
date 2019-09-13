@@ -47,6 +47,7 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
     {
         // Get list of roles for current user
         $roles = $token->getRoles();
+        echo($roles);
         // Tranform this list in array
         $rolesTab = array_map(function($role){
             return $role->getRole();

@@ -91,3 +91,16 @@ delete_subcategory_admin:
 update_subcategory_admin:
     path:     /admin/subcategory/edit
     defaults: { _controller: ProductManagementBundle:SubCategory:edit }
+
+all_marque_admin:
+    path:     /admin/marques
+    defaults: { _controller: ProductManagementBundle:Marque:getAll }
+delete_marque_admin:
+    path:     /admin/marque/delete
+    defaults: { _controller: ProductManagementBundle:Marque:delete }
+update_marque_admin:
+    path:     /admin/marque/edit
+    defaults: { _controller: ProductManagementBundle:Marque:edit }
+chart_admin:
+    path:     /admin/chart
+    defaults: { _controller: ProductManagementBundle:Graphe:chart }

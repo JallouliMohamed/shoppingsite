@@ -26,15 +26,7 @@ class SubCategoryType extends AbstractType
                 return $category->getName();
             }
             ));
-            if($options['isEdit'] == true){
-                $builder->add('imageFile',VichImageType::class, [
-                    'required' => false,
-                ]);
-            }else{
-                $builder->add('imageFile',VichImageType::class, [
-                    'required' => true,
-                ]);
-            }
+
         $builder->add('sauvegarder', SubmitType::class);
         ;
     }/**

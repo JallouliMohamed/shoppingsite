@@ -10,11 +10,9 @@
             {{ form_widget(form.name, {'attr' : {'class':'form-control'}}) }}
         </div>
 
-        {{ form_widget(form.imageFile) }}
         {{ form_widget(form.sauvegarder, {'attr' : {'class':'btn-success'}})}}
         {{ form_errors(form) }}
         {{ form_end(form) }}
 
-        {%endif%}
     </div>
 {% endblock %}

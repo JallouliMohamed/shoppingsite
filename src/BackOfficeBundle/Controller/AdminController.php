@@ -15,7 +15,23 @@ class AdminController extends Controller
 {
     public function layoutAction()
     {
-        return $this->render('BackOfficeBundle:Admin:base.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $categories = $em->getRepository('ProductManagementBundle:Category')->findAll();
+        $subcategories = $em->getRepository('ProductManagementBundle:SubCategory')->findAll();
+        if($categories==null){
+            $showsubcategory="false";
+            $showmarque="false";
+        }
+        elseif ($subcategories==null){
+            $showmarque="false";
+            $showsubcategory="true";
+
+        }
+        else{
+            $showmarque="true";
+            $showsubcategory="true";
+        }
+        return $this->render('BackOfficeBundle:Admin:base.html.twig',array('showsubcategory'=>$showsubcategory,'showmarque'=>$showmarque));
     }
 
     public function profileAction()

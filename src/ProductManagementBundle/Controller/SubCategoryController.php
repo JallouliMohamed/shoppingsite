@@ -32,8 +32,23 @@ class SubCategoryController extends Controller
             $em->flush();
             return $this->redirectToRoute('all_subcategories_admin');
         }
+        $categories = $em->getRepository('ProductManagementBundle:Category')->findAll();
+        $subcategories = $em->getRepository('ProductManagementBundle:SubCategory')->findAll();
+        if($categories==null){
+            $showsubcategory="false";
+            $showmarque="false";
+        }
+        elseif ($subcategories==null){
+            $showmarque="false";
+            $showsubcategory="true";
 
-        return $this->render('ProductManagementBundle:SubCategory:SubCategories.html.twig', array('notifications'=>$notifications,'subcategories'=>$subcategories,
+        }
+        else{
+            $showmarque="true";
+            $showsubcategory="true";
+        }
+        return $this->render('ProductManagementBundle:SubCategory:SubCategories.html.twig', array('notifications'=>$notifications,
+            'showsubcategory'=>$showsubcategory,'showmarque'=>$showmarque,'subcategories'=>$subcategories,
             'form'=>$form->createView()));
     }
 
@@ -51,9 +66,23 @@ class SubCategoryController extends Controller
             $em->flush();
             return $this->redirectToRoute('all_subcategories_admin');
         }
+        $categories = $em->getRepository('ProductManagementBundle:Category')->findAll();
+        $subcategories = $em->getRepository('ProductManagementBundle:SubCategory')->findAll();
+        if($categories==null){
+            $showsubcategory="false";
+            $showmarque="false";
+        }
+        elseif ($subcategories==null){
+            $showmarque="false";
+            $showsubcategory="true";
 
+        }
+        else{
+            $showmarque="true";
+            $showsubcategory="true";
+        }
         return $this->render('ProductManagementBundle:SubCategory:editSubCategory.html.twig', array('notifications'=>$notifications,
-            'form'=>$form->createView()));
+            'showsubcategory'=>$showsubcategory,'showmarque'=>$showmarque,'form'=>$form->createView()));
     }
 
     public function deleteAction(Request $request){

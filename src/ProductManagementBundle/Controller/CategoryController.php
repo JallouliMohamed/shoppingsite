@@ -20,6 +20,21 @@ class CategoryController extends Controller
         $em = $this->getDoctrine()->getManager();
         $categories = $em->getRepository('ProductManagementBundle:Category')->findAll();
         $notifications = $em->getRepository('NotificationsBundle:Notification')->findBy(array('user'=>$this->getUser(), 'isRead'=>false));
+        $categories = $em->getRepository('ProductManagementBundle:Category')->findAll();
+        $subcategories = $em->getRepository('ProductManagementBundle:SubCategory')->findAll();
+        if($categories==null){
+            $showsubcategory="false";
+            $showmarque="false";
+        }
+        elseif ($subcategories==null){
+            $showmarque="false";
+            $showsubcategory="true";
+
+        }
+        else{
+            $showmarque="true";
+            $showsubcategory="true";
+        }
         $category = new Category();
 
         $form = $this->createForm(CategoryType::class, $category, array('isEdit'=>false));
@@ -34,7 +49,7 @@ class CategoryController extends Controller
         }
 
         return $this->render('ProductManagementBundle:Category:categories.html.twig',
-            array('categories'=>$categories, 'notifications'=>$notifications,
+            array('categories'=>$categories,'showsubcategory'=>$showsubcategory,'showmarque'=>$showmarque, 'notifications'=>$notifications,
             'form'=>$form->createView()));
     }
 
@@ -52,9 +67,23 @@ class CategoryController extends Controller
             $em->flush();
             return $this->redirectToRoute('all_categories_admin');
         }
+        $categories = $em->getRepository('ProductManagementBundle:Category')->findAll();
+        $subcategories = $em->getRepository('ProductManagementBundle:SubCategory')->findAll();
+        if($categories==null){
+            $showsubcategory="false";
+            $showmarque="false";
+        }
+        elseif ($subcategories==null){
+            $showmarque="false";
+            $showsubcategory="true";
 
+        }
+        else{
+            $showmarque="true";
+            $showsubcategory="true";
+        }
         return $this->render('ProductManagementBundle:Category:editCategory.html.twig', array( 'notifications'=>$notifications,
-            'form'=>$form->createView()));
+            'showsubcategory'=>$showsubcategory,'showmarque'=>$showmarque,'form'=>$form->createView()));
     }
 
     public function deleteAction(Request $request){

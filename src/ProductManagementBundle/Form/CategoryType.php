@@ -16,7 +16,7 @@ class CategoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name');
-        if($options['isEdit'] == true){
+        /*if($options['isEdit'] == true){
             $builder->add('imageFile',VichImageType::class, [
                 'required' => false,
             ]);
@@ -24,7 +24,7 @@ class CategoryType extends AbstractType
             $builder->add('imageFile',VichImageType::class, [
                 'required' => true,
             ]);
-        }
+        }*/
         $builder->add('sauvegarder', SubmitType::class);
     }
 
