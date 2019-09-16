@@ -46,6 +46,15 @@ class ProductRepository extends \Doctrine\ORM\EntityRepository
             return $query->getResult();
         }
     }
+    public function getProductBycategory($i){
+        $em = $this->getEntityManager();
+        $query = $em
+            ->createQuery('select p from ProductManagementBundle:Product p INNER JOIN ProductManagementBundle:SubCategory s with s = p.subcategory INNER JOIN ProductManagementBundle:Category c with c = s.category
+                                                 WHERE c.id = ?1')
+            ->setParameter(1, $i);
+        return $query->getResult();
+
+    }
     public function getTopRatingByBrand($brand){
         $query = $this->getEntityManager()
             ->createQuery('select p from ProductManagementBundle:Product p WHERE p.enseigne = ?1 ORDER BY p.rating DESC')

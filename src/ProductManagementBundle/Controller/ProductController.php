@@ -7,6 +7,7 @@
  */
 
 namespace ProductManagementBundle\Controller;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Intl\Intl;
 
 
@@ -297,6 +298,12 @@ class ProductController extends Controller
         $values = json_encode($products);
         return $this->redirectToRoute('products_page', array('products'=>$values));
     }*/
+    public function showProductsAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $category = $em->getRepository('ProductManagementBundle:Category')->findAll();
+        $products = $em->getRepository('ProductManagementBundle:Product')->findAll();
+        return $this->render('@ProductManagement/Product/showProducts.html.twig',array('category'=>$category,'products'=>$products,'size'=>sizeof($products)));
+    }
     public function addProductAction(Request $request){
         $countries = Intl::getRegionBundle()->getCountryNames();
 
@@ -313,16 +320,41 @@ class ProductController extends Controller
     public function getSubcategoryByCategoryAction(Request $request){
         $em = $this->getDoctrine()->getManager();
         $category=$em->getRepository('ProductManagementBundle:Category')->find($request->get('id'));
-
         $subcategory = $em->getRepository('ProductManagementBundle:SubCategory')->findBycategory($category->getId());
-
         return new JsonResponse($subcategory);
     }
+    public function getSubcategoryByCategorysAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $category=$em->getRepository('ProductManagementBundle:Category')->find($request->get('id'));
+
+        $subcategory = $em->getRepository('ProductManagementBundle:SubCategory')->findBycategory($category->getId());
+        $products= $em->getRepository('ProductManagementBundle:Product')->getProductBycategory($category->getId());
+        $arrData = ['sub' =>$subcategory,'prd'=>$products];
+
+        return new JsonResponse($products);
+    }
+    public function getProductsBySubCategoryAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $category=$em->getRepository('ProductManagementBundle:SubCategory')->find($request->get('id'));
+
+        $products= $em->getRepository('ProductManagementBundle:Product')->findBysubcategory($category->getId());
+        return new JsonResponse($products);
+    }
+    public function getMarqueBySubCategoryAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $subcategory=$em->getRepository('ProductManagementBundle:SubCategory')->find($request->get('id'));
+        $marque = $em->getRepository('ProductManagementBundle:Marque')->findBysubcategory($subcategory->getId());
+        return new JsonResponse($marque);
+    }
     public function addProductdAction(Request $request){
+        $session = new Session();
+
         $em = $this->getDoctrine()->getManager();
         $subcategory=$em->getRepository('ProductManagementBundle:SubCategory')->find($request->get('subcategory'));
-        $product=new Product();
+        $marque=$em->getRepository('ProductManagementBundle:Marque')->find($request->get('marque'));
 
+        $product=new Product();
+        $product->setMarque($marque);
         if ($request->get('scripts')==1){
         $product->setRam($request->get('ram'));
         $product->setCamera($request->get('camera'));
@@ -344,17 +376,19 @@ class ProductController extends Controller
         $product->setAdress($request->get('adress'));
         $product->setName($request->get('title'));
         $file =$request->files->get('fileToUpload');
-        $fileName =$this->generateUniqueFileName().'.'.'png';
+        $fileName =$this->generateUniqueFileName().'.'.'jpg';
         $file->move(
             $this->getParameter('brochures_directory'),
             $fileName
         );
         $product->setImageName($fileName);
         $product->setUpdatedAt(new \DateTime());
+        $usr= $this->get('security.token_storage')->getToken()->getUser();
+        $product->setUser($usr);
         $em->persist($product);
         $em->flush();
-        dump($product);
-        die();
+        $session->getFlashBag()->add('success', 'your product has been added succesfully');
+        return $this->redirectToRoute('addProduct');
     }
     private function generateUniqueFileName()
     {

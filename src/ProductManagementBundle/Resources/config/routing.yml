@@ -91,7 +91,6 @@ delete_subcategory_admin:
 update_subcategory_admin:
     path:     /admin/subcategory/edit
     defaults: { _controller: ProductManagementBundle:SubCategory:edit }
-<<<<<<< HEAD
 
 all_marque_admin:
     path:     /admin/marques
@@ -111,6 +110,18 @@ addProduct:
 getSubCategoryByCategory:
     path:     /subcategory
     defaults: { _controller: ProductManagementBundle:Product:getSubcategoryByCategory}
+getSubCategoryByCategorys:
+    path:     /subcategorys
+    defaults: { _controller: ProductManagementBundle:Product:getSubcategoryByCategorys}
 addproductb:
     path:     /addproductd
     defaults: { _controller: ProductManagementBundle:Product:addProductd}
+getMarqueBySubCategory:
+    path:     /getMarques
+    defaults: { _controller: ProductManagementBundle:Product:getMarqueBySubCategory}
+showProduct:
+    path:     /showProducts
+    defaults: { _controller: ProductManagementBundle:Product:showProducts}
+showProductsBySubCategory:
+    path:     /showproductsbysub
+    defaults: { _controller: ProductManagementBundle:Product:getProductsBySubCategory}
