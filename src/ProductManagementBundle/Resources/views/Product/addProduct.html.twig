@@ -4,7 +4,9 @@
 
 {% endblock %}
 {% block body %}
+    <div align="center">
 <form action="{{ path('addproductb') }}" method="post" enctype="multipart/form-data">
+
     <div class="row">
         <div class="col-6">
             <div style="  width: 500px;
@@ -16,8 +18,8 @@
                     <input type="text" id="title" class="woocommerce-Input woocommerce-Input--text input-text" name="title"
                            id="reg_email" autocomplete="email" value=""/></p>
 
-                </p>
-                <label for="reg_email">Category&nbsp;<span class="required">*</span></label>
+                </p> <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <label for="reg_email">Category&nbsp;<span class="required">*</span></label></p>
 
                 <select id="scripts" name="scripts" onchange="changesubcategory()" class="form-control"
                         id="exampleFormControlSelect1">
@@ -25,15 +27,27 @@
                         <option value="{{ i.id }}">{{ i.name }}</option>
                     {% endfor %}
                 </select>
-                <br><br>
+                <br>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <label for="reg_email">Subcategory&nbsp;<span class="required">*</span></label>
-
+                </p>
                 <div id="jjj">
                         <select id="fff"  class="form-control">
 
                         <option value="none">none</option>
                         </select>
                 </div>
+                <br>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <label for="reg_email">Marque&nbsp;<span class="required">*</span></label>
+                </p>
+                <div id="ssss">
+                    <select id="dddd"  class="form-control">
+
+                        <option value="none">none</option>
+                    </select>
+                </div>
+
                 <div id="kkk">
 
                 </div>
@@ -76,16 +90,17 @@
         </div>
         </div>
     </div>
-    <div align="center"><input type="submit" class="btn btn-success" value="Submit"></div></form>
+    <div align="center"><input type="submit" class="btn btn-success" value="Submit"></div></form></div><br><br>
+    {% for flashMessage in app.session.flashBag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <script type="text/javascript">
-        function changesubcategory(i) {
+        function changesubcategory() {
             var sel = document.getElementById('scripts');
             var opt = sel.options[sel.selectedIndex];
-            console.log(opt.value);
-            console.log(opt.text);
-            console.log('hello');
-            var v='voiture';
             jQuery.ajax({
                 url: "{{ (path('getSubCategoryByCategory')) }}",
                 type: "POST",
@@ -95,7 +110,7 @@
                 },
                 async: true,
                 success: function (data) {
-                    var m = '<select name="subcategory" class="form-control form-control-sm" id="subcategory">';
+                    var m = "<select name='subcategory' onchange='changeMarque()' class='form-control form-control-sm' id='subcategory'>";
                     var k;
                     jQuery('#jjj').html('');
                     data.forEach(function (element) {
@@ -103,7 +118,7 @@
 
                     })
                     jQuery('#jjj').append(m + k + '</select>');
-                    if (parseInt(opt.value)==1){
+                    if (parseInt(opt.value)==5){
                         var mk="<br><div class='row'> <div class='col-6'><p class='woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide'><label for='reg_email'> Ram&nbsp;<span class='required'>*</span></label><input type='text' id='ram' class='woocommerce-Input woocommerce-Input--text input-text' name='ram' id='ram' autocomplete='email' value=''/></p></p></div><div class='col-6'><p class='woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide'><label for='reg_email'>Camera&nbsp;<span class='required'>*</span></label><input type='text' class='woocommerce-Input woocommerce-Input--text input-text' name='camera' id='camera' autocomplete='email' value=''/></p></p></div></div>";
                         jQuery('#kkk').html('');
                         jQuery('#kkk').append(mk);
@@ -118,9 +133,36 @@
                         jQuery('#kkk').html('');
                         jQuery('#kkk').append(mk);
                     }
+                    changeMarque();
                 }
             });
         }
+        function changeMarque() {
+            var sel = document.getElementById('subcategory');
+            var opt = sel.options[sel.selectedIndex];
+            jQuery.ajax({
+                url: "{{ (path('getMarqueBySubCategory')) }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    'id': parseInt(opt.value),
+                },
+                async: true,
+                success: function (data) {
+                    var m = '<select name="marque" class="form-control form-control-sm" id="marque">';
+                    var k;
+                    jQuery('#ssss').html('');
+                    data.forEach(function (element) {
+                        k = k + '<option value="' + element.id + '" >' + element.name + '</option>'
+
+                    })
+                    jQuery('#ssss').append(m + k + '</select>');
+
+
+                }
+            });
+        }
+
     </script>
 {% endblock %}
 {% block footercontent %}

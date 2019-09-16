@@ -1,0 +1,899 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <div class="row">
+        <div class="col-4">
+            <div id="sidebar" style="max-width: 100%" class="sidebar" role="complementary">
+                <aside id="electro_product_categories_widget-1"
+                       class="widget woocommerce widget_product_categories electro_widget_product_categories">
+                    <ul class="product-categories category-single">
+                        <li class="product_cat">
+                            <ul class="show-all-cat">
+                                <li class="product_cat"><span class="show-all-cat-dropdown">Show All Categories</span>
+                                    <ul>
+                                        {% for i in category %}
+                                            <li class="cat-item cat-item-89"><a
+                                                        onclick="changesubcategory({{ i.id }},'{{ i.name }}')">{{ i.name }}
+                                                </a> <span class="count"></span>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div id="jjj">
+                            </div>
+                        </li>
+                    </ul>
+                </aside>
+                <aside id="electro_products_filter-1" class="widget widget_electro_products_filter"><h3
+                            class="widget-title">Filters</h3>
+                    <aside id="woocommerce_layered_nav-1"
+                           class="widget woocommerce widget_layered_nav woocommerce-widget-layered-nav"><h3
+                                class="widget-title">Brands</h3>
+                        <ul class="woocommerce-widget-layered-nav-list">
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a rel="nofollow"
+                                                                                                          href="indexe8f6.html?filter_brands=acer">Acer</a>
+                                <span class="count">(1)</span></li>
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a rel="nofollow"
+                                                                                                          href="index695c.html?filter_brands=apple">Apple</a>
+                                <span class="count">(1)</span></li>
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a rel="nofollow"
+                                                                                                          href="indexb269.html?filter_brands=asus">Asus</a>
+                                <span class="count">(1)</span></li>
+                        </ul>
+                    </aside>
+                    <aside id="woocommerce_layered_nav-2"
+                           class="widget woocommerce widget_layered_nav woocommerce-widget-layered-nav"><h3
+                                class="widget-title">Color</h3>
+                        <ul class="woocommerce-widget-layered-nav-list">
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a rel="nofollow"
+                                                                                                          href="index9e72.html?filter_color=black-with-red">Black
+                                    with Red</a> <span class="count">(1)</span></li>
+                            <li class="woocommerce-widget-layered-nav-list__item wc-layered-nav-term "><a rel="nofollow"
+                                                                                                          href="indexf6a6.html?filter_color=white-with-gold">White
+                                    with Gold</a> <span class="count">(1)</span></li>
+                        </ul>
+                    </aside>
+                    <aside id="woocommerce_price_filter-1" class="widget woocommerce widget_price_filter"><h3
+                                class="widget-title">Price</h3>
+                        <form method="get"
+                              action="https://demo2.madrasthemes.com/electro-wide/product-category/accessories/">
+                            <div class="price_slider_wrapper">
+                                <div class="price_slider" style="display:none;"></div>
+                                <div class="price_slider_amount">
+                                    <input type="text" id="min_price" name="min_price" value="35" data-min="35"
+                                           placeholder="Min price"/>
+                                    <input type="text" id="max_price" name="max_price" value="1300" data-max="1300"
+                                           placeholder="Max price"/>
+                                    <button type="submit" class="button">Filter</button>
+                                    <div class="price_label" style="display:none;">
+                                        Price: <span class="from"></span> &mdash; <span class="to"></span>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </aside>
+                    <script type="text/javascript">
+                        jQuery(document).ready(function () {
+                            jQuery('.widget_electro_products_filter .widget .widget-title + ul').hideMaxListItems({
+                                'max': 5,
+                                'speed': 500,
+                                'moreText': "+ Show more",
+                                'lessText': "- Show less",
+                            });
+                            if (jQuery('.widget_electro_products_filter > .widget').length == 0) {
+                                jQuery('.widget_electro_products_filter').hide();
+                            }
+                        });
+                    </script>
+                </aside>
+                <aside id="media_image-2" class="widget widget_media_image"><img width="270" height="315"
+                                                                                 src="../../wp-content/uploads/2016/02/shop-sidebar-ad-banner.jpg"
+                                                                                 class="image wp-image-2142  attachment-full size-full"
+                                                                                 alt=""
+                                                                                 style="max-width: 100%; height: auto;"
+                                                                                 srcset="https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/02/shop-sidebar-ad-banner.jpg 270w, https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2016/02/shop-sidebar-ad-banner-257x300.jpg 257w"
+                                                                                 sizes="(max-width: 270px) 100vw, 270px"/>
+                </aside>
+            </div><!-- /.sidebar-shop -->
+
+        </div>
+        <div class="col-8">
+            <div id="content" class="site-content" tabindex="-1">
+                <div class="container">
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main">
+
+
+                            <header class="page-header">
+                                <h1 class="page-title">All Products</h1>
+                                <p class="woocommerce-result-count">
+                                    <div id="size">Showing all {{ size }} results</div></p>
+                            </header>
+
+                            <div class="shop-control-bar">
+                                <div class="handheld-sidebar-toggle">
+                                    <button class="btn sidebar-toggler" type="button"><i
+                                                class="fas fa-sliders-h"></i><span>Filters</span></button>
+                                </div>
+                                <ul class="shop-view-switcher nav nav-tabs" role="tablist">
+                                    <li class="nav-item"><a class="nav-link active" data-toggle="tab"
+                                                            data-archive-class="grid" title="Grid View" href="#grid"><i
+                                                    class="fa fa-th"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link " data-toggle="tab"
+                                                            data-archive-class="grid-extended"
+                                                            title="Grid Extended View" href="#grid-extended"><i
+                                                    class="fa fa-align-justify"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link " data-toggle="tab"
+                                                            data-archive-class="list-view" title="List View"
+                                                            href="#list-view"><i class="fa fa-list"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link " data-toggle="tab"
+                                                            data-archive-class="list-view-small" title="List View Small"
+                                                            href="#list-view-small"><i class="fa fa-th-list"></i></a>
+                                    </li>
+                                </ul>
+                                <form class="woocommerce-ordering" method="get">
+                                    <select name="orderby" class="orderby">
+                                        <option value="menu_order" selected='selected'>Default sorting</option>
+                                        <option value="popularity">Sort by popularity</option>
+                                        <option value="rating">Sort by average rating</option>
+                                        <option value="date">Sort by latest</option>
+                                        <option value="price">Sort by price: low to high</option>
+                                        <option value="price-desc">Sort by price: high to low</option>
+                                    </select>
+                                    <input type="hidden" name="paged" value="1"/>
+                                </form>
+                            </div>
+                            <div id="kkkkk">
+
+                            <ul data-view="grid" data-toggle="shop-products"
+                                class="products columns-5 columns__wide--5">
+                                {% for i in products %}
+
+                                <li class="post-2718 product type-product status-publish has-post-thumbnail product_cat-headphones first instock shipping-taxable purchasable product-type-simple">
+                                    <div class="product-outer product-item__outer">
+                                        <div class="product-inner product-item__inner">
+                                            <div class="product-loop-header product-item__header"><span
+                                                        class="loop-product-categories"><a href="headphones/index.html"
+                                                                                           rel="tag">{{ i.subcategory.name }}</a></span><a
+                                                        href="../../product/white-solo-2-wireless/index.html"
+                                                        class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                                                    <h2 class="woocommerce-loop-product__title">{{ i.name}}</h2>
+                                                    <div class="product-thumbnail product-item__thumbnail"><img
+                                                                width="300" height="300"
+                                                                src="{{ asset('uploads/' ~ i.imagename)}}"
+                                                                class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                                alt=""/></div>
+                                                </a></div><!-- /.product-loop-header -->
+                                            <div class="product-loop-body product-item__body"><span
+                                                        class="loop-product-categories"><a href="headphones/index.html"
+                                                                                           rel="tag">Headphones</a></span><a
+                                                        href="../../product/white-solo-2-wireless/index.html"
+                                                        class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                                                    <h2 class="woocommerce-loop-product__title">White Solo 2
+                                                        Wireless</h2>
+                                                    <div class="product-rating">
+                                                        <div class="star-rating" title="Rated 0 out of 5"><span
+                                                                    style="width:0%"><strong class="rating">0</strong> out of 5</span>
+                                                        </div>
+                                                        (0)
+                                                    </div>
+                                                    <div class="product-short-description">
+                                                        <ul>
+                                                            <li><span class="a-list-item">Pair and Play with your Bluetooth® device with 30&#039; range</span>
+                                                            </li>
+                                                            <li><span class="a-list-item">12 hour rechargeable battery with Fuel Gauge</span>
+                                                            </li>
+                                                            <li><span class="a-list-item">Take hands-free calls with built-in mic*</span>
+                                                            </li>
+                                                            <li><span class="a-list-item">Fine-tuned acoustics for clarity, breadth and balance</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="product-sku">SKU: 5487FB8/42</div>
+                                                </a></div><!-- /.product-loop-body -->
+                                            <div class="product-loop-footer product-item__footer">
+                                                <div class="price-add-to-cart">
+                                                    <span class="price"><span class="electro-price"><span
+                                                                    class="woocommerce-Price-amount amount"><span
+                                                                        class="woocommerce-Price-currencySymbol">&pound;</span>{{ i.price}}</span></span></span>
+                                                    <div class="add-to-cart-wrap" data-toggle="tooltip"
+                                                         data-title="Add to cart"><a
+                                                                href="index48c7.html?add-to-cart=2718" data-quantity="1"
+                                                                class="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                                data-product_id="2718" data-product_sku="5487FB8/42"
+                                                                aria-label="Add &ldquo;White Solo 2 Wireless&rdquo; to your cart"
+                                                                rel="nofollow">Add to cart</a></div>
+                                                </div><!-- /.price-add-to-cart -->
+                                                <div class="hover-area">
+                                                    <div class="action-buttons">
+                                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2718">
+                                                            <div class="yith-wcwl-add-button show"
+                                                                 style="display:block">
+
+
+                                                                <a href="indexad50.html?add_to_wishlist=2718"
+                                                                   rel="nofollow" data-product-id="2718"
+                                                                   data-product-type="simple" class="add_to_wishlist">
+                                                                    Wishlist</a>
+                                                                <img src="../../wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
+                                                                     class="ajax-loading" alt="loading" width="16"
+                                                                     height="16" style="visibility:hidden"/>
+                                                            </div>
+
+                                                            <div class="yith-wcwl-wishlistaddedbrowse hide"
+                                                                 style="display:none;">
+                                                                <span class="feedback">Product added!</span>
+                                                                <a href="../../wishlist/index.html" rel="nofollow">
+                                                                    Browse Wishlist </a>
+                                                            </div>
+
+                                                            <div class="yith-wcwl-wishlistexistsbrowse hide"
+                                                                 style="display:none">
+                                                                <span class="feedback">The product is already in the wishlist!</span>
+                                                                <a href="../../wishlist/index.html" rel="nofollow">
+                                                                    Browse Wishlist </a>
+                                                            </div>
+
+                                                            <div style="clear:both"></div>
+                                                            <div class="yith-wcwl-wishlistaddresponse"></div>
+
+                                                        </div>
+
+                                                        <div class="clear"></div>
+                                                        <a href="https://demo2.madrasthemes.com/electro-wide?action=yith-woocompare-add-product&amp;id=2718"
+                                                           class="add-to-compare-link"
+                                                           data-product_id="2718">Compare</a></div>
+                                                </div>
+                                            </div><!-- /.product-loop-footer --></div><!-- /.product-inner --></div>
+                                    <!-- /.product-outer --></li>
+
+                                {% endfor %}
+                            </ul>
+                            </div>
+                            <div class="shop-control-bar-bottom">
+                                <p class="woocommerce-result-count">
+                                <div id="size1">Showing all {{ size }} results</div></p>
+                            </div>
+
+
+                        </main><!-- #main -->
+                    </div><!-- #primary -->
+
+
+                </div>
+            </div><!-- .col-full -->
+        </div><!-- #content -->
+
+        <section class="brands-carousel">
+            <h2 class="sr-only">Brands Carousel</h2>
+            <div class="container">
+                <div id="owl-brands" class="owl-brands owl-carousel electro-owl-carousel owl-outer-nav"
+                     data-ride="owl-carousel" data-carousel-selector="self"
+                     data-carousel-options="{&quot;items&quot;:5,&quot;navRewind&quot;:true,&quot;autoplayHoverPause&quot;:true,&quot;nav&quot;:true,&quot;stagePadding&quot;:1,&quot;dots&quot;:false,&quot;rtl&quot;:true,&quot;navText&quot;:[&quot;&lt;i class=\&quot;fa fa-chevron-right\&quot;&gt;&lt;\/i&gt;&quot;,&quot;&lt;i class=\&quot;fa fa-chevron-left\&quot;&gt;&lt;\/i&gt;&quot;],&quot;touchDrag&quot;:false,&quot;responsive&quot;:{&quot;0&quot;:{&quot;items&quot;:1},&quot;480&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:2},&quot;992&quot;:{&quot;items&quot;:3},&quot;1200&quot;:{&quot;items&quot;:5}}}">
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Acer</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/themeforest.png" alt="Acer" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Apple</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/graphicriver.png" alt="Apple" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Asus</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/codecanyon.png" alt="Asus" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Dell</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/audiojungle.png" alt="Dell" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Gionee</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/activeden.png" alt="Gionee" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>HP</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/3docean.png" alt="HP" width="200" height="60"
+                                 class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>HTC</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/themeforest.png" alt="HTC" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>IBM</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/graphicriver.png" alt="IBM" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Lenova</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/codecanyon.png" alt="Lenova" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>LG</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/audiojungle.png" alt="LG" width="200" height="60"
+                                 class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Micromax</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/activeden.png" alt="Micromax" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                    <div class="item">
+                        <figure>
+                            <figcaption class="text-overlay">
+                                <div class="info">
+                                    <h4>Microsoft</h4>
+                                </div><!-- /.info -->
+                            </figcaption>
+                            <img src="../../wp-content/uploads/2016/03/3docean.png" alt="Microsoft" width="200"
+                                 height="60" class="img-responsive desaturate">
+                        </figure>
+                    </div><!-- /.item -->
+
+
+                </div><!-- /.owl-carousel -->
+            </div>
+        </section>
+    </div></div>
+    <script type="application/ld+json">{
+            "@context": "http:\/\/schema.org\/",
+            "@graph": [
+                {
+                    "@type": "Product",
+                    "@id": "product-2718",
+                    "name": "White Solo 2 Wireless",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/1.jpg",
+                    "description": "Pair and Play with your Bluetooth\u00ae device with 30&#039; range 12 hour rechargeable battery with Fuel Gauge Take hands-free calls with built-in mic* Fine-tuned acoustics for clarity, breadth and balance",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/white-solo-2-wireless\/",
+                    "sku": "5487FB8\/42",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "248.99",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2711",
+                    "name": "External SSD USB 3.1 750 GB",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/WifiRouter.jpg",
+                    "description": "Intel Core i5 processors (13-inch model) Store all of your data with a large capacity Store all of your data with a large capacity Enjoy blazing-fast read\/write speeds Enjoy a compact and lightweight design Force Touch trackpad (13-inch model)",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/external-ssd-usb-3-1-750-gb\/",
+                    "sku": "5487FB8\/38",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "3.00",
+                        "ratingCount": "3",
+                        "reviewCount": "3"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "385",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2709",
+                    "name": "Pendrive USB 3.0 Flash 64 GB",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/FlashDrive.jpg",
+                    "description": "Spend less time waiting as it transfer large photos, videos and other files up to 10 times faster than USB 2.0 Super-fast transfer speeds (up to 190MB\/sec) USB 3.0 enabled Password Protect Your Private Files Recover Lost or Deleted Photos with RescuePRO Deluxe",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/pendrive-usb-3-0-flash-64-gb\/",
+                    "sku": "5487FB8\/37",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.00",
+                        "ratingCount": "3",
+                        "reviewCount": "3"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "110",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2652",
+                    "name": "Powerbank 11 300 mAh Violet with Fox",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/MobilePowerBank.jpg",
+                    "description": "Dual output USB interfaces Compatible with all smartphones Portable design and light weight Battery type: Lithium-ion",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/powerbank-11-300-mah-violet-with-fox\/",
+                    "sku": "5487FB8\/12",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "1300",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2647",
+                    "name": "Clear View Cover Case to Galasy 2016 Pink",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/MobileCase1.jpg",
+                    "description": "Clock on lock Water proof Dialing monitor",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/clear-view-cover-case-to-galasy-2016-pink\/",
+                    "sku": "5487FB8\/20",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "248",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2635",
+                    "name": "Wireless Charger 2040 White",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/MobilePowerBank2.jpg",
+                    "description": "Wireless Fast Charge feature available for even faster charging speeds on select models Portable, attractive design for use in multiple locations Multi-colored LED halo indicates charging status",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/wireless-charger-2040-white\/",
+                    "sku": "5487FB8\/13",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "248",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2628",
+                    "name": "Powerbank 1130 mAh Blue",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/MobileBank.jpg",
+                    "description": "11300 mAh LED Indicator 5V 2.0A Output",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/powerbank-1130-mah-blue\/",
+                    "sku": "5487FB8\/09",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "200",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2608",
+                    "name": "Purple Solo 2 Wireless",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/1.jpg",
+                    "description": "Fine-tuned acoustics for clarity, breadth and balance Streamlined design for a custom-fit Durable and foldable so you can take them on-the-go ake calls and control music with RemoteTalk cable",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/purple-solo-2-wireless\/",
+                    "sku": "5487FB8\/24",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "248",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/OutOfStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2439",
+                    "name": "Ultra Wireless S50 Headphones S50 with Bluetooth",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/1.jpg",
+                    "description": "4.5 inch HD Touch Screen (1280 x 720) Android 4.4 KitKat OS 1.4 GHz Quad Core\u2122 Processor 20 MP front and 28 megapixel CMOS rear camera Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. SKU: FW511948218",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/ultra-wireless-s50-headphones-s50-with-bluetooth\/",
+                    "sku": "FW511948218",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.33",
+                        "ratingCount": "3",
+                        "reviewCount": "3"
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "35",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2441",
+                    "name": "Headphones USB Wires",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/headphone-usb-wires.jpg",
+                    "description": "High-fidelity stereo music and clear speech 100% Stable and Comfortable when exercising, running and other outdoor sports Up to 6 hours music play 7 hours talking time Force Touch trackpad (13-inch model)",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/headphones-usb-wires\/",
+                    "sku": "5487FB8\/27",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "50",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                },
+                {
+                    "@type": "Product",
+                    "@id": "product-2440",
+                    "name": "Universal Headphones Case in Black",
+                    "image": "https:\/\/demo2.madrasthemes.com\/electro-wide\/wp-content\/uploads\/2016\/03\/headphone-case.jpg",
+                    "description": "Brand new and high quality Made of supreme quality, durable EVA crush resistant, anti-shock material. Soft inner cloth lining, one mesh pocket inside. Compact and functional hard case keeps items safe and extremely portable. Force Touch trackpad (13-inch model)",
+                    "url": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product\/universal-headphones-case-in-black\/",
+                    "sku": "5487FB8\/28",
+                    "brand": {
+                        "@type": "Thing",
+                        "name": ""
+                    },
+                    "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "GBP",
+                        "price": "159",
+                        "itemCondition": "http:\/\/schema.org\/NewCondition",
+                        "availability": "http:\/\/schema.org\/InStock",
+                        "seller": {
+                            "@type": "Organization",
+                            "name": "Electro"
+                        }
+                    }
+                }
+            ]
+        }</script>
+    <script type="application/ld+json">{
+            "@context": "https:\/\/schema.org\/",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "name": "Home",
+                        "@id": "https:\/\/demo2.madrasthemes.com\/electro-wide"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "name": "Accessories",
+                        "@id": "https:\/\/demo2.madrasthemes.com\/electro-wide\/product-category\/accessories\/"
+                    }
+                }
+            ]
+        }</script>
+    <script type="text/javascript">
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+        document.body.className = c;
+    </script>
+    <link rel='stylesheet' id='js_composer_front-css'
+          href="{{ asset('wp-content/plugins/js_composer/assets/css/js_composer.mine23c.css') }}" type='text/css'
+          media='all'/>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min7359.js') }}"></script>
+
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl7888.js') }}"></script>
+
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/contact-form-7/includes/js/scripts3c21.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js') }}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.minf8ee.js') }}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.minf8ee.js') }}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/yith-woocommerce-compare/assets/js/woocompare.min6259.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/yith-woocommerce-compare/assets/js/jquery.colorbox-min13ac.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min005e.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-content/themes/electro/assets/js/tether.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/bootstrap.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/jquery.waypoints.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/jquery.easing.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/scrollup.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/bootstrap-hover-dropdown.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/jquery.mCustomScrollbar254d.js') }}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript' src="{{ asset('wp-content/themes/electro/assets/js/electro.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/owl.carousel.min254d.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-content/themes/electro/assets/js/pace.min254d.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-includes/js/wp-embed.minfee8.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/js_composer/assets/js/dist/js_composer_front.mine23c.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/themes/electro/assets/js/hidemaxlistitem.min254d.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/ui/core.mine899.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/ui/widget.mine899.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/ui/mouse.mine899.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/ui/slider.mine899.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/jquery-ui-touch-punch/jquery-ui-touch-punch.minf8ee.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/accounting/accounting.minaffb.js') }}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/frontend/price-slider.minf8ee.js') }}"></script>
+    <script type="text/javascript">
+        function changesubcategory(i, k) {
+            console.log(k)
+            var mkk = "<ul><li class='cat-item cat-item-88 current-cat'><a><b>" + k + "</b></a> <span class='count'></span><ul class='children'>";
+
+            jQuery.ajax({
+                url: "{{ (path('getSubCategoryByCategory')) }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    'id': parseInt(i),
+                },
+                async: true,
+                success: function (data) {
+                    var k = "";
+                    jQuery('#jjj').html('');
+                    data.forEach(function (element) {
+                        k = k + '<li class="cat-item cat-item-91"><a onclick="showprsub('+element.id+')">' + element.name + '</a> <span class="count"></span></li>';
+                    })
+                    jQuery('#jjj').append(mkk + k + '</ul></li></ul>');
+                    console.log(data);
+                }
+            });
+            jQuery.ajax({
+                url: "{{ (path('getSubCategoryByCategorys')) }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    'id': parseInt(i),
+                },
+                async: true,
+                success: function (data) {
+                    var d = "";
+                    jQuery('#kkkkk').html('');
+                    var path= '/shoppingsite/shoppingsite/web/uploads/';
+                    data.forEach(function (element) {
+                        d = d + '<li class="post-2718 product type-product status-publish has-post-thumbnail product_cat-headphones first instock shipping-taxable purchasable product-type-simple"><div class="product-outer product-item__outer"><div class="product-inner product-item__inner"><div class="product-loop-header product-item__header"><span class="loop-product-categories"><a href="headphones/index.html" rel="tag">'+element.subcategory.name+'</a></span><a href="../../product/white-solo-2-wireless/index.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"> <h2 class="woocommerce-loop-product__title">'+element.name+'</h2><div class="product-thumbnail product-item__thumbnail"><img width="300" height="300" src="'+path+element.imageName+'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""/></div> </a></div><!-- /.product-loop-header --> <div class="product-loop-body product-item__body"><span class="loop-product-categories"><a href="headphones/index.html" rel="tag">Headphones</a></span><a href="../../product/white-solo-2-wireless/index.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><h2 class="woocommerce-loop-product__title">White Solo 2 Wireless</h2><div class="product-rating"><div class="star-rating" title="Rated 0 out of 5"><span                                                                    style="width:0%"><strong class="rating">0</strong> out of 5</span>                                                        </div>                                                        (0)                                                    </div>                                                    <div class="product-short-description">                                                        <ul>                                                            <li><span class="a-list-item">Pair and Play with your Bluetooth® device with 30&#039; range</span>                                                            </li>                                                            <li><span class="a-list-item">12 hour rechargeable battery with Fuel Gauge</span>                                                            </li>                                                            <li><span class="a-list-item">Take hands-free calls with built-in mic*</span>                                                            </li>                                                            <li><span class="a-list-item">Fine-tuned acoustics for clarity, breadth and balance</span>                                                            </li>                                                        </ul>                                                    </div>                                                    <div class="product-sku">SKU: 5487FB8/42</div>                                                </a></div><!-- /.product-loop-body -->                                            <div class="product-loop-footer product-item__footer">                                                <div class="price-add-to-cart">                                                    <span class="price"><span class="electro-price"><span                                                                    class="woocommerce-Price-amount amount"><span                                                                        class="woocommerce-Price-currencySymbol">&pound;</span>'+element.price+'</span></span></span>                                                    <div class="add-to-cart-wrap" data-toggle="tooltip"                                                         data-title="Add to cart"><a                                                                href="index48c7.html?add-to-cart=2718" data-quantity="1"                                                                class="button product_type_simple add_to_cart_button ajax_add_to_cart"                                                                data-product_id="2718" data-product_sku="5487FB8/42"                                                                aria-label="Add &ldquo;White Solo 2 Wireless&rdquo; to your cart"                                                                rel="nofollow">Add to cart</a></div>                                                </div><!-- /.price-add-to-cart -->                                                <div class="hover-area">                                                    <div class="action-buttons">                                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2718">                                                            <div class="yith-wcwl-add-button show"                                                                 style="display:block">                                                                <a href="indexad50.html?add_to_wishlist=2718"                                                                   rel="nofollow" data-product-id="2718"                                                                   data-product-type="simple" class="add_to_wishlist">                                                                    Wishlist</a>                                                                <img src="../../wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"                                                                     class="ajax-loading" alt="loading" width="16"                                                                     height="16" style="visibility:hidden"/>                                                            </div>                                                            <div class="yith-wcwl-wishlistaddedbrowse hide"                                                                 style="display:none;">                                                                <span class="feedback">Product added!</span>                                                                <a href="../../wishlist/index.html" rel="nofollow">                                                                    Browse Wishlist </a>                                                            </div>                                                            <div class="yith-wcwl-wishlistexistsbrowse hide"                                                                 style="display:none">                                                                <span class="feedback">The product is already in the wishlist!</span>                                                                <a href="../../wishlist/index.html" rel="nofollow">                                                                    Browse Wishlist </a>                                                            </div>                                                            <div style="clear:both"></div>                                                            <div class="yith-wcwl-wishlistaddresponse"></div>                                                        </div>                                                        <div class="clear"></div>                                                        <a href="https://demo2.madrasthemes.com/electro-wide?action=yith-woocompare-add-product&amp;id=2718"                                                           class="add-to-compare-link"                                                           data-product_id="2718">Compare</a></div>                                                </div>                                            </div><!-- /.product-loop-footer --></div><!-- /.product-inner --></div>                                    <!-- /.product-outer --></li>';
+
+                    })
+                    jQuery('#kkkkk').append(' <ul data-view="grid" data-toggle="shop-products" class="products columns-5 columns__wide--5">'+d+'</ul>');
+                    jQuery('#size').html('');
+                    jQuery('#size1').html('');
+                    jQuery('#size').append('Showing all '+ data.length +' results')
+                    jQuery('#size1').append('Showing all '+ data.length +' results')
+                }
+            });
+        }
+        function showprsub(i) {
+
+            jQuery.ajax({
+                url: "{{ (path('showProductsBySubCategory')) }}",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    'id': parseInt(i),
+                },
+                async: true,
+                success: function (data) {
+                    var d = "";
+                    jQuery('#kkkkk').html('');
+                    var path= '/shoppingsite/shoppingsite/web/uploads/';
+                    data.forEach(function (element) {
+                        d = d + '<li class="post-2718 product type-product status-publish has-post-thumbnail product_cat-headphones first instock shipping-taxable purchasable product-type-simple"><div class="product-outer product-item__outer"><div class="product-inner product-item__inner"><div class="product-loop-header product-item__header"><span class="loop-product-categories"><a href="headphones/index.html" rel="tag">'+element.subcategory.name+'</a></span><a href="../../product/white-solo-2-wireless/index.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"> <h2 class="woocommerce-loop-product__title">'+element.name+'</h2><div class="product-thumbnail product-item__thumbnail"><img width="300" height="300" src="'+path+element.imageName+'" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""/></div> </a></div><!-- /.product-loop-header --> <div class="product-loop-body product-item__body"><span class="loop-product-categories"><a href="headphones/index.html" rel="tag">Headphones</a></span><a href="../../product/white-solo-2-wireless/index.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><h2 class="woocommerce-loop-product__title">White Solo 2 Wireless</h2><div class="product-rating"><div class="star-rating" title="Rated 0 out of 5"><span                                                                    style="width:0%"><strong class="rating">0</strong> out of 5</span>                                                        </div>                                                        (0)                                                    </div>                                                    <div class="product-short-description">                                                        <ul>                                                            <li><span class="a-list-item">Pair and Play with your Bluetooth® device with 30&#039; range</span>                                                            </li>                                                            <li><span class="a-list-item">12 hour rechargeable battery with Fuel Gauge</span>                                                            </li>                                                            <li><span class="a-list-item">Take hands-free calls with built-in mic*</span>                                                            </li>                                                            <li><span class="a-list-item">Fine-tuned acoustics for clarity, breadth and balance</span>                                                            </li>                                                        </ul>                                                    </div>                                                    <div class="product-sku">SKU: 5487FB8/42</div>                                                </a></div><!-- /.product-loop-body -->                                            <div class="product-loop-footer product-item__footer">                                                <div class="price-add-to-cart">                                                    <span class="price"><span class="electro-price"><span                                                                    class="woocommerce-Price-amount amount"><span                                                                        class="woocommerce-Price-currencySymbol">&pound;</span>'+element.price+'</span></span></span>                                                    <div class="add-to-cart-wrap" data-toggle="tooltip"                                                         data-title="Add to cart"><a                                                                href="index48c7.html?add-to-cart=2718" data-quantity="1"                                                                class="button product_type_simple add_to_cart_button ajax_add_to_cart"                                                                data-product_id="2718" data-product_sku="5487FB8/42"                                                                aria-label="Add &ldquo;White Solo 2 Wireless&rdquo; to your cart"                                                                rel="nofollow">Add to cart</a></div>                                                </div><!-- /.price-add-to-cart -->                                                <div class="hover-area">                                                    <div class="action-buttons">                                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2718">                                                            <div class="yith-wcwl-add-button show"                                                                 style="display:block">                                                                <a href="indexad50.html?add_to_wishlist=2718"                                                                   rel="nofollow" data-product-id="2718"                                                                   data-product-type="simple" class="add_to_wishlist">                                                                    Wishlist</a>                                                                <img src="../../wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"                                                                     class="ajax-loading" alt="loading" width="16"                                                                     height="16" style="visibility:hidden"/>                                                            </div>                                                            <div class="yith-wcwl-wishlistaddedbrowse hide"                                                                 style="display:none;">                                                                <span class="feedback">Product added!</span>                                                                <a href="../../wishlist/index.html" rel="nofollow">                                                                    Browse Wishlist </a>                                                            </div>                                                            <div class="yith-wcwl-wishlistexistsbrowse hide"                                                                 style="display:none">                                                                <span class="feedback">The product is already in the wishlist!</span>                                                                <a href="../../wishlist/index.html" rel="nofollow">                                                                    Browse Wishlist </a>                                                            </div>                                                            <div style="clear:both"></div>                                                            <div class="yith-wcwl-wishlistaddresponse"></div>                                                        </div>                                                        <div class="clear"></div>                                                        <a href="https://demo2.madrasthemes.com/electro-wide?action=yith-woocompare-add-product&amp;id=2718"                                                           class="add-to-compare-link"                                                           data-product_id="2718">Compare</a></div>                                                </div>                                            </div><!-- /.product-loop-footer --></div><!-- /.product-inner --></div>                                    <!-- /.product-outer --></li>';
+
+                    })
+                    jQuery('#kkkkk').append(' <ul data-view="grid" data-toggle="shop-products" class="products columns-5 columns__wide--5">'+d+'</ul>');
+                    jQuery('#size').html('');
+                    jQuery('#size1').html('');
+                    jQuery('#size').append('Showing all '+ data.length +' results')
+                    jQuery('#size1').append('Showing all '+ data.length +' results')
+                }
+            });        }
+    </script>
+{% endblock %}
+{% block footercontent %}
+{% endblock %}

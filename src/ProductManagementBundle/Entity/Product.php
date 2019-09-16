@@ -151,6 +151,27 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
      */
     private $subcategory;
 
+     /**
+      * @ORM\ManyToOne(targetEntity="ProductManagementBundle\Entity\Marque")
+      * @ORM\JoinColumn(name="marque_id",referencedColumnName="id", onDelete="CASCADE")
+      */
+     private $marque;
+
+     /**
+      * @return mixed
+      */
+     public function getMarque()
+     {
+         return $this->marque;
+     }
+
+     /**
+      * @param mixed $marque
+      */
+     public function setMarque($marque)
+     {
+         $this->marque = $marque;
+     }
 
     /**
      * @ORM\ManyToOne(targetEntity="BakeryManagementBundle\Entity\Enseigne")
@@ -237,6 +258,27 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
      * @ORM\Column(name="sales", type="integer", nullable=true)
      */
     private $sales;
+     /**
+      * @ORM\ManyToOne(targetEntity="UsersBundle\Entity\Users")
+      * @ORM\JoinColumn(name="user_id",referencedColumnName="id", onDelete="CASCADE")
+      */
+     private $user;
+
+     /**
+      * @return mixed
+      */
+     public function getUser()
+     {
+         return $this->user;
+     }
+
+     /**
+      * @param mixed $user
+      */
+     public function setUser($user)
+     {
+         $this->user = $user;
+     }
 
     /**
      * Product constructor.
