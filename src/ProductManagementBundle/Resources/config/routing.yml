@@ -125,3 +125,6 @@ showProduct:
 showProductsBySubCategory:
     path:     /showproductsbysub
     defaults: { _controller: ProductManagementBundle:Product:getProductsBySubCategory}
+uniqueProduct:
+    path:     /uniqueproduct
+    defaults: { _controller: ProductManagementBundle:Product:singleProduct}
