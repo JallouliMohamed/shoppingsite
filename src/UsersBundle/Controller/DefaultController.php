@@ -3,6 +3,8 @@
 namespace UsersBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -15,6 +17,24 @@ class DefaultController extends Controller
     {
         return $this->render('::base.html.twig');
     }
+    public function userProfileAction(){
+        $users = $this->get('security.token_storage')->getToken()->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $product=$em->getRepository('ProductManagementBundle:Product')->findByuser($users);
+        return $this->render('@Users/profile.html.twig', array(
+            'users' => $users,"products"=>$product));
+    }
+    public function userProductAction(){
+        $users = $this->get('security.token_storage')->getToken()->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $product=$em->getRepository('ProductManagementBundle:Product')->findByuser($users);
+        return new JsonResponse($product);
+}
+    public function userProductJsonAction(Request $request){
 
+        $em = $this->getDoctrine()->getManager();
+        $product=$em->getRepository('ProductManagementBundle:Product')->findByuser($users);
+        return new JsonResponse($product);
+    }
 
 }

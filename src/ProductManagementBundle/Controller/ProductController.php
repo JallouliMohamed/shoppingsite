@@ -7,6 +7,7 @@
  */
 
 namespace ProductManagementBundle\Controller;
+use ProductManagementBundle\Entity\Follower;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Intl\Intl;
 
@@ -376,7 +377,7 @@ class ProductController extends Controller
         $product->setAdress($request->get('adress'));
         $product->setName($request->get('title'));
         $file =$request->files->get('fileToUpload');
-        $fileName =$this->generateUniqueFileName().'.'.'jpg';
+        $fileName =$this->generateUniqueFileName().'.'.$file->guessExtension();
         $file->move(
             $this->getParameter('brochures_directory'),
             $fileName
@@ -393,7 +394,15 @@ class ProductController extends Controller
     public function singleProductAction(Request $request){
         $em = $this->getDoctrine()->getManager();
         $product=$em->getRepository('ProductManagementBundle:Product')->find($request->get('id'));
-        return $this->render('ProductManagementBundle:Product:uniqueProduct.html.twig',array('product'=>$product));
+        $usr= $this->get('security.token_storage')->getToken()->getUser();
+
+        $follower=$em->getRepository('ProductManagementBundle:Follower')->findBy(array("follower"=>$usr,"followed"=>$product->getUser()));
+        if(sizeof($follower)!=0){
+            return $this->render('ProductManagementBundle:Product:uniqueProduct.html.twig',array('product'=>$product,"flag"=>true));
+        }else{
+            return $this->render('ProductManagementBundle:Product:uniqueProduct.html.twig',array('product'=>$product,"flag"=>false));
+        }
+
     }
     private function generateUniqueFileName()
     {
@@ -401,4 +410,32 @@ class ProductController extends Controller
         // uniqid(), which is based on timestamps
         return md5(uniqid());
     }
+    public function followAction(Request $request){
+        $usr= $this->get('security.token_storage')->getToken()->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $product=$em->getRepository('ProductManagementBundle:Product')->find($request->get('id'));
+        $f = new Follower();
+        $f->setFollower($usr);
+        $f->setFollowed($product->getUser());
+        $em->persist($f);
+        $em->flush();
+        return new JsonResponse(['message'=>"you have followed ".$product->getUser()->getUsername(),'id'=>$product->getId()]);
+    }
+    public function unfollowAction(Request $request){
+        $usr= $this->get('security.token_storage')->getToken()->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $product=$em->getRepository('ProductManagementBundle:Product')->find($request->get('id'));
+        $f=$em->getRepository('ProductManagementBundle:Follower')->findOneBy(array("follower"=>$usr,"followed"=>$product->getUser()));
+        $em->remove($f);
+        $em->flush();
+        return new JsonResponse(['message'=>"you have unfollowed ".$product->getUser()->getUsername(),'id'=>$product->getId()]);
+
+    }
+    public function followersAction(){
+        $usr= $this->get('security.token_storage')->getToken()->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $followers= $em->getRepository('ProductManagementBundle:Follower')->findByfollowed($usr);
+        return new JsonResponse($followers);
+    }
+
 }
