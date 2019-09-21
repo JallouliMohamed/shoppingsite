@@ -9,6 +9,7 @@
 namespace ProductManagementBundle\Controller;
 use ProductManagementBundle\Entity\Follower;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Intl\Intl;
 
 
 use ProductManagementBundle\Entity\Product;
@@ -305,6 +306,7 @@ class ProductController extends Controller
         return $this->render('@ProductManagement/Product/showProducts.html.twig',array('category'=>$category,'products'=>$products,'size'=>sizeof($products)));
     }
     public function addProductAction(Request $request){
+        $countries = Intl::getRegionBundle()->getCountryNames();
 
         $router = $this->container->get('router');
         $user = $this->getUser();
@@ -314,7 +316,6 @@ class ProductController extends Controller
         $em = $this->getDoctrine()->getManager();
         $category = $em->getRepository('ProductManagementBundle:Category')->findAll();
         $subcategory=null;
-        $countries=null;
         return $this->render('@ProductManagement/Product/addProduct.html.twig',array('category'=>$category,"sub"=>$subcategory,'countries'=>$countries));
     }
     public function getSubcategoryByCategoryAction(Request $request){

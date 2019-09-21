@@ -24,6 +24,3 @@ userprofile:
 userproduts:
     path:     /userproducts
     defaults: { _controller: UsersBundle:Default:userProduct}
-followerperuser:
-    path:     /followers
-    defaults: { _controller: UsersBundle:Default:userProductJson}

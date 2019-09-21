@@ -4,7 +4,6 @@ namespace UsersBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -30,11 +29,5 @@ class DefaultController extends Controller
         $product=$em->getRepository('ProductManagementBundle:Product')->findByuser($users);
         return new JsonResponse($product);
 }
-    public function userProductJsonAction(Request $request){
-
-        $em = $this->getDoctrine()->getManager();
-        $product=$em->getRepository('ProductManagementBundle:Product')->findByuser($users);
-        return new JsonResponse($product);
-    }
 
 }
