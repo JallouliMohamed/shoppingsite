@@ -10,12 +10,14 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use FOS\MessageBundle\Model\ParticipantInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity
  * @ORM\Table(name="users")
  * @Vich\Uploadable
  */
-class Users extends BaseUser implements ParticipantInterface
+class Users extends BaseUser implements ParticipantInterface,\JsonSerializable
 {
     /**
      * @ORM\Id
@@ -125,11 +127,13 @@ class Users extends BaseUser implements ParticipantInterface
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     *
-     * @var string
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
+     * @Assert\File(
+     *     maxSize = "1024k",
+     * )
      */
-    private $imageName;
+    private $image;
 
 
     /**
@@ -416,6 +420,22 @@ class Users extends BaseUser implements ParticipantInterface
      */
     private $notifications;
 
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
     public function __construct()
     {
         parent::__construct();
@@ -424,8 +444,18 @@ class Users extends BaseUser implements ParticipantInterface
         $this->adresses = new ArrayCollection();
         $this->commandes = new ArrayCollection();
         $this->planning = new ArrayCollection();
-        $this->addRole("ROLE_ADMIN");
     }
 
 
+    /**
+     * Specify data which should be serialized to JSON
+     * @link https://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return (object) get_object_vars($this);
+    }
 }

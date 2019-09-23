@@ -18,3 +18,9 @@ userallorders:
 bakeryalllineorders:
     path:     /bakery/lineorders
     defaults: {_controller: EcommerceBundle:Order:BakerylistOrders}
+userprofile:
+    path:     /profile
+    defaults: { _controller: UsersBundle:Default:userProfile}
+userproduts:
+    path:     /userproducts
+    defaults: { _controller: UsersBundle:Default:userProduct}

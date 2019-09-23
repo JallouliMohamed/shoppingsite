@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
-    <link rel="alternate" type="application/rss+xml" title="Electro &raquo; Feed" href="../../feed/index.html" />
-    <link rel="alternate" type="application/rss+xml" title="Electro &raquo; Comments Feed" href="../../comments/feed/index.html" />
-    <link rel="alternate" type="application/rss+xml" title="Electro &raquo; Tablet Air 3 WiFi 64GB  Gold Comments Feed" href="feed/index.html" />
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/'/>
+    <link rel="alternate" type="application/rss+xml" title="Electro &raquo; Feed" href="../../feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="Electro &raquo; Comments Feed"
+          href="../../comments/feed/index.html"/>
+    <link rel="alternate" type="application/rss+xml" title="Electro &raquo; Tablet Air 3 WiFi 64GB  Gold Comments Feed"
+          href="feed/index.html"/>
     <style type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -18,60 +20,126 @@
             padding: 0 !important;
         }
     </style>
-    <link rel='stylesheet' id='wp-block-library-css'  href="{{ asset('wp-includes/css/dist/block-library/style.minfee8.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='jquery-selectBox-css'  href="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox7359.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='yith-wcwl-font-awesome-css'  href="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min1849.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='yith-wcwl-main-css'  href="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/css/style7888.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='contact-form-7-css'  href="{{ asset('wp-content/plugins/contact-form-7/includes/css/styles3c21.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='rs-plugin-settings-css'  href="{{ asset('wp-content/plugins/revslider/public/assets/css/settings84f5.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-block-library-css'
+          href="{{ asset('wp-includes/css/dist/block-library/style.minfee8.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' id='jquery-selectBox-css'
+          href="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox7359.css') }}"
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='yith-wcwl-font-awesome-css'
+          href="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min1849.css') }}"
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='yith-wcwl-main-css'
+          href="{{ asset('wp-content/plugins/yith-woocommerce-wishlist/assets/css/style7888.css') }}" type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css'
+          href="{{ asset('wp-content/plugins/contact-form-7/includes/css/styles3c21.css') }}" type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='rs-plugin-settings-css'
+          href="{{ asset('wp-content/plugins/revslider/public/assets/css/settings84f5.css') }}" type='text/css'
+          media='all'/>
     <style id='rs-plugin-settings-inline-css' type='text/css'>
-        #rs-demo-id {}
+        #rs-demo-id {
+        }
     </style>
-    <link rel='stylesheet' id='photoswipe-css'  href="{{ asset('wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipef8ee.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='photoswipe-default-skin-css'  href="{{ asset('wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skinf8ee.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='photoswipe-css'
+          href="{{ asset('wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipef8ee.css') }}" type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='photoswipe-default-skin-css'
+          href="{{ asset('wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skinf8ee.css') }}"
+          type='text/css' media='all'/>
     <style id='woocommerce-inline-inline-css' type='text/css'>
-        .woocommerce form .form-row .required { visibility: visible; }
+        .woocommerce form .form-row .required {
+            visibility: visible;
+        }
     </style>
-    <link rel='stylesheet' id='jquery-colorbox-css'  href="{{ asset('wp-content/plugins/yith-woocommerce-compare/assets/css/colorboxfee8.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='electro-fonts-css'  href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700%2C800%2C800italic%2C700italic%2C600italic%2C400italic%2C300italic&amp;subset=latin%2Clatin-ext' type='text/css' media='all' />
-    <link rel='stylesheet' id='bootstrap-css'  href="{{ asset('wp-content/themes/electro/assets/css/bootstrap.min254d.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='fontawesome-css'  href="{{ asset('wp-content/themes/electro/assets/css/font-awesome.min254d.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='animate-css'  href="{{ asset('wp-content/themes/electro/assets/css/animate.min254d.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='font-electro-css'  href="{{ asset('wp-content/themes/electro/assets/css/font-electro254d.css')}} type='text/css' media='all' />
-    <link rel='stylesheet' id='jquery-mCustomScrollbar-css'  href="{{ asset('wp-content/themes/electro/assets/css/jquery.mCustomScrollbar254d.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='electro-style-css'  href="{{ asset('wp-content/themes/electro/style.min254d.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='electro-style-v2-css'  href="{{ asset('wp-content/themes/electro/assets/css/v2.min254d.css')}}" type='text/css' media='all' />
-    <link rel='stylesheet' id='electro-color-css'  href="{{ asset('wp-content/themes/electro/assets/css/colors/yellow.min254d.css')}}" type='text/css' media='all' />
-    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/jqueryb8ff.js')}}"></script>
-    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/jquery-migrate.min330a.js')}}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min84f5.js')}}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min84f5.js')}}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js')}}"></script>
+    <link rel='stylesheet' id='jquery-colorbox-css'
+          href="{{ asset('wp-content/plugins/yith-woocommerce-compare/assets/css/colorboxfee8.css') }}" type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='electro-fonts-css'
+          href='http://fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C600%2C700%2C800%2C800italic%2C700italic%2C600italic%2C400italic%2C300italic&amp;subset=latin%2Clatin-ext'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='bootstrap-css'
+          href="{{ asset('wp-content/themes/electro/assets/css/bootstrap.min254d.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' id='fontawesome-css'
+          href="{{ asset('wp-content/themes/electro/assets/css/font-awesome.min254d.css') }}" type='text/css'
+          media='all'/>
+    <link rel='stylesheet' id='animate-css'
+          href="{{ asset('wp-content/themes/electro/assets/css/animate.min254d.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' id='font-electro-css'
+          href="{{ asset('wp-content/themes/electro/assets/css/font-electro254d.css') }} type='text/css' media='all' />
+    <link rel='stylesheet' id='jquery-mCustomScrollbar-css'  href="{{ asset('wp-content/themes/electro/assets/css/jquery.mCustomScrollbar254d.css') }}" type='text/css' media='all' />
+    <link rel='stylesheet' id='electro-style-css' href="{{ asset('wp-content/themes/electro/style.min254d.css') }}"
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='electro-style-v2-css'
+          href="{{ asset('wp-content/themes/electro/assets/css/v2.min254d.css') }}" type='text/css' media='all'/>
+    <link rel='stylesheet' id='electro-color-css'
+          href="{{ asset('wp-content/themes/electro/assets/css/colors/yellow.min254d.css') }}" type='text/css'
+          media='all'/>
+    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/jqueryb8ff.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('wp-includes/js/jquery/jquery-migrate.min330a.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min84f5.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min84f5.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.minf8ee.js')}}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-carte23c.js')}}"></script>
-    <link rel='https://api.w.org/' href="{{ asset('wp-json/index.html')}} />
-    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{ asset('xmlrpc0db0.php')}}" />
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{ asset('wp-includes/wlwmanifest.xml')}}" />
-    <meta name="generator" content="WordPress 5.1.2" />
-    <meta name="generator" content="WooCommerce 3.5.7" />
-    <link rel="canonical" href="index.html" />
-    <link rel='shortlink' href="{{ asset('index5705.html')}}" />
-    <link rel="alternate" type="application/json+oembed" href="{{ asset('wp-json/oembed/1.0/embed7554.json?url=https%3A%2F%2Fdemo2.madrasthemes.com%2Felectro-wide%2Fproduct%2Ftablet-air-3-wifi-64gb-gold%2F')}}" />
-    <link rel="alternate" type="text/xml+oembed" href="{{ asset('wp-json/oembed/1.0/embed2d63?url=https%3A%2F%2Fdemo2.madrasthemes.com%2Felectro-wide%2Fproduct%2Ftablet-air-3-wifi-64gb-gold%2F&amp;format=xml')}}" />
-    <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.minf8ee.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/js_composer/assets/js/vendors/woocommerce-add-to-carte23c.js') }}"></script>
+    <link rel='https://api.w.org/' href="{{ asset('wp-json/index.html') }} />
+    <link rel=" EditURI" type="application/rsd+xml" title="RSD" href="{{ asset('xmlrpc0db0.php') }}" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{{ asset('wp-includes/wlwmanifest.xml') }}"/>
+    <meta name="generator" content="WordPress 5.1.2"/>
+    <meta name="generator" content="WooCommerce 3.5.7"/>
+    <link rel="canonical" href="index.html"/>
+    <link rel='shortlink' href="{{ asset('index5705.html') }}"/>
+    <link rel="alternate" type="application/json+oembed"
+          href="{{ asset('wp-json/oembed/1.0/embed7554.json?url=https%3A%2F%2Fdemo2.madrasthemes.com%2Felectro-wide%2Fproduct%2Ftablet-air-3-wifi-64gb-gold%2F') }}"/>
+    <link rel="alternate" type="text/xml+oembed"
+          href="{{ asset('wp-json/oembed/1.0/embed2d63?url=https%3A%2F%2Fdemo2.madrasthemes.com%2Felectro-wide%2Fproduct%2Ftablet-air-3-wifi-64gb-gold%2F&amp;format=xml') }}"/>
+    <noscript>
+        <style>.woocommerce-product-gallery {
+                opacity: 1 !important;
+            }</style>
+    </noscript>
     <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
-    <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://demo2.madrasthemes.com/electro-wide/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><meta name="generator" content="Powered by Slider Revolution 5.4.8.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
-    <link rel="icon" href="{{ asset('wp-content/uploads/2019/04/cropped-electro-fav-icon-32x32.png')}}" sizes="32x32" />
-    <link rel="icon" href="{{ asset('wp-content/uploads/2019/04/cropped-electro-fav-icon-192x192.png')}}" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('wp-content/uploads/2019/04/cropped-electro-fav-icon-180x180.png')}}" />
-    <meta name="msapplication-TileImage" content="https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2019/04/cropped-electro-fav-icon-270x270.png" />
-    <script type="text/javascript">function setREVStartSize(e){
-            try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
-                if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
-            }catch(d){console.log("Failure at Presize of Slider:"+d)}
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" type="text/css"
+          href="https://demo2.madrasthemes.com/electro-wide/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css"
+          media="screen"><![endif]-->
+    <meta name="generator"
+          content="Powered by Slider Revolution 5.4.8.1 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface."/>
+    <link rel="icon" href="{{ asset('wp-content/uploads/2019/04/cropped-electro-fav-icon-32x32.png') }}" sizes="32x32"/>
+    <link rel="icon" href="{{ asset('wp-content/uploads/2019/04/cropped-electro-fav-icon-192x192.png') }}"
+          sizes="192x192"/>
+    <link rel="apple-touch-icon-precomposed"
+          href="{{ asset('wp-content/uploads/2019/04/cropped-electro-fav-icon-180x180.png') }}"/>
+    <meta name="msapplication-TileImage"
+          content="https://demo2.madrasthemes.com/electro-wide/wp-content/uploads/2019/04/cropped-electro-fav-icon-270x270.png"/>
+    <script type="text/javascript">function setREVStartSize(e) {
+            try {
+                e.c = jQuery(e.c);
+                var i = jQuery(window).width(), t = 9999, r = 0, n = 0, l = 0, f = 0, s = 0, h = 0;
+                if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function (e, f) {
+                    f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e)
+                }), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) {
+                    var u = (e.c.width(), jQuery(window).height());
+                    if (void 0 != e.fullScreenOffsetContainer) {
+                        var c = e.fullScreenOffsetContainer.split(",");
+                        if (c) jQuery.each(c, function (e, i) {
+                            u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u
+                        }), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0))
+                    }
+                    f = u
+                } else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
+                e.c.closest(".rev_slider_wrapper").css({height: f})
+            } catch (d) {
+                console.log("Failure at Presize of Slider:" + d)
+            }
         };</script>
     <style type="text/css" id="wp-custom-css">
         .handheld-footer .handheld-footer-bar .footer-logo svg path {
@@ -80,156 +148,221 @@
 
         .handheld-footer .handheld-footer-bar .handheld-footer-bar-inner {
             flex-direction: row;
-        }		</style>
-    <noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+        }        </style>
+    <noscript>
+        <style type="text/css"> .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }</style>
+    </noscript></head>
 
 
 
     <div id="content" class="site-content" tabindex="-1">
         <div class="container">
-                <div id="primary" class="content-area">
-                    <main id="main" class="site-main">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
 
 
-                        <div class="woocommerce-notices-wrapper"></div><div id="product-2706" class="post-2706 product type-product status-publish has-post-thumbnail product_cat-tablets first instock shipping-taxable purchasable product-type-simple">
+                    <div class="woocommerce-notices-wrapper"></div>
+                    <div id="product-2706"
+                         class="post-2706 product type-product status-publish has-post-thumbnail product_cat-tablets first instock shipping-taxable purchasable product-type-simple">
 
-                            <div class="single-product-wrapper">
-                                <div class="product-images-wrapper">
-                                           <img width="600" height="550" src="{{ asset('uploads/' ~ product.imagename)}}" />
-                                </div><!-- /.product-images-wrapper -->
+                        <div class="single-product-wrapper">
+                            <div class="product-images-wrapper">
+                                <img width="600" height="550" src="{{ asset('uploads/' ~ product.imagename) }}"/>
+                            </div><!-- /.product-images-wrapper -->
 
-                                <div class="summary entry-summary">
-                                    <span class="loop-product-categories"><a href="../../product-category/smart-phones-tablets/tablets/index.html" rel="tag">{{ product.subcategory.name }}</a></span><h1 class="product_title entry-title">{{ product.name}}</h1>
-                                    <div class="woocommerce-product-rating">
-                                        <div class="star-rating"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5 based on <span class="rating">3</span> customer ratings</span></div>		<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span class="count">3</span> customer reviews)</a>	</div>
-
-                                    <div class="brand">
-                                        <a href="../../indexe461.html?taxonomy=pa_brands&amp;term=apple"><img src="../../wp-content/uploads/2016/03/graphicriver.png" alt="Apple" /></a>		</div>
-
-                                    <div class="availability">
-                                        Availability: <span class="electro-stock-availability"><p class="stock in-stock">BY : {{ product.user.username }}</p></span>
+                            <div class="summary entry-summary">
+                                <span class="loop-product-categories"><a
+                                            href="../../product-category/smart-phones-tablets/tablets/index.html"
+                                            rel="tag">{{ product.subcategory.name }}</a></span>
+                                <h1 class="product_title entry-title">{{ product.name }}</h1>
+                                <div class="woocommerce-product-rating">
+                                    <div class="star-rating"><span style="width:80%">Rated <strong
+                                                    class="rating">4.00</strong> out of 5 based on <span class="rating">3</span> customer ratings</span>
                                     </div>
+                                    <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span
+                                                class="count">3</span> customer reviews)</a></div>
 
-                                    <hr class="single-product-title-divider" />
-                                    <div class="action-buttons">
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2706">
-                                            <div class="yith-wcwl-add-button hide" style="display:none">
+                                <div class="brand">
+                                    <a href="../../indexe461.html?taxonomy=pa_brands&amp;term=apple"><img
+                                                src="../../wp-content/uploads/2016/03/graphicriver.png"
+                                                alt="Apple"/></a></div>
 
-
-                                                <a href="index7f75.html?add_to_wishlist=2706" rel="nofollow" data-product-id="2706" data-product-type="simple" class="add_to_wishlist" >
-                                                    Wishlist</a>
-                                                <img src="../../wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="../../wishlist/index.html" rel="nofollow">
-                                                    Browse Wishlist	        </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse show" style="display:block">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="../../wishlist/index.html" rel="nofollow">
-                                                    Browse Wishlist	        </a>
-                                            </div>
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
-
-                                        <div class="clear"></div><a href="https://demo2.madrasthemes.com/electro-wide?action=yith-woocompare-add-product&amp;id=2706" class="add-to-compare-link" data-product_id="2706">Compare</a></div><div class="woocommerce-product-details__short-description">
-                                        <ul>
-                                            <li>{{ product.description }}</li>
-
-                                        </ul>
-                                    </div>
-                                    <p class="price"><span class="electro-price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&pound;</span>{{ product.price }}</span></span></p>
-                                    <div class="availability">
-                                      <span class="electro-stock-availability"><p class="stock in-stock">by : {{ product.user.username }}</p></span>
-                                    </div>
-
-                                    <form class="cart" action="https://demo2.madrasthemes.com/electro-wide/product/tablet-air-3-wifi-64gb-gold/" method="post" enctype='multipart/form-data'>
-
-                                        <div class="quantity">
-                                            <label for="quantity_5d71c5e2c194e">Quantity</label>
-
-                                        </div>
-
-                                        <button type="submit" name="add-to-cart" value="2706" class="single_add_to_cart_button button alt">Contact him</button>
-                                        <button type="submit" name="add-to-cart" value="2706" class="single_add_to_cart_button button alt">Follow</button>
-
-                                    </form>
-
-
+                                <div class="availability">
+                                    Availability: <span class="electro-stock-availability"><p class="stock in-stock">BY : {{ product.user.username }}</p></span>
                                 </div>
 
-                            </div><!-- /.single-product-wrapper -->
-
-                            <div class="woocommerce-tabs wc-tabs-wrapper">
-
-                                <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--accessories panel entry-content wc-tab" id="tab-accessories" role="tabpanel" aria-labelledby="tab-title-accessories">
-
-                                    </main><!-- #main -->
-                </div><!-- #primary -->
+                                <hr class="single-product-title-divider"/>
+                                <div class="action-buttons">
+                                    <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2706">
+                                        <div class="yith-wcwl-add-button hide" style="display:none">
 
 
+                                            <a href="index7f75.html?add_to_wishlist=2706" rel="nofollow"
+                                               data-product-id="2706" data-product-type="simple"
+                                               class="add_to_wishlist">
+                                                Wishlist</a>
+                                            <img src="../../wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
+                                                 class="ajax-loading" alt="loading" width="16" height="16"
+                                                 style="visibility:hidden"/>
+                                        </div>
 
-            </div>		</div><!-- .col-full -->
+                                        <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
+                                            <span class="feedback">Product added!</span>
+                                            <a href="../../wishlist/index.html" rel="nofollow">
+                                                Browse Wishlist </a>
+                                        </div>
+
+                                        <div class="yith-wcwl-wishlistexistsbrowse show" style="display:block">
+                                            <span class="feedback">The product is already in the wishlist!</span>
+                                            <a href="../../wishlist/index.html" rel="nofollow">
+                                                Browse Wishlist </a>
+                                        </div>
+
+                                        <div style="clear:both"></div>
+                                        <div class="yith-wcwl-wishlistaddresponse"></div>
+
+                                    </div>
+
+                                    <div class="clear"></div>
+                                    <a href="https://demo2.madrasthemes.com/electro-wide?action=yith-woocompare-add-product&amp;id=2706"
+                                       class="add-to-compare-link" data-product_id="2706">Compare</a></div>
+                                <div class="woocommerce-product-details__short-description">
+                                    <ul>
+                                        <li>{{ product.description }}</li>
+
+                                    </ul>
+                                </div>
+                                <p class="price"><span class="electro-price"><span
+                                                class="woocommerce-Price-amount amount"><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>{{ product.price }}</span></span>
+                                </p>
+                                <div class="availability">
+                                    <span class="electro-stock-availability"><p
+                                                class="stock in-stock">by : {{ product.user.username }}</p></span>
+                                </div>
+
+                                <form class="cart"
+                                      action="https://demo2.madrasthemes.com/electro-wide/product/tablet-air-3-wifi-64gb-gold/"
+                                      method="post" enctype='multipart/form-data'>
+
+                                    <div class="quantity">
+                                        <label for="quantity_5d71c5e2c194e">Quantity</label>
+
+                                    </div>
+
+                                    <button type="submit" name="add-to-cart" value="2706"
+                                            class="single_add_to_cart_button button alt">Contact him
+                                    </button>
+                                    <div style="all:unset;" id="jjj">
+                                    {% if flag==true %}
+                                    <button onclick="unfollow({{ product.id }})" type="button" name="add-to-cart" value="2706"
+                                            class="single_add_to_cart_button button alt">unfollow
+                                    </button>
+                                    {% endif %}
+                                    {% if flag==false %}
+                                        <button onclick="showprsub({{ product.id }})" type="button" name="add-to-cart" value="2706"
+                                                class="single_add_to_cart_button button alt">follow
+                                        </button>
+                                    {% endif %}
+                                    </div>
+                                </form>
+
+
+                            </div>
+
+                        </div><!-- /.single-product-wrapper -->
+
+                        <div class="woocommerce-tabs wc-tabs-wrapper">
+
+                            <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--accessories panel entry-content wc-tab"
+                                 id="tab-accessories" role="tabpanel" aria-labelledby="tab-title-accessories">
+
+                </main><!-- #main -->
+            </div><!-- #primary -->
+
+
+        </div>
+    </div><!-- .col-full -->
     </div><!-- #content -->
 
-</section>
+    </section>
     <script type="text/javascript">
         var c = document.body.className;
         c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
         document.body.className = c;
     </script>
-    <link rel='stylesheet' id='js_composer_front-css'  href="{{ asset('wp-content/plugins/js_composer/assets/css/js_composer.mine23c.css') }}" type='text/css' media='all' />
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min7359.js') }}"></script>
+    <link rel='stylesheet' id='js_composer_front-css'
+          href="{{ asset('wp-content/plugins/js_composer/assets/css/js_composer.mine23c.css') }}" type='text/css'
+          media='all'/>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min7359.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl7888.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl7888.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/contact-form-7/includes/js/scripts3c21.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min5a35.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/js_composer/assets/lib/bower/flexslider/jquery.flexslider-mine23c.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min0235.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min0235.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/contact-form-7/includes/js/scripts3c21.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min5a35.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/js_composer/assets/lib/bower/flexslider/jquery.flexslider-mine23c.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min0235.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min0235.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/frontend/single-product.minf8ee.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/frontend/single-product.minf8ee.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.minf8ee.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.minf8ee.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.minf8ee.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.minf8ee.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-compare/assets/js/woocompare.min6259.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-compare/assets/js/jquery.colorbox-min13ac.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min005e.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/tether.min254d.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/bootstrap.min254d.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/jquery.waypoints.min254d.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/jquery.easing.min254d.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/scrollup.min254d.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/bootstrap-hover-dropdown.min254d.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/jquery.mCustomScrollbar254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-compare/assets/js/woocompare.min6259.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/yith-woocommerce-compare/assets/js/jquery.colorbox-min13ac.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min005e.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/tether.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/bootstrap.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/jquery.waypoints.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/jquery.easing.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/scrollup.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/bootstrap-hover-dropdown.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/jquery.mCustomScrollbar254d.js') }}"></script>
     <script type='text/javascript'>
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/electro.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/electro.min254d.js') }}"></script>
     <script type='text/javascript'>
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
 
             /**
              * Check if a node is blocked for processing.
@@ -237,8 +370,8 @@
              * @param {JQuery Object} $node
              * @return {bool} True if the DOM Element is UI Blocked, false if not.
              */
-            var is_blocked = function( $node ) {
-                return $node.is( '.processing' ) || $node.parents( '.processing' ).length;
+            var is_blocked = function ($node) {
+                return $node.is('.processing') || $node.parents('.processing').length;
             };
 
             /**
@@ -246,15 +379,15 @@
              *
              * @param {JQuery Object} $node
              */
-            var block = function( $node ) {
-                if ( ! is_blocked( $node ) ) {
-                    $node.addClass( 'processing' ).block( {
+            var block = function ($node) {
+                if (!is_blocked($node)) {
+                    $node.addClass('processing').block({
                         message: null,
                         overlayCSS: {
                             background: '#fff url( "https://demo2.madrasthemes.com/electro-wide/wp-content/themes/electro/assets/images/ajax-loader.gif" ) no-repeat center',
                             opacity: 0.6
                         }
-                    } );
+                    });
                 }
             };
 
@@ -263,15 +396,15 @@
              *
              * @param {JQuery Object} $node
              */
-            var unblock = function( $node ) {
-                $node.removeClass( 'processing' ).unblock();
+            var unblock = function ($node) {
+                $node.removeClass('processing').unblock();
             };
 
-            function accessory_checked_count(){
+            function accessory_checked_count() {
                 var product_count = 0;
-                $('.accessory-checkbox .product-check').each(function() {
-                    if( $(this).is(':checked') ) {
-                        if( $(this).data( 'price' ) !== '' ) {
+                $('.accessory-checkbox .product-check').each(function () {
+                    if ($(this).is(':checked')) {
+                        if ($(this).data('price') !== '') {
                             product_count++;
                         }
                     }
@@ -279,187 +412,195 @@
                 return product_count;
             }
 
-            function accessory_checked_total_price(){
+            function accessory_checked_total_price() {
                 var total_price = 0;
-                $('.accessory-checkbox .product-check').each(function() {
-                    if( $(this).is(':checked') ) {
-                        if( $(this).data( 'price' ) !== '' ) {
-                            total_price += parseFloat( $(this).data( 'price' ) );
+                $('.accessory-checkbox .product-check').each(function () {
+                    if ($(this).is(':checked')) {
+                        if ($(this).data('price') !== '') {
+                            total_price += parseFloat($(this).data('price'));
                         }
                     }
                 });
                 return total_price;
             }
 
-            function accessory_checked_total_price_suffix(){
+            function accessory_checked_total_price_suffix() {
                 var total_price_suffix = 0;
-                $('.accessory-checkbox .product-check').each(function() {
-                    if( $(this).is(':checked') ) {
-                        if( $(this).data( 'price-suffix' ) !== '' ) {
-                            total_price_suffix += parseFloat( $(this).data( 'price-suffix' ) );
+                $('.accessory-checkbox .product-check').each(function () {
+                    if ($(this).is(':checked')) {
+                        if ($(this).data('price-suffix') !== '') {
+                            total_price_suffix += parseFloat($(this).data('price-suffix'));
                         }
                     }
                 });
                 return total_price_suffix;
             }
 
-            function accessory_checked_product_ids(){
+            function accessory_checked_product_ids() {
                 var product_ids = [];
-                $('.accessory-checkbox .product-check').each(function() {
-                    if( $(this).is(':checked') ) {
-                        product_ids.push( $(this).data( 'product-id' ) );
+                $('.accessory-checkbox .product-check').each(function () {
+                    if ($(this).is(':checked')) {
+                        product_ids.push($(this).data('product-id'));
                     }
                 });
                 return product_ids;
             }
 
-            function accessory_unchecked_product_ids(){
+            function accessory_unchecked_product_ids() {
                 var product_ids = [];
-                $('.accessory-checkbox .product-check').each(function() {
-                    if( ! $(this).is(':checked') ) {
-                        product_ids.push( $(this).data( 'product-id' ) );
+                $('.accessory-checkbox .product-check').each(function () {
+                    if (!$(this).is(':checked')) {
+                        product_ids.push($(this).data('product-id'));
                     }
                 });
                 return product_ids;
             }
 
-            function accessory_checked_variable_product_ids(){
+            function accessory_checked_variable_product_ids() {
                 var variable_product_ids = [];
-                $('.accessory-checkbox .product-check').each(function() {
-                    if( $(this).is(':checked') && $(this).data( 'product-type' ) == 'variable' ) {
-                        variable_product_ids.push( $(this).data( 'product-id' ) );
+                $('.accessory-checkbox .product-check').each(function () {
+                    if ($(this).is(':checked') && $(this).data('product-type') == 'variable') {
+                        variable_product_ids.push($(this).data('product-id'));
                     }
                 });
                 return variable_product_ids;
             }
 
-            function accessory_is_variation_selected(){
-                if( $(".single_add_to_cart_button").is(":disabled") ) {
+            function accessory_is_variation_selected() {
+                if ($(".single_add_to_cart_button").is(":disabled")) {
                     return false;
                 }
                 return true;
             }
 
-            function accessory_is_variation_available(){
-                if( $(".single_add_to_cart_button").length === 0 || $(".single_add_to_cart_button").hasClass("disabled") || $(".single_add_to_cart_button").hasClass("wc-variation-is-unavailable") ) {
+            function accessory_is_variation_available() {
+                if ($(".single_add_to_cart_button").length === 0 || $(".single_add_to_cart_button").hasClass("disabled") || $(".single_add_to_cart_button").hasClass("wc-variation-is-unavailable")) {
                     return false;
                 }
                 return true;
             }
 
-            function accessory_is_product_available(){
-                if( $(".single_add_to_cart_button").length === 0 || $(".single_add_to_cart_button").hasClass("disabled") ) {
+            function accessory_is_product_available() {
+                if ($(".single_add_to_cart_button").length === 0 || $(".single_add_to_cart_button").hasClass("disabled")) {
                     return false;
                 }
                 return true;
             }
 
-            function accessory_refresh_fragments( response ){
+            function accessory_refresh_fragments(response) {
                 var this_page = window.location.toString();
                 var fragments = response.fragments;
                 var cart_hash = response.cart_hash;
 
                 // Block fragments class
-                if ( fragments ) {
-                    $.each( fragments, function( key ) {
-                        $( key ).addClass( 'updating' );
+                if (fragments) {
+                    $.each(fragments, function (key) {
+                        $(key).addClass('updating');
                     });
                 }
 
                 // Replace fragments
-                if ( fragments ) {
-                    $.each( fragments, function( key, value ) {
-                        $( key ).replaceWith( value );
+                if (fragments) {
+                    $.each(fragments, function (key, value) {
+                        $(key).replaceWith(value);
                     });
                 }
 
                 // Cart page elements
-                $( '.shop_table.cart' ).load( this_page + ' .shop_table.cart:eq(0) > *', function() {
+                $('.shop_table.cart').load(this_page + ' .shop_table.cart:eq(0) > *', function () {
 
-                    $( '.shop_table.cart' ).stop( true ).css( 'opacity', '1' ).unblock();
+                    $('.shop_table.cart').stop(true).css('opacity', '1').unblock();
 
-                    $( document.body ).trigger( 'cart_page_refreshed' );
+                    $(document.body).trigger('cart_page_refreshed');
                 });
 
-                $( '.cart_totals' ).load( this_page + ' .cart_totals:eq(0) > *', function() {
-                    $( '.cart_totals' ).stop( true ).css( 'opacity', '1' ).unblock();
+                $('.cart_totals').load(this_page + ' .cart_totals:eq(0) > *', function () {
+                    $('.cart_totals').stop(true).css('opacity', '1').unblock();
                 });
             }
 
-            $( 'body' ).on( 'found_variation', function( event, variation ) {
-                $('.accessory-checkbox .product-check').each(function() {
-                    if( $(this).is(':checked') && $(this).data( 'product-type' ) == 'variable' ) {
-                        $(this).data( 'price', variation.display_price );
-                        $(this).siblings( 'span.accessory-price' ).html( $(variation.price_html).html() );
+            $('body').on('found_variation', function (event, variation) {
+                $('.accessory-checkbox .product-check').each(function () {
+                    if ($(this).is(':checked') && $(this).data('product-type') == 'variable') {
+                        $(this).data('price', variation.display_price);
+                        $(this).siblings('span.accessory-price').html($(variation.price_html).html());
                     }
                 });
             });
 
-            $( 'body' ).on( 'woocommerce_variation_has_changed', function( event ) {
-                block( $( 'div.accessories' ) );
+            $('body').on('woocommerce_variation_has_changed', function (event) {
+                block($('div.accessories'));
                 var total_price = accessory_checked_total_price();
                 var total_price_suffix = accessory_checked_total_price_suffix();
-                $.post( "../../wp-admin/admin-ajax.html", { 'action': "electro_accessories_total_price", 'price': total_price, 'price_suffix': total_price_suffix  } )
-                    .done( function( response ) {
-                        $( 'span.total-price-html' ).html( response );
-                        $( 'span.total-products' ).html( accessory_checked_count() );
-                        unblock( $( 'div.accessories' ) );
+                $.post("../../wp-admin/admin-ajax.html", {
+                    'action': "electro_accessories_total_price",
+                    'price': total_price,
+                    'price_suffix': total_price_suffix
+                })
+                    .done(function (response) {
+                        $('span.total-price-html').html(response);
+                        $('span.total-products').html(accessory_checked_count());
+                        unblock($('div.accessories'));
                     })
-                    .fail(function() {
-                        unblock( $( 'div.accessories' ) );
+                    .fail(function () {
+                        unblock($('div.accessories'));
                     })
-                    .always(function() {
-                        unblock( $( 'div.accessories' ) );
+                    .always(function () {
+                        unblock($('div.accessories'));
                     });
             });
 
-            $( '.accessory-checkbox .product-check' ).on( "click", function() {
-                block( $( 'div.accessories' ) );
+            $('.accessory-checkbox .product-check').on("click", function () {
+                block($('div.accessories'));
                 var total_price = accessory_checked_total_price();
                 var total_price_suffix = accessory_checked_total_price_suffix();
                 $.ajax({
                     type: "POST",
                     async: false,
                     url: "https://demo2.madrasthemes.com/electro-wide/wp-admin/admin-ajax.php",
-                    data: { 'action': "electro_accessories_total_price", 'price': total_price, 'price_suffix': total_price_suffix  },
-                    success : function( response ) {
-                        $( 'span.total-price-html' ).html( response );
-                        $( 'span.total-products' ).html( accessory_checked_count() );
+                    data: {
+                        'action': "electro_accessories_total_price",
+                        'price': total_price,
+                        'price_suffix': total_price_suffix
+                    },
+                    success: function (response) {
+                        $('span.total-price-html').html(response);
+                        $('span.total-products').html(accessory_checked_count());
 
                         var unchecked_product_ids = accessory_unchecked_product_ids();
-                        $( '.accessories ul.products > li' ).each(function() {
+                        $('.accessories ul.products > li').each(function () {
                             $(this).show();
-                            for (var i = 0; i < unchecked_product_ids.length; i++ ) {
-                                if( $(this).hasClass( 'post-'+unchecked_product_ids[i] ) ) {
+                            for (var i = 0; i < unchecked_product_ids.length; i++) {
+                                if ($(this).hasClass('post-' + unchecked_product_ids[i])) {
                                     $(this).hide();
                                 }
                             }
                         });
                     },
-                    complete: function() {
-                        unblock( $( 'div.accessories' ) );
+                    complete: function () {
+                        unblock($('div.accessories'));
                     }
                 })
             });
 
-            $('.accessories-add-all-to-cart .add-all-to-cart').click(function() {
+            $('.accessories-add-all-to-cart .add-all-to-cart').click(function () {
                 var accerories_all_product_ids = accessory_checked_product_ids();
                 var accerories_variable_product_ids = accessory_checked_variable_product_ids();
-                if( accerories_all_product_ids.length === 0 ) {
+                if (accerories_all_product_ids.length === 0) {
                     var accerories_alert_msg = '<div class="woocommerce-error">No Products selected.</div>';
-                } else if( accerories_variable_product_ids.length > 0 && accessory_is_variation_selected() === false ) {
+                } else if (accerories_variable_product_ids.length > 0 && accessory_is_variation_selected() === false) {
                     var accerories_alert_msg = '<div class="woocommerce-error">Product Variation does not selected.</div>';
-                } else if( accerories_variable_product_ids.length > 0 && accessory_is_variation_available() === false ) {
+                } else if (accerories_variable_product_ids.length > 0 && accessory_is_variation_available() === false) {
                     var accerories_alert_msg = '<div class="woocommerce-error">Sorry, this product is unavailable.</div>';
-                } else if( accerories_variable_product_ids.length === 0 && accessory_is_product_available() === false ) {
+                } else if (accerories_variable_product_ids.length === 0 && accessory_is_product_available() === false) {
                     var accerories_alert_msg = '<div class="woocommerce-error">Sorry, this product is unavailable.</div>';
                 } else {
-                    for (var i = 0; i < accerories_all_product_ids.length; i++ ) {
-                        if( ! $.inArray( accerories_all_product_ids[i], accerories_variable_product_ids ) ) {
-                            var variation_id  = $('.variations_form .variations_button').find('input[name^=variation_id]').val();
+                    for (var i = 0; i < accerories_all_product_ids.length; i++) {
+                        if (!$.inArray(accerories_all_product_ids[i], accerories_variable_product_ids)) {
+                            var variation_id = $('.variations_form .variations_button').find('input[name^=variation_id]').val();
                             var variation = {};
-                            if( $( '.variations_form' ).find('select[name^=attribute]').length ) {
-                                $( '.variations_form' ).find('select[name^=attribute]').each(function() {
+                            if ($('.variations_form').find('select[name^=attribute]').length) {
+                                $('.variations_form').find('select[name^=attribute]').each(function () {
                                     var attribute = $(this).attr("name");
                                     var attributevalue = $(this).val();
                                     variation[attribute] = attributevalue;
@@ -467,7 +608,7 @@
 
                             } else {
 
-                                $( '.variations_form' ).find('.select').each(function() {
+                                $('.variations_form').find('.select').each(function () {
                                     var attribute = $(this).attr("data-attribute-name");
                                     var attributevalue = $(this).find('.selected').attr('data-name');
                                     variation[attribute] = attributevalue;
@@ -478,9 +619,14 @@
                                 type: "POST",
                                 async: false,
                                 url: "https://demo2.madrasthemes.com/electro-wide/wp-admin/admin-ajax.php",
-                                data: { 'action': "electro_variable_add_to_cart", 'product_id': accerories_all_product_ids[i], 'variation_id': variation_id, 'variation': variation  },
-                                success : function( response ) {
-                                    accessory_refresh_fragments( response );
+                                data: {
+                                    'action': "electro_variable_add_to_cart",
+                                    'product_id': accerories_all_product_ids[i],
+                                    'variation_id': variation_id,
+                                    'variation': variation
+                                },
+                                success: function (response) {
+                                    accessory_refresh_fragments(response);
                                 }
                             })
                         } else {
@@ -488,27 +634,70 @@
                                 type: "POST",
                                 async: false,
                                 url: "https://demo2.madrasthemes.com/electro-wide/wp-admin/admin-ajax.php",
-                                data: { 'action': "electro_variable_add_to_cart", 'product_id': accerories_all_product_ids[i]  },
-                                success : function( response ) {
-                                    accessory_refresh_fragments( response );
+                                data: {
+                                    'action': "electro_variable_add_to_cart",
+                                    'product_id': accerories_all_product_ids[i]
+                                },
+                                success: function (response) {
+                                    accessory_refresh_fragments(response);
                                 }
                             })
                         }
                     }
                     var accerories_alert_msg = '<div class="woocommerce-message">Products was successfully added to your cart. <a class="button wc-forward" href="../../cart/index.html">View Cart</a></div>';
                 }
-                $( '.electro-wc-message' ).html(accerories_alert_msg);
+                $('.electro-wc-message').html(accerories_alert_msg);
             });
 
         });
 
     </script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-includes/js/comment-reply.minfee8.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/owl.carousel.min254d.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/pace.min254d.js') }}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/js/jquery.amaran.js"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-includes/js/comment-reply.minfee8.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/owl.carousel.min254d.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/themes/electro/assets/js/pace.min254d.js') }}"></script>
     <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-includes/js/wp-embed.minfee8.js') }}"></script>
-    <script type='text/javascript' src="{{ asset('wp-content/plugins/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.mine23c.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('wp-content/plugins/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.mine23c.js') }}"></script>
+<script type="text/javascript">
+    function showprsub(i) {
 
+        jQuery.ajax({
+            url: "{{ (path('followAction')) }}",
+            type: "POST",
+            dataType: "json",
+            data: {
+                'id': parseInt(i),
+            },
+            async: true,
+            success: function (data) {
+               alert(data.message);
+                jQuery('#jjj').html('');
+                jQuery('#jjj').append(' <button onclick="unfollow(\''+data.id+'\')" type="button" name="add-to-cart" value="2706" class="single_add_to_cart_button button alt">unfollow </button>')
+
+            }
+        });        }
+    function unfollow(i) {
+
+        jQuery.ajax({
+            url: "{{ (path('unfollowAction')) }}",
+            type: "POST",
+            dataType: "json",
+            data: {
+                'id': parseInt(i),
+            },
+            async: true,
+            success: function (data) {
+                alert(data.message);
+                jQuery('#jjj').html('');
+                jQuery('#jjj').append(' <button onclick="showprsub(\''+data.id+'\')" type="button" name="add-to-cart" value="2706" class="single_add_to_cart_button button alt">follow </button>')
+            }
+        });        }
+</script>
 {% endblock %}
 {% block footercontent %}
 {% endblock %}

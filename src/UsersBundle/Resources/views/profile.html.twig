@@ -1,0 +1,216 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' id='dashicons-css'  href="{{asset('profile/wp-includes/css/dashicons.min20fd.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='theme-my-login-css'  href="{{asset('profile/wp-content/plugins/theme-my-login/theme-my-login9d94.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='education-icon-collection-css'  href="{{asset('profile/wp-content/themes/bright/assets/css/education-icon-collection5152.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='contact-form-7-css'  href="{{asset('profile/wp-content/plugins/contact-form-7/includes/css/styles20fd.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='searchandfilter-css'  href="{{asset('profile/wp-content/plugins/search-filter/style68b3.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-layout-css'  href="{{asset('profile/wp-content/plugins/woocommerce/assets/css/woocommerce-layoutc169.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce-smallscreen-css'  href="{{asset('profile/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreenc169.css?')}}" type='text/css' media='only screen and (max-width: 768px)' />
+    <link rel='stylesheet' id='woocommerce-general-css'  href="{{asset('profile/wp-content/plugins/woocommerce/assets/css/woocommercec169.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='course-wishlist-style-css'  href="{{asset('profile/wp-content/plugins/learnpress-wishlist/source/wishlist20fd.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='bright-style-css'  href="{{asset('profile/wp-content/themes/bright/style20fd.css')}}" type='text/css' media='all' />
+
+    <link rel='stylesheet' id='owl-carousel-css'  href="{{asset('profile/wp-content/themes/bright/css/owl.carousel3ba1.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='font-awesoume-css'  href="{{asset('profile/wp-content/themes/bright/assets/css/font-awesome.min4698.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='animate-css'  href="{{asset('profile/wp-content/themes/bright/assets/css/animate4698.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='bright-main-style-css'  href="{{asset('profile/wp-content/themes/bright/css/main.min5152.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='bright-color-css'  href="{{asset('profile/wp-content/themes/bright/css/color5152.css')}}" type='text/css' media='all' />
+    <link rel='stylesheet' id='bright-custom-css'  href="{{asset('profile/wp-content/themes/bright/css/custom5152.css')}}" type='text/css' media='all' />
+
+
+    <div id="content" class="site-content container" style="width: 2500px">
+        <div class="bright-main-content-inner">
+
+            <div id="primary" class="content-area page_no_sidebar">
+                <main id="main" class="site-main">
+
+
+                    <article id="post-7" class="post-7 page type-page status-publish hentry">
+                        <div class="entry-content">
+                            <div class="learnpress">
+                                <div class="learn-press-user-profile row" id="learn-press-user-profile">
+
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="bright-user-wrapper">
+                                            <div class="bright-user-details">
+                                                <div class="bright-user-avatar">
+                                                    <img src="{{asset('uploads/'~users.image)}}" width="120" height="120" alt="Julia Benjama" class="avatar avatar-120 wp-user-avatar wp-user-avatar-120 alignnone photo" />
+                                                </div>
+                                                <div class="bright-user-name-wrapper">
+                                                    <h4 class="bright-user-display-name">{{ users.username }}</h4>
+                                                    <span class="bright-user-job">{{ users.email }}</span><br>
+
+                                                </div>
+                                            </div>
+
+
+                                            <div class="bright-user-bio">
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                                            </div>
+
+                                            <ul class="tabs learn-press-tabs clearfix bright-user-prifile-menu">
+                                                <li class="courses_tab current">
+                                                    <a onclick="products()" data-slug="http://bright.wpbranch.com/lp-profile/Julia+Benjama/courses/">Products</a>
+                                                </li>
+                                                <li class="wishlist_tab">
+                                                    <a onclick="follower()" data-slug="http://bright.wpbranch.com/lp-profile/Julia+Benjama/wishlist/">Followers</a>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-8"><div class="user-profile-tabs learn-press-tabs-wrapper-x">
+                                            <div class="learn-press-tab" id="tab-courses">
+                                                <div class="entry-tab-inner">
+                                                    <div class="learn-press-subtab-content" style="display: block">
+                                                        <div id="jjj" style="all:unset;" >
+
+                                                        <ul class="learn-press-courses profile-courses courses-list">
+                                                            {% for i in products %}
+
+                                                            <li class="course bright-course-item">
+
+                                                                <div class="courses-list-item-inner">
+                                                                    <div class="courses-thum">
+                                                                        <img src="{{ asset('uploads/' ~ i.imagename)}}" alt="Diving into Big Data">	</div>
+                                                                    <div class="courses-content">
+                                                                        <h3 class="bright-course-title"><a  rel="bookmark">{{ i.name}}</a></h3>
+                                                                        <span class="bright-course-author-name"><a >{{ i.addedAt|date("m/d/Y") }}</a></span>
+                                                                        <span class="bright-course-author-name"><a>{{ i.description}}</a></span>
+                                                                        <span class="bright-course-author-name"><a> <button type="button" name="add-to-cart" value="2706"
+                                                                                                                            class="danger">Delete
+                                                                            </button><button style="padding-left: 10px;margin-left: 10px;" type="button" name="add-to-cart" value="2706"
+                                                                                             class="btn btn-warning">Update
+                                                                            </button></a></span>
+
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            {% endfor %}
+
+
+
+
+
+
+                                                        </ul>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div></div>
+                        </div><!-- .entry-content -->
+
+                    </article><!-- #post-## -->
+
+                </main><!-- #main -->
+            </div><!-- #primary -->
+
+        </div>
+    </div   >
+    <!-- #content -->
+    <script type='text/javascript'> </script><script type='text/javascript' src="{{asset('profile/wp-content/plugins/bbpress/templates/default/js/editor01c4.js')}}"></script>
+    <script type='text/javascript'>
+    </script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/contact-form-7/includes/js/scripts20fd.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min6b25.js')}}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.minc169.js')}}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.minc169.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/bootstrap.min7433.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/jquery.slicknav.min4b68.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/owl.carousele7f0.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/jquery.countdown3601.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/jquery.magnific-popup.min4963.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/jquery.matchHeight-min5152.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/js_composer/assets/lib/waypoints/waypoints.min5243.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/jquery.counterup.min5152.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/jquery.mixitup.minc3e6.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/main5152.js')}}"></script>
+    <script type='text/javascript'>
+        (function($) {
+            'use strict';
+        })(jQuery);
+    </script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/themes/bright/js/skip-link-focus-fix4a7d.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/underscore.min4511.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/backbone.min9632.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/learnpress/assets/js/jquery.alert3ea8.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/learnpress/assets/js/global3ea8.js')}}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/learnpress/assets/js/frontend/learnpress3ea8.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/learnpress/assets/js/frontend/become-teacher3ea8.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/jquery/ui/core.mine899.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/jquery/ui/widget.mine899.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/jquery/ui/mouse.mine899.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/jquery/ui/slider.mine899.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/jquery/ui/draggable.mine899.js')}}"></script>
+    <script type='text/javascript'>
+
+    </script>
+    <script type='text/javascript' src="{{asset('profile/wp-content/plugins/learnpress/assets/js/frontend/profile3ea8.js')}}"></script>
+    <script type='text/javascript' src="{{asset('profile/wp-includes/js/wp-embed.min20fd.js')}}"></script>
+    <script type='text/javascript'>
+    </script>
+    <script type="text/javascript">
+        function follower() {
+            jQuery.ajax({
+                url: "{{ (path('followersAction')) }}",
+                type: "POST",
+                dataType: "json",
+
+                async: true,
+                success: function (data) {
+                    var k = "";
+                    jQuery('#jjj').html('');
+                    console.log(data);
+                    data.forEach(function (element) {
+                        var path= '/shoppingsite/shoppingsite/web/uploads/';
+                        k = k + '<li class="course bright-course-item"><div class="courses-list-item-inner"><div class="courses-thum"><img src="'+path+element.follower.image+'" alt="Diving into Big Data"></div><div class="courses-content"><h3 class="bright-course-title"><a  rel="bookmark"><b>'+element.follower.username+'</b></a></h3><span class="bright-course-author-name"><a >'+element.follower.email+'</a></span><span class="bright-course-author-name"><a></a></span><span class="bright-course-author-name"><a> </a></span></div></div></li>';
+                    });
+                    jQuery('#jjj').append('<ul class="learn-press-courses profile-courses courses-list">'+k+'</ul>');
+                    console.log(data);
+                }
+            });}
+        function products() {
+            jQuery.ajax({
+                url: "{{ (path('userproduts')) }}",
+                type: "POST",
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    var k = "";
+                    jQuery('#jjj').html('');
+                    console.log(data);
+                    data.forEach(function (element) {
+                        var path= '/shoppingsite/shoppingsite/web/uploads/';
+
+
+                        k = k + '<li class="course bright-course-item"><div class="courses-list-item-inner"><div class="courses-thum"><img src="'+path+element.imageName+'" alt="Diving into Big Data"></div><div class="courses-content"><h3 class="bright-course-title"><a  rel="bookmark">'+element.name+'</a></h3><span class="bright-course-author-name"><a >'+element.addedAt.date+'</a></span><span class="bright-course-author-name"><a>'+element.description+'</a></span><span class="bright-course-author-name"><a>  <button type="button" name="add-to-cart" value="2706" class="danger">Delete</button><button style="padding-left: 10px;margin-left: 10px;" type="button" name="add-to-cart" value="2706" class="btn btn-warning">Update</button></a></span></div></div></li>';
+                    });
+                    jQuery('#jjj').append('<ul class="learn-press-courses profile-courses courses-list">'+k+'</ul>');
+                    console.log(data);
+                }
+            });}
+    </script>
+{% endblock %}
+{% block footercontent %}
+{% endblock %}

@@ -128,3 +128,21 @@ showProductsBySubCategory:
 uniqueProduct:
     path:     /uniqueproduct
     defaults: { _controller: ProductManagementBundle:Product:singleProduct}
+followAction:
+    path:     /follow
+    defaults: { _controller: ProductManagementBundle:Product:follow}
+unfollowAction:
+    path:    /unfollow
+    defaults: { _controller: ProductManagementBundle:Product:unfollow}
+followersAction:
+    path:    /followers
+    defaults: { _controller: ProductManagementBundle:Product:followers}
+add_favoriteProduct:
+    path:     /favoriteProduct/add
+    defaults: { _controller: ProductManagementBundle:FavoriteProduct:addFavorite}
+remove_favoriteProduct:
+    path:     /favoriteProduct/remove
+    defaults: { _controller: ProductManagementBundle:FavoriteProduct:removeFavorite}
+list_favorite_product:
+    path:     /favoriteProduct/list
+    defaults: { _controller: ProductManagementBundle:FavoriteProduct:listFavorite }
